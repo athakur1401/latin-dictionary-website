@@ -1,0 +1,17 @@
+[
+    {
+      "latin": "Aqua",
+      "part_of_speech": "Noun (f.)",
+      "definition": "Water",
+      "declension": "1st Declension",
+      "forms": ["Aqua", "Aquae", "Aquam", "Aquā", "Aquae", "Aquārum", "Aquis", "Aquas", "Aquis"]
+    },
+    {
+      "latin": "Amare",
+      "part_of_speech": "Verb",
+      "definition": "To love",
+      "conjugation": "1st Conjugation",
+      "forms": ["Amo", "Amas", "Amat", "Amamus", "Amatis", "Amant"]
+    }
+  ]
+  
