@@ -36,16 +36,21 @@ const words = [
     }
 ];
 
-const container = document.getElementById("dictionary");
-container.innerHTML = words.map(word => `
-    <div class="entry">
-        <h2>${word.latin}</h2>
-        <p><strong>Part of Speech:</strong> ${word.part_of_speech}</p>
-        <p><strong>Definition:</strong> ${word.definition}</p>
-        ${word.declension ? `<p><strong>Declension:</strong> ${word.declension}</p>` : ""}
-        ${word.conjugation ? `<p><strong>Conjugation:</strong> ${word.conjugation}</p>` : ""}
-        ${word.comparative ? `<p><strong>Comparative:</strong> ${word.comparative}</p>` : ""}
-        ${word.superlative ? `<p><strong>Superlative:</strong> ${word.superlative}</p>` : ""}
-        ${word.forms ? `<p><strong>Forms:</strong> ${word.forms.join(", ")}</p>` : ""}
-    </div>
-`).join("");
+function lookupWord() {
+    let word = document.getElementById("wordInput").value.toLowerCase();
+    let resultDiv = document.getElementById("result");
+
+    if (dictionary[word]) {
+        let data = dictionary[word];
+        resultDiv.innerHTML = `
+            <h2>${word}</h2>
+            <p><strong>Type:</strong> ${data.type}</p>
+            <p><strong>Definition:</strong> ${data.definition}</p>
+            <p><strong>Analysis:</strong> ${data.analysis}</p>
+        `;
+        resultDiv.style.display = "block";
+    } else {
+        resultDiv.innerHTML = `<p style="color:red;">Word not found in dictionary.</p>`;
+        resultDiv.style.display = "block";
+    }
+}
