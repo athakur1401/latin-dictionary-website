@@ -1,3 +1,16 @@
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("lookupButton").addEventListener("click", function () {
+        const inputWord = document.getElementById("inputField").value.trim().toLowerCase();
+        console.log("User entered:", inputWord); // Debugging step
+
+        if (!inputWord) {
+            alert("Please enter a word.");
+            return;
+        }
+
+
+
+//dummy data
 const dictionary = [
     {
         "latin": "Aqua",
@@ -36,21 +49,18 @@ const dictionary = [
     }
 ];
 
-function lookupWord() {
-    let word = document.getElementById("wordInput").value.toLowerCase();
-    let resultDiv = document.getElementById("result");
+const resultContainer = document.getElementById("resultContainer");
 
-    if (dictionary[word]) {
-        let data = dictionary[word];
-        resultDiv.innerHTML = `
-            <h2>${word}</h2>
-            <p><strong>Type:</strong> ${data.type}</p>
-            <p><strong>Definition:</strong> ${data.definition}</p>
-            <p><strong>Analysis:</strong> ${data.analysis}</p>
-        `;
-        resultDiv.style.display = "block";
-    } else {
-        resultDiv.innerHTML = `<p style="color:red;">Word not found in dictionary.</p>`;
-        resultDiv.style.display = "block";
-    }
-}
+        if (dictionary[inputWord]) {
+            const wordData = dictionary[inputWord];
+            resultContainer.innerHTML = `
+                <h3>${inputWord}</h3>
+                <p><strong>Type:</strong> ${wordData.type}</p>
+                <p><strong>Definition:</strong> ${wordData.definition}</p>
+                <p><strong>Grammar:</strong> ${wordData.grammar}</p>
+            `;
+        } else {
+            resultContainer.innerHTML = `<p>Word not found in the dictionary.</p>`;
+        }
+    });
+});
