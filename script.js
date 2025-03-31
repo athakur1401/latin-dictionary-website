@@ -1,6 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("lookupButton").addEventListener("click", function () {
-        const inputWord = document.getElementById("inputField").value.trim().toLowerCase();
+    const lookupButton = document.getElementById("lookupButton");
+    const inputField = document.getElementById("inputField");
+    const resultContainer = document.getElementById("resultContainer");
+
+    if (!lookupButton || !inputField || !resultContainer) {
+        console.error("Required elements (lookupButton, inputField, or resultContainer) are missing!");
+        return;
+    }
+
+    function performSearch() {
+        const inputWord = inputField.value.trim().toLowerCase();
         console.log("User entered:", inputWord); // Debugging step
 
         if (!inputWord) {
@@ -47,16 +56,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         ];
 
-        const resultContainer = document.getElementById("resultContainer");
-        let foundWord = null;
+        // Generalized lookup function
+        function findWord(inputWord, dictionary) {
+            return dictionary.find(entry => entry.latin.toLowerCase() === inputWord);
+        }
 
         // Search for the input word in the dictionary
-        for (const entry of dictionary) {
-            if (entry.latin.toLowerCase() === inputWord) {
-                foundWord = entry;
-                break;
-            }
-        }
+        const foundWord = findWord(inputWord, dictionary);
 
         if (foundWord) {
             let outputHTML = `<h3>${foundWord.latin}</h3>
@@ -86,6 +92,20 @@ document.addEventListener("DOMContentLoaded", function () {
             resultContainer.innerHTML = outputHTML;
         } else {
             resultContainer.innerHTML = `<p>Word not found in the dictionary.</p>`;
+        }
+    }
+
+    // Trigger search on button click
+    lookupButton.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent form submission if part of a form
+        performSearch();
+    });
+
+    // Trigger search on "Enter" key press
+    inputField.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Prevent default behavior
+            performSearch();
         }
     });
 });
