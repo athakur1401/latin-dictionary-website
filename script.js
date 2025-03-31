@@ -1,4 +1,4 @@
-const words = [
+const dictionary = [
     {
         "latin": "Aqua",
         "part_of_speech": "Noun (f.)",
