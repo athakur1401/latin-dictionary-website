@@ -47,24 +47,59 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p><strong>Part of Speech:</strong> ${foundWord.part_of_speech}</p>
                 <p><strong>Definition:</strong> ${foundWord.definition}</p>`;
 
+            // Additional Information Based on Data Type
+            if (foundWord.case) {
+                outputHTML += `<p><strong>Case:</strong> ${foundWord.case.join(", ")}</p>`;
+            }
+
+            if (foundWord.number) {
+                outputHTML += `<p><strong>Number:</strong> ${foundWord.number.join(", ")}</p>`;
+            }
+
+            if (foundWord.gender) {
+                outputHTML += `<p><strong>Gender:</strong> ${Array.isArray(foundWord.gender) ? foundWord.gender.join(", ") : foundWord.gender}</p>`;
+            }
+
             if (foundWord.declension) {
                 outputHTML += `<p><strong>Declension:</strong> ${foundWord.declension}</p>`;
             }
 
-            if (foundWord.conjugation) {
-                outputHTML += `<p><strong>Conjugation:</strong> ${foundWord.conjugation}</p>`;
-            }
-
-            if (foundWord.comparative) {
-                outputHTML += `<p><strong>Comparative:</strong> ${foundWord.comparative}</p>`;
-            }
-
-            if (foundWord.superlative) {
-                outputHTML += `<p><strong>Superlative:</strong> ${foundWord.superlative}</p>`;
-            }
-
             if (foundWord.forms) {
                 outputHTML += `<p><strong>Forms:</strong> ${foundWord.forms.join(", ")}</p>`;
+            }
+
+            if (foundWord.person) {
+                outputHTML += `<p><strong>Person:</strong> ${foundWord.person.join(", ")}</p>`;
+            }
+
+            if (foundWord.tense) {
+                outputHTML += `<p><strong>Tense:</strong> ${foundWord.tense.join(", ")}</p>`;
+            }
+
+            if (foundWord.mood) {
+                outputHTML += `<p><strong>Mood:</strong> ${foundWord.mood.join(", ")}</p>`;
+            }
+
+            if (foundWord.voice) {
+                outputHTML += `<p><strong>Voice:</strong> ${foundWord.voice.join(", ")}</p>`;
+            }
+
+            if (foundWord.degree) {
+                outputHTML += `<p><strong>Degree:</strong> ${foundWord.degree.join(", ")}</p>`;
+            }
+
+            if (foundWord.indicative_forms) {
+                outputHTML += `<h4>Indicative Forms</h4>`;
+                for (const [tense, forms] of Object.entries(foundWord.indicative_forms)) {
+                    outputHTML += `<p><strong>${tense.charAt(0).toUpperCase() + tense.slice(1)}:</strong> ${forms.join(", ")}</p>`;
+                }
+            }
+
+            if (foundWord.subjunctive_forms) {
+                outputHTML += `<h4>Subjunctive Forms</h4>`;
+                for (const [tense, forms] of Object.entries(foundWord.subjunctive_forms)) {
+                    outputHTML += `<p><strong>${tense.charAt(0).toUpperCase() + tense.slice(1)}:</strong> ${forms.join(", ")}</p>`;
+                }
             }
 
             resultContainer.innerHTML = outputHTML;

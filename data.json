@@ -1,37 +1,65 @@
 [
-  {
-      "latin": "aqua",
-      "part_of_speech": "Noun (f.)",
-      "definition": "Water",
-      "declension": "1st Declension",
-      "forms": ["Aqua", "Aquae", "Aquam", "Aquā", "Aquae", "Aquārum", "Aquis", "Aquas", "Aquis"]
-  },
-  {
-      "latin": "amare",
-      "part_of_speech": "Verb",
-      "definition": "To love",
-      "conjugation": "1st Conjugation",
-      "forms": ["Amo", "Amas", "Amat", "Amamus", "Amatis", "Amant"]
-  },
-  {
-      "latin": "bonus",
-      "part_of_speech": "Adjective",
-      "definition": "Good",
-      "comparative": "Melior",
-      "superlative": "Optimus"
-  },
-  {
-      "latin": "celeriter",
-      "part_of_speech": "Adverb",
-      "definition": "Quickly",
-      "comparative": "Celerius",
-      "superlative": "Celerrime"
-  },
-  {
-      "latin": "puer",
-      "part_of_speech": "Noun (m.)",
-      "definition": "Boy",
-      "declension": "2nd Declension",
-      "forms": ["Puer", "Pueri", "Puero", "Puerum", "Puero", "Pueri", "Puerorum", "Pueris", "Pueros", "Pueris"]
-  }
-]
+    {
+        "latin": "aqua",
+        "part_of_speech": "Noun (f.)",
+        "definition": "Water",
+        "case": ["Nominative", "Genitive", "Dative", "Accusative", "Ablative", "Vocative"],
+        "number": ["Singular", "Plural"],
+        "gender": "Feminine",
+        "declension": "1st Declension",
+        "forms": ["Aqua", "Aquae", "Aquam", "Aquā", "Aquae", "Aquārum", "Aquis", "Aquas", "Aquis"]
+    },
+    {
+        "latin": "amare",
+        "part_of_speech": "Verb",
+        "definition": "To love",
+        "person": ["First", "Second", "Third"],
+        "number": ["Singular", "Plural"],
+        "tense": ["Present", "Imperfect", "Future", "Perfect", "Pluperfect", "Future Perfect"],
+        "mood": ["Indicative", "Subjunctive", "Imperative"],
+        "voice": ["Active", "Passive"],
+        "conjugation": "1st Conjugation",
+        "indicative_forms": {
+            "present": ["Amo", "Amas", "Amat", "Amamus", "Amatis", "Amant"],
+            "imperfect": ["Amabam", "Amabas", "Amabat", "Amabamus", "Amabatis", "Amabant"],
+            "future": ["Amabo", "Amabis", "Amabit", "Amabimus", "Amabitis", "Amabunt"]
+        },
+        "subjunctive_forms": {
+            "present": ["Amem", "Ames", "Amet", "Amemus", "Ametis", "Ament"],
+            "imperfect": ["Amarem", "Amares", "Amaret", "Amaremus", "Amaretis", "Amarent"],
+            "perfect": ["Amaverim", "Amaveris", "Amaverit", "Amaverimus", "Amaveritis", "Amaverint"],
+            "pluperfect": ["Amavissem", "Amavisses", "Amavisset", "Amavissemus", "Amavissetis", "Amavissent"]
+        }
+    },
+    {
+        "latin": "bonus",
+        "part_of_speech": "Adjective",
+        "definition": "Good",
+        "case": ["Nominative", "Genitive", "Dative", "Accusative", "Ablative", "Vocative"],
+        "number": ["Singular", "Plural"],
+        "gender": ["Masculine", "Feminine", "Neuter"],
+        "degree": ["Positive", "Comparative", "Superlative"],
+        "declension": "First/Second Declension",
+        "comparative": "Melior",
+        "superlative": "Optimus"
+    },
+    {
+        "latin": "celeriter",
+        "part_of_speech": "Adverb",
+        "definition": "Quickly",
+        "degree": ["Positive", "Comparative", "Superlative"],
+        "comparative": "Celerius",
+        "superlative": "Celerrime"
+    },
+    {
+        "latin": "puer",
+        "part_of_speech": "Noun (m.)",
+        "definition": "Boy",
+        "case": ["Nominative", "Genitive", "Dative", "Accusative", "Ablative", "Vocative"],
+        "number": ["Singular", "Plural"],
+        "gender": "Masculine",
+        "declension": "2nd Declension",
+        "forms": ["Puer", "Pueri", "Puero", "Puerum", "Puero", "Pueri", "Puerorum", "Pueris", "Pueros", "Pueris"]
+    }
+  ]
+  
