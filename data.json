@@ -1,17 +1,158 @@
 [
-    {
-      "latin": "Aqua",
+  {
+      "latin": "aqua",
       "part_of_speech": "Noun (f.)",
       "definition": "Water",
+      "gender": "Feminine",
       "declension": "1st Declension",
-      "forms": ["Aqua", "Aquae", "Aquam", "Aquā", "Aquae", "Aquārum", "Aquis", "Aquas", "Aquis"]
-    },
-    {
-      "latin": "Amare",
+      "forms": {
+          "singular": {
+              "Nominative": "Aqua",
+              "Genitive": "Aquae",
+              "Dative": "Aquae",
+              "Accusative": "Aquam",
+              "Ablative": "Aquā",
+              "Vocative": "Aqua"
+          },
+          "plural": {
+              "Nominative": "Aquae",
+              "Genitive": "Aquārum",
+              "Dative": "Aquis",
+              "Accusative": "Aquas",
+              "Ablative": "Aquis",
+              "Vocative": "Aquae"
+          }
+      },
+      "all_forms": ["Aqua", "Aquae", "Aquam", "Aquā", "Aquārum", "Aquis", "Aquas"]
+  },
+  {
+      "latin": "amare",
       "part_of_speech": "Verb",
       "definition": "To love",
       "conjugation": "1st Conjugation",
-      "forms": ["Amo", "Amas", "Amat", "Amamus", "Amatis", "Amant"]
-    }
-  ]
-  
+      "forms": {
+          "indicative_present": ["Amo", "Amas", "Amat", "Amamus", "Amatis", "Amant"],
+          "indicative_imperfect": ["Amabam", "Amabas", "Amabat", "Amabamus", "Amabatis", "Amabant"],
+          "indicative_future": ["Amabo", "Amabis", "Amabit", "Amabimus", "Amabitis", "Amabunt"],
+          "subjunctive_present": ["Amem", "Ames", "Amet", "Amemus", "Ametis", "Ament"],
+          "subjunctive_imperfect": ["Amarem", "Amares", "Amaret", "Amaremus", "Amaretis", "Amarent"],
+          "subjunctive_perfect": ["Amaverim", "Amaveris", "Amaverit", "Amaverimus", "Amaveritis", "Amaverint"],
+          "subjunctive_pluperfect": ["Amavissem", "Amavisses", "Amavisset", "Amavissemus", "Amavissetis", "Amavissent"]
+      },
+      "all_forms": [
+          "Amo", "Amas", "Amat", "Amamus", "Amatis", "Amant",
+          "Amabam", "Amabas", "Amabat", "Amabamus", "Amabatis", "Amabant",
+          "Amabo", "Amabis", "Amabit", "Amabimus", "Amabitis", "Amabunt",
+          "Amem", "Ames", "Amet", "Amemus", "Ametis", "Ament",
+          "Amarem", "Amares", "Amaret", "Amaremus", "Amaretis", "Amarent",
+          "Amaverim", "Amaveris", "Amaverit", "Amaverimus", "Amaveritis", "Amaverint",
+          "Amavissem", "Amavisses", "Amavisset", "Amavissemus", "Amavissetis", "Amavissent"
+      ]
+  },
+  {
+      "latin": "bonus",
+      "part_of_speech": "Adjective",
+      "definition": "Good",
+      "declension": "First/Second Declension",
+      "degrees": {
+          "positive": {
+              "singular": {
+                  "Masculine": {
+                      "Nominative": "Bonus",
+                      "Genitive": "Boni",
+                      "Dative": "Bono",
+                      "Accusative": "Bonum",
+                      "Ablative": "Bono",
+                      "Vocative": "Bone"
+                  },
+                  "Feminine": {
+                      "Nominative": "Bona",
+                      "Genitive": "Bonae",
+                      "Dative": "Bonae",
+                      "Accusative": "Bonam",
+                      "Ablative": "Bona",
+                      "Vocative": "Bona"
+                  },
+                  "Neuter": {
+                      "Nominative": "Bonum",
+                      "Genitive": "Boni",
+                      "Dative": "Bono",
+                      "Accusative": "Bonum",
+                      "Ablative": "Bono",
+                      "Vocative": "Bonum"
+                  }
+              },
+              "plural": {
+                  "Masculine": {
+                      "Nominative": "Boni",
+                      "Genitive": "Bonorum",
+                      "Dative": "Bonis",
+                      "Accusative": "Bonos",
+                      "Ablative": "Bonis",
+                      "Vocative": "Boni"
+                  },
+                  "Feminine": {
+                      "Nominative": "Bonae",
+                      "Genitive": "Bonarum",
+                      "Dative": "Bonis",
+                      "Accusative": "Bonas",
+                      "Ablative": "Bonis",
+                      "Vocative": "Bonae"
+                  },
+                  "Neuter": {
+                      "Nominative": "Bona",
+                      "Genitive": "Bonorum",
+                      "Dative": "Bonis",
+                      "Accusative": "Bona",
+                      "Ablative": "Bonis",
+                      "Vocative": "Bona"
+                  }
+              }
+          },
+          "comparative": "Melior",
+          "superlative": "Optimus"
+      },
+      "all_forms": [
+          "Bonus", "Boni", "Bono", "Bonum", "Bone", "Bona",
+          "Bonae", "Bonarum", "Bonis", "Bonos",
+          "Bona", "Melior", "Optimus"
+      ]
+  },
+  {
+      "latin": "celeriter",
+      "part_of_speech": "Adverb",
+      "definition": "Quickly",
+      "degrees": {
+          "positive": "Celeriter",
+          "comparative": "Celerius",
+          "superlative": "Celerrime"
+      },
+      "all_forms": ["Celeriter", "Celerius", "Celerrime"]
+  },
+  {
+      "latin": "puer",
+      "part_of_speech": "Noun (m.)",
+      "definition": "Boy",
+      "gender": "Masculine",
+      "declension": "2nd Declension",
+      "forms": {
+          "singular": {
+              "Nominative": "Puer",
+              "Genitive": "Pueri",
+              "Dative": "Puero",
+              "Accusative": "Puerum",
+              "Ablative": "Puero",
+              "Vocative": "Puer"
+          },
+          "plural": {
+              "Nominative": "Pueri",
+              "Genitive": "Puerorum",
+              "Dative": "Pueris",
+              "Accusative": "Pueros",
+              "Ablative": "Pueris",
+              "Vocative": "Pueri"
+          }
+      },
+      "all_forms": ["Puer", "Pueri", "Puero", "Puerum", "Puerorum", "Pueris", "Pueros"]
+  }
+]
