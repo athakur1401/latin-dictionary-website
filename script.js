@@ -48,59 +48,50 @@ document.addEventListener("DOMContentLoaded", function () {
         const foundWord = findWord(inputWord, dictionary);
 
         if (foundWord) {
-            let outputHTML = `<h3>${foundWord.latin}</h3>
-                <p><strong>Part of Speech:</strong> ${foundWord.part_of_speech}</p>
-                <p><strong>Definition:</strong> ${foundWord.definition}</p>`;
+            let outputHTML = `<h3>${foundWord.latin}</h3>`;
+            outputHTML += `<p><strong>Part of Speech:</strong> ${foundWord.part_of_speech}</p>`;
+            outputHTML += `<p><strong>Definition:</strong> ${foundWord.definition}</p>`;
 
-            // Additional Information Based on Data Type
-            if (foundWord.forms) {
+            // Display noun forms (singular/plural) if applicable
+            if (foundWord.forms && foundWord.forms.singular) {
                 outputHTML += `<h4>Forms:</h4>`;
-                if (foundWord.forms.singular) {
-                    outputHTML += `<p><strong>Singular Forms:</strong></p>`;
-                    outputHTML += `<ul>`;
-                    for (const [caseName, form] of Object.entries(foundWord.forms.singular)) {
-                        outputHTML += `<li>${caseName}: ${form}</li>`;
-                    }
-                    outputHTML += `</ul>`;
+                outputHTML += `<p><strong>Singular:</strong></p>`;
+                for (const [caseName, form] of Object.entries(foundWord.forms.singular)) {
+                    outputHTML += `<p>${caseName}: ${form}</p>`;
                 }
-                if (foundWord.forms.plural) {
-                    outputHTML += `<p><strong>Plural Forms:</strong></p>`;
-                    outputHTML += `<ul>`;
-                    for (const [caseName, form] of Object.entries(foundWord.forms.plural)) {
-                        outputHTML += `<li>${caseName}: ${form}</li>`;
-                    }
-                    outputHTML += `</ul>`;
+
+                outputHTML += `<p><strong>Plural:</strong></p>`;
+                for (const [caseName, form] of Object.entries(foundWord.forms.plural)) {
+                    outputHTML += `<p>${caseName}: ${form}</p>`;
                 }
             }
 
-            if (foundWord.person) {
-                outputHTML += `<p><strong>Person:</strong> ${foundWord.person.join(", ")}</p>`;
+            // Display verb forms across all tenses and moods
+            if (foundWord.forms) {
+                outputHTML += `<h4>Verb Forms:</h4>`;
+                const verbForms = [
+                    "indicative_present",
+                    "indicative_future",
+                    "subjunctive_present",
+                    "subjunctive_imperfect",
+                    "subjunctive_perfect",
+                    "subjunctive_pluperfect"
+                ];
+                verbForms.forEach(formType => {
+                    if (foundWord.forms[formType]) {
+                        const readableKey = formType.replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
+                        outputHTML += `<p><strong>${readableKey}:</strong> ${foundWord.forms[formType].join(", ")}</p>`;
+                    }
+                });
             }
 
-            if (foundWord.tense) {
-                outputHTML += `<p><strong>Tense:</strong> ${foundWord.tense.join(", ")}</p>`;
-            }
-
-            if (foundWord.mood) {
-                outputHTML += `<p><strong>Mood:</strong> ${foundWord.mood.join(", ")}</p>`;
-            }
-
-            if (foundWord.voice) {
-                outputHTML += `<p><strong>Voice:</strong> ${foundWord.voice.join(", ")}</p>`;
-            }
-
-            if (foundWord.degree) {
-                outputHTML += `<p><strong>Degree:</strong> ${foundWord.degree.join(", ")}</p>`;
-            }
-
-            if (foundWord.forms && foundWord.forms.indicative_present) {
-                outputHTML += `<h4>Indicative Forms (Present):</h4>`;
-                outputHTML += `<p>${foundWord.forms.indicative_present.join(", ")}</p>`;
-            }
-
-            if (foundWord.forms && foundWord.forms.subjunctive_present) {
-                outputHTML += `<h4>Subjunctive Forms (Present):</h4>`;
-                outputHTML += `<p>${foundWord.forms.subjunctive_present.join(", ")}</p>`;
+            // Highlight the matched form's context (tense, number, etc.)
+            outputHTML += `<h4>Matched Form Details:</h4>`;
+            for (const [key, forms] of Object.entries(foundWord.forms)) {
+                if (Array.isArray(forms) && forms.includes(inputWord)) {
+                    const readableKey = key.replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
+                    outputHTML += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
+                }
             }
 
             resultContainer.innerHTML = outputHTML;
@@ -123,3 +114,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
