@@ -25,6 +25,28 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error fetching the dictionary data:", error);
         });
 
+    // Recursive function to find matched forms
+    function findMatchedForms(inputWord, forms, prefix = "") {
+        let matchedDetails = "";
+
+        for (const [key, value] of Object.entries(forms)) {
+            if (typeof value === "object") {
+                // If it's an object (e.g., singular/plural cases), recurse deeper
+                matchedDetails += findMatchedForms(inputWord, value, `${prefix} ${key}`);
+            } else if (Array.isArray(value) && value.some(form => form.toLowerCase() === inputWord.toLowerCase())) {
+                // If it's an array and contains the input word, display it
+                const readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
+                matchedDetails += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
+            } else if (typeof value === "string" && value.toLowerCase() === inputWord.toLowerCase()) {
+                // If it's a direct string match, display it
+                const readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
+                matchedDetails += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
+            }
+        }
+
+        return matchedDetails;
+    }
+
     function performSearch() {
         const inputWord = inputField.value.trim().toLowerCase();
         console.log("User entered:", inputWord); // Debugging step
@@ -87,12 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Highlight the matched form's context (tense, number, etc.)
             outputHTML += `<h4>Matched Form Details:</h4>`;
-            for (const [key, forms] of Object.entries(foundWord.forms)) {
-                if (Array.isArray(forms) && forms.includes(inputWord)) {
-                    const readableKey = key.replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
-                    outputHTML += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
-                }
-            }
+            outputHTML += findMatchedForms(inputWord, foundWord.forms);
 
             resultContainer.innerHTML = outputHTML;
         } else {
@@ -114,4 +131,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
