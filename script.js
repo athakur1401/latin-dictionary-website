@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (Array.isArray(value) && value.some(form => form.toLowerCase() === inputWord.toLowerCase())) {
                 // If it's an array and contains the input word, display it
                 const readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
-                readableKey = readableKey.replace(/(\d+)/g, match => parseInt(match) + 1);
+                readableKey = readableKey.replace(/(\d+)?$/, (match, num) => num ? parseInt(num) + 1 : "1");
                 matchedDetails += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
             } else if (typeof value === "string" && value.toLowerCase() === inputWord.toLowerCase()) {
                 // If it's a direct string match, display it
