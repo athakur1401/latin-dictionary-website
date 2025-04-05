@@ -28,26 +28,27 @@ document.addEventListener("DOMContentLoaded", function () {
     // Recursive function to find matched forms
     function findMatchedForms(inputWord, forms, prefix = "") {
     let matchedDetails = "";
-    let count = 1; // Start from 1 for the numbering
 
     for (const [key, value] of Object.entries(forms)) {
         if (typeof value === "object") {
             matchedDetails += findMatchedForms(inputWord, value, `${prefix} ${key}`);
-        } else if (Array.isArray(value) && value.some(form => form.toLowerCase() === inputWord.toLowerCase())) {
-            let readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
-            readableKey += ` ${count}`; // Use the incrementing number
-            matchedDetails += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
-            count++; // Increment after use
+        } else if (Array.isArray(value)) {
+            // If the value is an array, find the position of the matched word
+            const index = value.findIndex(form => form.toLowerCase() === inputWord.toLowerCase());
+            if (index !== -1) {
+                const readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
+                const position = index + 1; // Convert zero-based index to one-based position
+                matchedDetails += `<p><strong>Matched In:</strong> ${readableKey} ${position}</p>`;
+            }
         } else if (typeof value === "string" && value.toLowerCase() === inputWord.toLowerCase()) {
-            let readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
-            readableKey += ` ${count}`; // Use the incrementing number
-            matchedDetails += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
-            count++; // Increment after use
+            const readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
+            matchedDetails += `<p><strong>Matched In:</strong> ${readableKey} 1</p>`; // Single string matches are position 1 by default
         }
     }
 
     return matchedDetails;
 }
+
 
 
 
