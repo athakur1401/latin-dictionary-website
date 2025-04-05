@@ -28,26 +28,27 @@ document.addEventListener("DOMContentLoaded", function () {
     // Recursive function to find matched forms
     function findMatchedForms(inputWord, forms, prefix = "") {
     let matchedDetails = "";
-    let count = 1; // Start from 1
+    let count = 1; // Start from 1 for the numbering
 
     for (const [key, value] of Object.entries(forms)) {
         if (typeof value === "object") {
             matchedDetails += findMatchedForms(inputWord, value, `${prefix} ${key}`);
         } else if (Array.isArray(value) && value.some(form => form.toLowerCase() === inputWord.toLowerCase())) {
             let readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
-            readableKey += ` ${count}`; // Append an incrementing number
-            count++; // Increase for next match
+            readableKey += ` ${count}`; // Use the incrementing number
             matchedDetails += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
+            count++; // Increment after use
         } else if (typeof value === "string" && value.toLowerCase() === inputWord.toLowerCase()) {
             let readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
-            readableKey += ` ${count}`; // Append an incrementing number
-            count++;
+            readableKey += ` ${count}`; // Use the incrementing number
             matchedDetails += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
+            count++; // Increment after use
         }
     }
 
     return matchedDetails;
 }
+
 
 
     function performSearch() {
