@@ -27,26 +27,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Recursive function to find matched forms
     function findMatchedForms(inputWord, forms, prefix = "") {
-        let matchedDetails = "";
+    let matchedDetails = "";
+    let count = 1; // Start from 1
 
-        for (const [key, value] of Object.entries(forms)) {
-            if (typeof value === "object") {
-                // If it's an object (e.g., singular/plural cases), recurse deeper
-                matchedDetails += findMatchedForms(inputWord, value, `${prefix} ${key}`);
-            } else if (Array.isArray(value) && value.some(form => form.toLowerCase() === inputWord.toLowerCase())) {
-                // If it's an array and contains the input word, display it
-                const readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
-                readableKey = readableKey.replace(/(\d+)?$/, (match, num) => num ? parseInt(num) + 1 : "1");
-                matchedDetails += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
-            } else if (typeof value === "string" && value.toLowerCase() === inputWord.toLowerCase()) {
-                // If it's a direct string match, display it
-                const readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
-                matchedDetails += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
-            }
+    for (const [key, value] of Object.entries(forms)) {
+        if (typeof value === "object") {
+            matchedDetails += findMatchedForms(inputWord, value, `${prefix} ${key}`);
+        } else if (Array.isArray(value) && value.some(form => form.toLowerCase() === inputWord.toLowerCase())) {
+            let readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
+            readableKey += ` ${count}`; // Append an incrementing number
+            count++; // Increase for next match
+            matchedDetails += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
+        } else if (typeof value === "string" && value.toLowerCase() === inputWord.toLowerCase()) {
+            let readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
+            readableKey += ` ${count}`; // Append an incrementing number
+            count++;
+            matchedDetails += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
         }
-
-        return matchedDetails;
     }
+
+    return matchedDetails;
+}
+
 
     function performSearch() {
         const inputWord = inputField.value.trim().toLowerCase();
