@@ -110,7 +110,9 @@ class Noun {
     }
 
     matchNounForms(form) {
-        return form.toLowerCase() === this.inputWord ? `<strong>${form}</strong>` : form;
+        return form.toLowerCase() === this.inputWord
+            ? `<span class="matched">${form}</span>` // Apply the 'matched' CSS class
+            : form;
     }
 }
 
@@ -145,7 +147,9 @@ class Verb {
 
     matchVerbForms(forms) {
         return forms.map(form =>
-            form.toLowerCase() === this.inputWord ? `<strong>${form}</strong>` : form
+            form.toLowerCase() === this.inputWord
+                ? `<span class="matched">${form}</span>` // Apply the 'matched' CSS class
+                : form
         ).join(", ");
     }
 }
@@ -188,7 +192,9 @@ class Adjective {
     }
 
     matchAdjectiveForms(form) {
-        return form.toLowerCase() === this.inputWord ? `<strong>${form}</strong>` : form;
+        return form.toLowerCase() === this.inputWord
+            ? `<span class="matched">${form}</span>` // Apply the 'matched' CSS class
+            : form;
     }
 }
 
@@ -209,7 +215,9 @@ class Adverb {
     }
 
     matchAdverbForms(form) {
-        return form.toLowerCase() === this.inputWord ? `<strong>${form}</strong>` : form;
+        return form.toLowerCase() === this.inputWord
+            ? `<span class="matched">${form}</span>` // Apply the 'matched' CSS class
+            : form;
     }
 }
 
