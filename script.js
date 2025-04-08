@@ -57,8 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function findWord(inputWord, dictionary) {
             for (const entry of dictionary) {
-                if (entry.all_forms && entry.all_forms.some(form => form.toLowerCase() === inputWord)) {
-                    return entry;
+        if (entry.all_forms && Array.isArray(entry.all_forms)) {
+            if (entry.all_forms.some(form => form.toLowerCase() === inputWord)) {
+                return entry;
                 }
             }
             return null;
