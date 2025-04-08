@@ -81,6 +81,7 @@ class DictionaryApp {
     findMatchedForms(inputWord, forms, prefix = "") {
         let matchedDetails = "";
 
+        // Process typical nested forms (used in nouns/verbs)
         for (const [key, value] of Object.entries(forms)) {
             if (typeof value === "object" && !Array.isArray(value)) {
                 matchedDetails += this.findMatchedForms(inputWord, value, `${prefix} ${key}`);
@@ -94,6 +95,16 @@ class DictionaryApp {
             } else if (typeof value === "string" && value.toLowerCase() === inputWord.toLowerCase()) {
                 const readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
                 matchedDetails += `<p><strong>Matched In:</strong> ${readableKey}</p>`;
+            }
+        }
+
+        // Process degrees (specific to adjectives/adverbs)
+        if (forms.degrees) {
+            for (const [degree, form] of Object.entries(forms.degrees)) {
+                if (form.toLowerCase() === inputWord.toLowerCase()) {
+                    const readableKey = degree.charAt(0).toUpperCase() + degree.slice(1); // Capitalize the degree name
+                    matchedDetails += `<p><strong>Matched In:</strong> ${readableKey} Degree</p>`;
+                }
             }
         }
 
@@ -198,9 +209,9 @@ class Adjective {
             outputHTML += `<p><strong>Superlative:</strong> ${this.wordEntry.degrees.superlative}</p>`;
         }
 
-        // Include matched forms
+        // Include matched forms for degrees
         outputHTML += `<h4>Matched Form Details:</h4>`;
-        outputHTML += this.app.findMatchedForms(inputWord, this.wordEntry.forms || {});
+        outputHTML += this.app.findMatchedForms(inputWord, { degrees: this.wordEntry.degrees });
 
         return outputHTML;
     }
@@ -211,16 +222,15 @@ class Adverb {
         this.wordEntry = wordEntry;
         this.app = app; // Reference to DictionaryApp
     }
-
     render(inputWord) {
         let outputHTML = `<h4>Adverb Degrees:</h4>`;
         outputHTML += `<p><strong>Positive:</strong> ${this.wordEntry.degrees.positive}</p>`;
         outputHTML += `<p><strong>Comparative:</strong> ${this.wordEntry.degrees.comparative}</p>`;
         outputHTML += `<p><strong>Superlative:</strong> ${this.wordEntry.degrees.superlative}</p>`;
 
-        // Include matched forms
+        // Include matched forms for degrees
         outputHTML += `<h4>Matched Form Details:</h4>`;
-        outputHTML += this.app.findMatchedForms(inputWord, this.wordEntry.forms || {});
+        outputHTML += this.app.findMatchedForms(inputWord, { degrees: this.wordEntry.degrees });
 
         return outputHTML;
     }
