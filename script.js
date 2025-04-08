@@ -125,6 +125,7 @@ class Verb {
     render() {
         let outputHTML = `<h4>Verb Forms:</h4>`;
         const verbForms = [
+            "infinitives" 
             "indicative_present",
             "indicative_imperfect",
             "indicative_future",
