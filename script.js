@@ -42,7 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         } else if (typeof value === "string" && value.toLowerCase() === inputWord.toLowerCase()) {
             const readableKey = (prefix + " " + key).trim().replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
-            matchedDetails += `<p><strong>Matched In:</strong> ${readableKey}</p>`; // Single string matches are position 1 by default
+            const position = index + 1;
+            matchedDetails += `<p><strong>Matched In:</strong> ${readableKey} ${position}</p>`; // Single string matches are position 1 by default
+            
         }
     }
 
