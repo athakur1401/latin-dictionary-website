@@ -1,35 +1,89 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const lookupButton = document.getElementById("lookupButton");
-    const inputField = document.getElementById("inputField");
-    const resultContainer = document.getElementById("resultContainer");
+class DictionaryApp {
+    constructor() {
+        this.dictionary = [];
+        this.resultContainer = document.getElementById("resultContainer");
+        this.inputField = document.getElementById("inputField");
+        this.lookupButton = document.getElementById("lookupButton");
 
-    if (!lookupButton || !inputField || !resultContainer) {
-        console.error("Required elements (lookupButton, inputField, or resultContainer) are missing!");
-        return;
+        if (!this.resultContainer || !this.inputField || !this.lookupButton) {
+            console.error("Required elements are missing!");
+            return;
+        }
+
+        this.init();
     }
 
-    let dictionary = [];
+    async init() {
+        // Load dictionary data
+        try {
+            const response = await fetch('data.json');
+            if (!response.ok) throw new Error("Failed to load dictionary data");
+            this.dictionary = await response.json();
+        } catch (error) {
+            console.error("Error fetching dictionary data:", error);
+        }
 
-    fetch('data.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load dictionary data");
-            }
-            return response.json();
-        })
-        .then(data => {
-            dictionary = data;
-        })
-        .catch(error => {
-            console.error("Error fetching the dictionary data:", error);
+        // Add event listeners
+        this.lookupButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            this.performSearch();
         });
+        this.inputField.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                this.performSearch();
+            }
+        });
+    }
 
-    function findMatchedForms(inputWord, forms, prefix = "") {
+    performSearch() {
+        const inputWord = this.inputField.value.trim().toLowerCase();
+        console.log("User entered:", inputWord);
+
+        if (!inputWord) {
+            alert("Please enter a word.");
+            return;
+        }
+
+        const foundWord = this.dictionary.find(entry =>
+            entry.all_forms && entry.all_forms.some(form => form.toLowerCase() === inputWord)
+        );
+
+        if (foundWord) {
+            this.resultContainer.innerHTML = this.processWord(foundWord, inputWord);
+        } else {
+            this.resultContainer.innerHTML = `<p>Word not found in the dictionary.</p>`;
+        }
+    }
+
+    processWord(wordEntry, inputWord) {
+        let outputHTML = `<h3>${wordEntry.latin}</h3>`;
+        outputHTML += `<p><strong>Part of Speech:</strong> ${wordEntry.part_of_speech}</p>`;
+        outputHTML += `<p><strong>Definition:</strong> ${wordEntry.definition}</p>`;
+
+        // Delegate processing based on part of speech
+        switch (wordEntry.part_of_speech.toLowerCase()) {
+            case "noun (m.)":
+            case "noun (f.)":
+                return outputHTML + new Noun(wordEntry, this).render(inputWord);
+            case "verb":
+                return outputHTML + new Verb(wordEntry, this).render(inputWord);
+            case "adjective":
+                return outputHTML + new Adjective(wordEntry, this).render(inputWord);
+            case "adverb":
+                return outputHTML + new Adverb(wordEntry, this).render(inputWord);
+            default:
+                return outputHTML + `<p>Details for this part of speech are not supported yet.</p>`;
+        }
+    }
+
+    // Shared method to find matched forms
+    findMatchedForms(inputWord, forms, prefix = "") {
         let matchedDetails = "";
 
         for (const [key, value] of Object.entries(forms)) {
             if (typeof value === "object" && !Array.isArray(value)) {
-                matchedDetails += findMatchedForms(inputWord, value, `${prefix} ${key}`);
+                matchedDetails += this.findMatchedForms(inputWord, value, `${prefix} ${key}`);
             } else if (Array.isArray(value)) {
                 const index = value.findIndex(form => form.toLowerCase() === inputWord.toLowerCase());
                 if (index !== -1) {
@@ -45,126 +99,132 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return matchedDetails;
     }
+}
 
-    function performSearch() {
-        const inputWord = inputField.value.trim().toLowerCase();
-        console.log("User entered:", inputWord);
-
-        if (!inputWord) {
-            alert("Please enter a word.");
-            return;
-        }
-
-        function findWord(inputWord, dictionary) {
-            for (const entry of dictionary) {
-                if (entry.all_forms && Array.isArray(entry.all_forms)) {
-                    if (entry.all_forms.some(form => form.toLowerCase() === inputWord)) {
-                        return entry;
-                    }
-                }
-            }
-            return null; // Explicitly return null when no match is found.
-        }
-
-        const foundWord = findWord(inputWord, dictionary);
-
-        if (foundWord) {
-            let outputHTML = `<h3>${foundWord.latin}</h3>`;
-            outputHTML += `<p><strong>Part of Speech:</strong> ${foundWord.part_of_speech}</p>`;
-            outputHTML += `<p><strong>Definition:</strong> ${foundWord.definition}</p>`;
-
-            // Handle Noun/Adjective Forms
-            if (foundWord.forms) {
-                const singularForms = foundWord.forms.singular || {};
-                const pluralForms = foundWord.forms.plural || {};
-                if (Object.keys(singularForms).length > 0 || Object.keys(pluralForms).length > 0) {
-                    outputHTML += `<h4>Noun/Adjective Forms:</h4>`;
-                }
-                if (Object.keys(singularForms).length > 0) {
-                    outputHTML += `<p><strong>Singular:</strong></p>`;
-                    for (const [caseName, form] of Object.entries(singularForms)) {
-                        outputHTML += `<p>${caseName}: ${form}</p>`;
-                    }
-                }
-                if (Object.keys(pluralForms).length > 0) {
-                    outputHTML += `<p><strong>Plural:</strong></p>`;
-                    for (const [caseName, form] of Object.entries(pluralForms)) {
-                        outputHTML += `<p>${caseName}: ${form}</p>`;
-                    }
-                }
-
-                const verbForms = [
-                    "indicative_present",
-                    "indicative_imperfect",
-                    "indicative_future",
-                    "subjunctive_present",
-                    "subjunctive_imperfect",
-                    "subjunctive_perfect",
-                    "subjunctive_pluperfect"
-                ];
-                const hasVerbForms = verbForms.some(formType => foundWord.forms[formType]);
-                if (hasVerbForms) {
-                    outputHTML += `<h4>Verb Forms:</h4>`;
-                    verbForms.forEach(formType => {
-                        if (foundWord.forms[formType]) {
-                            const readableKey = formType.replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
-                            outputHTML += `<p><strong>${readableKey}:</strong> ${foundWord.forms[formType].join(", ")}</p>`;
-                        }
-                    });
-                }
-            }
-
-            // Handle Adjective Degrees
-            if (foundWord.degrees) {
-                if (foundWord.degrees.positive) {
-                    const positiveForms = foundWord.degrees.positive;
-                    outputHTML += `<h4>Adjective Positive Degree Forms:</h4>`;
-                    for (const [number, genderForms] of Object.entries(positiveForms)) {
-                        outputHTML += `<p><strong>${number}:</strong></p>`;
-                        for (const [gender, caseForms] of Object.entries(genderForms)) {
-                            outputHTML += `<p>${gender}:</p>`;
-                            for (const [caseName, form] of Object.entries(caseForms)) {
-                                outputHTML += `<p>${caseName}: ${form}</p>`;
-                            }
-                        }
-                    }
-                }
-
-                if (foundWord.degrees.comparative) {
-                    outputHTML += `<p><strong>Comparative:</strong> ${foundWord.degrees.comparative}</p>`;
-                }
-
-                if (foundWord.degrees.superlative) {
-                    outputHTML += `<p><strong>Superlative:</strong> ${foundWord.degrees.superlative}</p>`;
-                }
-            }
-
-            // Handle Adverbs
-            if (foundWord.part_of_speech.toLowerCase() === "adverb" && foundWord.degrees) {
-                outputHTML += `<h4>Adverb Degrees:</h4>`;
-                outputHTML += `<p><strong>Positive:</strong> ${foundWord.degrees.positive}</p>`;
-                outputHTML += `<p><strong>Comparative:</strong> ${foundWord.degrees.comparative}</p>`;
-                outputHTML += `<p><strong>Superlative:</strong> ${foundWord.degrees.superlative}</p>`;
-            }
-
-            outputHTML += `<h4>Matched Form Details:</h4>`;
-            outputHTML += findMatchedForms(inputWord, foundWord.forms || {});
-
-            resultContainer.innerHTML = outputHTML;
-        } else {
-            resultContainer.innerHTML = `<p>Word not found in the dictionary.</p>`;
-        }
+class Noun {
+    constructor(wordEntry, app) {
+        this.wordEntry = wordEntry;
+        this.app = app; // Reference to DictionaryApp
     }
 
-    lookupButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        performSearch();
-    });
+    render(inputWord) {
+        let outputHTML = `<h4>Noun Forms:</h4>`;
+        const singularForms = this.wordEntry.forms.singular || {};
+        const pluralForms = this.wordEntry.forms.plural || {};
 
-    inputField.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            performSearch();
+        if (Object.keys(singularForms).length > 0) {
+            outputHTML += `<p><strong>Singular:</strong></p>`;
+            for (const [caseName, form] of Object.entries(singularForms)) {
+                outputHTML += `<p>${caseName}: ${form}</p>`;
+            }
         }
-    });
-});
+
+        if (Object.keys(pluralForms).length > 0) {
+            outputHTML += `<p><strong>Plural:</strong></p>`;
+            for (const [caseName, form] of Object.entries(pluralForms)) {
+                outputHTML += `<p>${caseName}: ${form}</p>`;
+            }
+        }
+
+        // Include matched forms
+        outputHTML += `<h4>Matched Form Details:</h4>`;
+        outputHTML += this.app.findMatchedForms(inputWord, this.wordEntry.forms || {});
+
+        return outputHTML;
+    }
+}
+
+class Verb {
+    constructor(wordEntry, app) {
+        this.wordEntry = wordEntry;
+        this.app = app; // Reference to DictionaryApp
+    }
+
+    render(inputWord) {
+        let outputHTML = `<h4>Verb Forms:</h4>`;
+        const verbForms = [
+            "indicative_present",
+            "indicative_imperfect",
+            "indicative_future",
+            "subjunctive_present",
+            "subjunctive_imperfect",
+            "subjunctive_perfect",
+            "subjunctive_pluperfect"
+        ];
+
+        verbForms.forEach(formType => {
+            if (this.wordEntry.forms[formType]) {
+                const readableKey = formType.replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
+                outputHTML += `<p><strong>${readableKey}:</strong> ${this.wordEntry.forms[formType].join(", ")}</p>`;
+            }
+        });
+
+        // Include matched forms
+        outputHTML += `<h4>Matched Form Details:</h4>`;
+        outputHTML += this.app.findMatchedForms(inputWord, this.wordEntry.forms || {});
+
+        return outputHTML;
+    }
+}
+
+class Adjective {
+    constructor(wordEntry, app) {
+        this.wordEntry = wordEntry;
+        this.app = app; // Reference to DictionaryApp
+    }
+
+    render(inputWord) {
+        let outputHTML = `<h4>Adjective Degrees:</h4>`;
+
+        if (this.wordEntry.degrees.positive) {
+            const positiveForms = this.wordEntry.degrees.positive;
+            outputHTML += `<h5>Positive Forms:</h5>`;
+            for (const [number, genderForms] of Object.entries(positiveForms)) {
+                outputHTML += `<p><strong>${number}:</strong></p>`;
+                for (const [gender, caseForms] of Object.entries(genderForms)) {
+                    outputHTML += `<p>${gender}:</p>`;
+                    for (const [caseName, form] of Object.entries(caseForms)) {
+                        outputHTML += `<p>${caseName}: ${form}</p>`;
+                    }
+                }
+            }
+        }
+
+        if (this.wordEntry.degrees.comparative) {
+            outputHTML += `<p><strong>Comparative:</strong> ${this.wordEntry.degrees.comparative}</p>`;
+        }
+
+        if (this.wordEntry.degrees.superlative) {
+            outputHTML += `<p><strong>Superlative:</strong> ${this.wordEntry.degrees.superlative}</p>`;
+        }
+
+        // Include matched forms
+        outputHTML += `<h4>Matched Form Details:</h4>`;
+        outputHTML += this.app.findMatchedForms(inputWord, this.wordEntry.forms || {});
+
+        return outputHTML;
+    }
+}
+
+class Adverb {
+    constructor(wordEntry, app) {
+        this.wordEntry = wordEntry;
+        this.app = app; // Reference to DictionaryApp
+    }
+
+    render(inputWord) {
+        let outputHTML = `<h4>Adverb Degrees:</h4>`;
+        outputHTML += `<p><strong>Positive:</strong> ${this.wordEntry.degrees.positive}</p>`;
+        outputHTML += `<p><strong>Comparative:</strong> ${this.wordEntry.degrees.comparative}</p>`;
+        outputHTML += `<p><strong>Superlative:</strong> ${this.wordEntry.degrees.superlative}</p>`;
+
+        // Include matched forms
+        outputHTML += `<h4>Matched Form Details:</h4>`;
+        outputHTML += this.app.findMatchedForms(inputWord, this.wordEntry.forms || {});
+
+        return outputHTML;
+    }
+}
+
+// Initialize the app
+document.addEventListener("DOMContentLoaded", () => new DictionaryApp());
