@@ -39,3 +39,11 @@ button {
     border-radius: 5px;
     display: none;
 }
+
+/* Highlight matched forms */
+.matched {
+    background-color: yellow; /* Highlight color */
+    font-weight: bold;       /* Bold matched text */
+    border-radius: 3px;      /* Slightly rounded edges for the highlight */
+    padding: 2px 4px;        /* Add some padding inside the highlight */
+}
