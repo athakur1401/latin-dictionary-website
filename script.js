@@ -57,12 +57,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function findWord(inputWord, dictionary) {
             for (const entry of dictionary) {
-        if (entry.all_forms && Array.isArray(entry.all_forms)) {
-            if (entry.all_forms.some(form => form.toLowerCase() === inputWord)) {
-                return entry;
+                if (entry.all_forms && Array.isArray(entry.all_forms)) {
+                    if (entry.all_forms.some(form => form.toLowerCase() === inputWord)) {
+                        return entry;
+                    }
                 }
             }
-            return null;
+            return null; // Explicitly return null when no match is found.
         }
 
         const foundWord = findWord(inputWord, dictionary);
@@ -72,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
             outputHTML += `<p><strong>Part of Speech:</strong> ${foundWord.part_of_speech}</p>`;
             outputHTML += `<p><strong>Definition:</strong> ${foundWord.definition}</p>`;
 
+            // Handle Noun/Adjective Forms
             if (foundWord.forms) {
                 const singularForms = foundWord.forms.singular || {};
                 const pluralForms = foundWord.forms.plural || {};
@@ -112,8 +114,41 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
+            // Handle Adjective Degrees
+            if (foundWord.degrees) {
+                if (foundWord.degrees.positive) {
+                    const positiveForms = foundWord.degrees.positive;
+                    outputHTML += `<h4>Adjective Positive Degree Forms:</h4>`;
+                    for (const [number, genderForms] of Object.entries(positiveForms)) {
+                        outputHTML += `<p><strong>${number}:</strong></p>`;
+                        for (const [gender, caseForms] of Object.entries(genderForms)) {
+                            outputHTML += `<p>${gender}:</p>`;
+                            for (const [caseName, form] of Object.entries(caseForms)) {
+                                outputHTML += `<p>${caseName}: ${form}</p>`;
+                            }
+                        }
+                    }
+                }
+
+                if (foundWord.degrees.comparative) {
+                    outputHTML += `<p><strong>Comparative:</strong> ${foundWord.degrees.comparative}</p>`;
+                }
+
+                if (foundWord.degrees.superlative) {
+                    outputHTML += `<p><strong>Superlative:</strong> ${foundWord.degrees.superlative}</p>`;
+                }
+            }
+
+            // Handle Adverbs
+            if (foundWord.part_of_speech.toLowerCase() === "adverb" && foundWord.degrees) {
+                outputHTML += `<h4>Adverb Degrees:</h4>`;
+                outputHTML += `<p><strong>Positive:</strong> ${foundWord.degrees.positive}</p>`;
+                outputHTML += `<p><strong>Comparative:</strong> ${foundWord.degrees.comparative}</p>`;
+                outputHTML += `<p><strong>Superlative:</strong> ${foundWord.degrees.superlative}</p>`;
+            }
+
             outputHTML += `<h4>Matched Form Details:</h4>`;
-            outputHTML += findMatchedForms(inputWord, foundWord.forms);
+            outputHTML += findMatchedForms(inputWord, foundWord.forms || {});
 
             resultContainer.innerHTML = outputHTML;
         } else {
