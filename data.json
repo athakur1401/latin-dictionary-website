@@ -31,7 +31,7 @@
       "definition": "To love",
       "conjugation": "1st Conjugation",
      "forms": {
-          "infinitives": ["Amare", "Amari", "Amabisse", "Amatum esse", "Amaturum esse", "Amatum iri"]
+          "infinitives": ["Amare", "Amari", "Amabisse", "Amatum esse", "Amaturum esse", "Amatum iri"],
           "indicative_present": ["Amo", "Amas", "Amat", "Amamus", "Amatis", "Amant"],
           "indicative_imperfect": ["Amabam", "Amabas", "Amabat", "Amabamus", "Amabatis", "Amabant"],
           "indicative_future": ["Amabo", "Amabis", "Amabit", "Amabimus", "Amabitis", "Amabunt"],
