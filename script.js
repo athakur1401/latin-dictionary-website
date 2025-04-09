@@ -130,6 +130,7 @@ class Verb {
             "indicative_present",
             "indicative_imperfect",
             "indicative_future",
+            "indicative_pluperfect",
             "subjunctive_present",
             "subjunctive_imperfect",
             "subjunctive_perfect",
