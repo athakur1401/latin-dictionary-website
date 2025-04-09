@@ -47,3 +47,50 @@ button {
     border-radius: 3px;      /* Slightly rounded edges for the highlight */
     padding: 2px 4px;        /* Add some padding inside the highlight */
 }
+
+/* Tabs Container */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Tab Links */
+.tab-link {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.tab-link:hover {
+    background-color: #ddd;
+}
+
+.tab-link.active {
+    background-color: white;
+    border-bottom: 2px solid white;
+}
+
+/* Tab Content */
+.tab-content {
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 20px;
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+    margin-top: -1px;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
