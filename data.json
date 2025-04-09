@@ -35,6 +35,8 @@
       "indicative_present": ["Amo", "Amas", "Amat", "Amamus", "Amatis", "Amant"],
       "indicative_imperfect": ["Amabam", "Amabas", "Amabat", "Amabamus", "Amabatis", "Amabant"],
       "indicative_future": ["Amabo", "Amabis", "Amabit", "Amabimus", "Amabitis", "Amabunt"],
+      "indicative_perfect": ["Amavi", "Amavisti", "Amavit", "Amavimus", "Amavistis", "Amaverunt"],
+      "indicative_pluperfect": ["Amaveram", "Amaveras", "Amaverat", "Amaveramus", "Amaveratis", "Amaverant"],
       "subjunctive_present": ["Amem", "Ames", "Amet", "Amemus", "Ametis", "Ament"],
       "subjunctive_imperfect": ["Amarem", "Amares", "Amaret", "Amaremus", "Amaretis", "Amarent"],
       "subjunctive_perfect": ["Amaverim", "Amaveris", "Amaverit", "Amaverimus", "Amaveritis", "Amaverint"],
@@ -44,6 +46,8 @@
       "Amo", "Amas", "Amat", "Amamus", "Amatis", "Amant",
       "Amabam", "Amabas", "Amabat", "Amabamus", "Amabatis", "Amabant",
       "Amabo", "Amabis", "Amabit", "Amabimus", "Amabitis", "Amabunt",
+      "Amavi", "Amavisti", "Amavit", "Amavimus", "Amavistis", "Amaverunt",
+      "Amaveram", "Amaveras", "Amaverat", "Amaveramus", "Amaveratis", "Amaverant",
       "Amem", "Ames", "Amet", "Amemus", "Ametis", "Ament",
       "Amarem", "Amares", "Amaret", "Amaremus", "Amaretis", "Amarent",
       "Amaverim", "Amaveris", "Amaverit", "Amaverimus", "Amaveritis", "Amaverint",
@@ -193,6 +197,8 @@
       "indicative_present": ["Libero", "Liberas", "Liberat", "Liberamus", "Liberatis", "Liberant"],
       "indicative_imperfect": ["Liberabam", "Liberabas", "Liberabat", "Liberabamus", "Liberabatis", "Liberabant"],
       "indicative_future": ["Liberabo", "Liberabis", "Liberabit", "Liberabimus", "Liberabitis", "Liberabunt"],
+      "indicative_perfect": ["Liberavi", "Liberavisti", "Liberavit", "Liberavimus", "Liberavistis", "Liberaverunt"],
+      "indicative_pluperfect": ["Liberaveram", "Liberaveras", "Liberaverat", "Liberaveramus", "Liberaveratis", "Liberaverant"],
       "subjunctive_present": ["Liberem", "Liberes", "Liberet", "Liberemus", "Liberetis", "Liberent"],
       "subjunctive_imperfect": ["Liberarem", "Liberares", "Liberaret", "Liberaremus", "Liberaretis", "Liberarent"],
       "subjunctive_perfect": ["Liberaverim", "Liberaveris", "Liberaverit", "Liberaverimus", "Liberaveritis", "Liberaverint"],
@@ -202,6 +208,8 @@
       "Libero", "Liberas", "Liberat", "Liberamus", "Liberatis", "Liberant",
       "Liberabam", "Liberabas", "Liberabat", "Liberabamus", "Liberabatis", "Liberabant",
       "Liberabo", "Liberabis", "Liberabit", "Liberabimus", "Liberabitis", "Liberabunt",
+      "Liberavi", "Liberavisti", "Liberavit", "Liberavimus", "Liberavistis", "Liberaverunt",
+      "Liberaveram", "Liberaveras", "Liberaverat", "Liberaveramus", "Liberaveratis", "Liberaverant",
       "Liberem", "Liberes", "Liberet", "Liberemus", "Liberetis", "Liberent",
       "Liberarem", "Liberares", "Liberaret", "Liberaremus", "Liberaretis", "Liberarent",
       "Liberaverim", "Liberaveris", "Liberaverit", "Liberaverimus", "Liberaveritis", "Liberaverint",
@@ -234,6 +242,59 @@
         }
     },
     "all_forms": ["Astrum", "Astrī", "Astrō", "Astrōrum", "Astrīs", "Astra"]
-}
-
+  },
+  {
+    "latin": "lex",
+    "part_of_speech": "Noun (f.)",
+    "definition": "Law",
+    "gender": "Feminine",
+    "declension": "3rd Declension",
+    "forms": {
+      "singular": {
+        "Nominative": "Lex",
+        "Genitive": "Legis",
+        "Dative": "Legi",
+        "Accusative": "Legem",
+        "Ablative": "Lege",
+        "Vocative": "Lex"
+      },
+      "plural": {
+        "Nominative": "Leges",
+        "Genitive": "Legum",
+        "Dative": "Legibus",
+        "Accusative": "Leges",
+        "Ablative": "Legibus",
+        "Vocative": "Leges"
+      }
+    },
+    "all_forms": ["Lex", "Legis", "Legi", "Legem", "Lege", "Leges", "Legum", "Legibus"]
+  },
+  {
+    "latin": "errare",
+    "part_of_speech": "Verb",
+    "definition": "To wander, to make a mistake",
+    "conjugation": "1st Conjugation",
+    "forms": {
+      "infinitives": ["Errare", "Errari", "Erravisse", "Erratum esse", "Erraturum esse", "Erratum iri"],
+      "indicative_present": ["Erro", "Erras", "Errat", "Erramus", "Erratis", "Errant"],
+      "indicative_imperfect": ["Errabam", "Errabas", "Errabat", "Errabamus", "Errabatis", "Errabant"],
+      "indicative_future": ["Errabo", "Errabis", "Errabit", "Errabimus", "Errabitis", "Errabunt"],
+      "indicative_perfect": ["Erravi", "Erravisti", "Erravit", "Erravimus", "Erravistis", "Erraverunt"],
+      "indicative_pluperfect": ["Erraveram", "Erraveras", "Erraverat", "Erraveramus", "Erraveratis", "Erraverant"],
+      "subjunctive_present": ["Errem", "Erres", "Erret", "Erremus", "Erretis", "Errent"],
+      "subjunctive_imperfect": ["Errarem", "Errares", "Erraret", "Erraremus", "Erraretis", "Errarent"],
+      "subjunctive_perfect": ["Erraverim", "Erraveris", "Erraverit", "Erraverimus", "Erraveritis", "Erraverint"],
+      "subjunctive_pluperfect": ["Erravissem", "Erravisses", "Erravisset", "Erravissemus", "Erravissetis", "Erravissent"]
+    },
+    "all_forms": [
+      "Erro", "Erras", "Errat", "Erramus", "Erratis", "Errant",
+      "Errabam", "Errabas", "Errabat", "Errabamus", "Errabatis", "Errabant",
+      "Errabo", "Errabis", "Errabit", "Errabimus", "Errabitis", "Errabunt",
+      "Erravi", "Erravisti", "Erravit", "Erravimus", "Erravistis", "Erraverunt",
+      "Erraveram", "Erraveras", "Erraverat", "Erraveramus","Erraveratis", "Erraverant",
+      "Errem", "Erres", "Erret", "Erremus", "Erretis", "Errent",
+      "Errarem", "Errares", "Erraret", "Erraremus", "Erraretis", "Errarent",
+      "Erraverim", "Erraveris", "Erraverit", "Erraverimus", "Erraveritis", "Erraverint",
+      "Erravissem", "Erravisses", "Erravisset", "Erravissemus", "Erravissetis", "Erravissent"]
+  }
 ]
