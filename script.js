@@ -4,8 +4,9 @@ class DictionaryApp {
         this.resultContainer = document.getElementById("resultContainer");
         this.inputField = document.getElementById("inputField");
         this.lookupButton = document.getElementById("lookupButton");
+        this.wordCountDisplay = document.getElementById("wordCount");
 
-        if (!this.resultContainer || !this.inputField || !this.lookupButton) {
+        if (!this.resultContainer || !this.inputField || !this.lookupButton || !this.wordCountDisplay) {
             console.error("Required elements are missing!");
             return;
         }
@@ -19,6 +20,9 @@ class DictionaryApp {
             const response = await fetch('data.json');
             if (!response.ok) throw new Error("Failed to load dictionary data");
             this.dictionary = await response.json();
+
+            // Display the word count in the webpage
+            this.wordCountDisplay.textContent = `Total Words: ${this.dictionary.length}`;
             console.log(`Number of words stored in the dictionary: ${this.dictionary.length}`);
         } catch (error) {
             console.error("Error fetching dictionary data:", error);
@@ -53,81 +57,65 @@ class DictionaryApp {
 
         if (foundWord) {
             this.resultContainer.innerHTML = this.processWord(foundWord, inputWord);
+            this.setupTabListeners();
         } else {
             this.resultContainer.innerHTML = `<p>Word not found in the dictionary.</p>`;
         }
     }
 
     processWord(wordEntry, inputWord) {
-        let outputHTML = `<h3>${wordEntry.latin}</h3>`;
-        outputHTML += `<p><strong>Part of Speech:</strong> ${wordEntry.part_of_speech}</p>`;
-        outputHTML += `<p><strong>Definition:</strong> ${wordEntry.definition}</p>`;
+        // Definition section
+        let outputHTML = `
+            <h3>${wordEntry.latin}</h3>
+            <p><strong>Part of Speech:</strong> ${wordEntry.part_of_speech}</p>
+            <p><strong>Definition:</strong> ${wordEntry.definition}</p>
+        `;
 
-        // Delegate processing based on part of speech
-        switch (wordEntry.part_of_speech.toLowerCase()) {
-            case "noun (m.)":
-            case "noun (f.)":
-            case "noun (n.)":
-                return outputHTML + new Noun(wordEntry, inputWord).render();
-            case "verb":
-                return outputHTML + new Verb(wordEntry, inputWord).render();
-            case "adjective":
-                return outputHTML + new Adjective(wordEntry, inputWord).render();
-            case "adverb":
-                return outputHTML + new Adverb(wordEntry, inputWord).render();
-            default:
-                return outputHTML + `<p>Details for this part of speech are not supported yet.</p>`;
-        }
-    }
-}
-
-class Noun {
-    constructor(wordEntry, inputWord) {
-        this.wordEntry = wordEntry;
-        this.inputWord = inputWord;
-    }
-
-    render() {
-        let outputHTML = `<h4>Noun Forms:</h4>`;
-        const singularForms = this.wordEntry.forms.singular || {};
-        const pluralForms = this.wordEntry.forms.plural || {};
-
-        if (Object.keys(singularForms).length > 0) {
-            outputHTML += `<p><strong>Singular:</strong></p>`;
-            for (const [caseName, form] of Object.entries(singularForms)) {
-                const highlight = this.matchNounForms(form);
-                outputHTML += `<p>${caseName}: ${highlight}</p>`;
-            }
-        }
-
-        if (Object.keys(pluralForms).length > 0) {
-            outputHTML += `<p><strong>Plural:</strong></p>`;
-            for (const [caseName, form] of Object.entries(pluralForms)) {
-                const highlight = this.matchNounForms(form);
-                outputHTML += `<p>${caseName}: ${highlight}</p>`;
-            }
-        }
+        // Tabs for forms
+        outputHTML += `
+            <div class="tabs">
+                <button class="tab-link active" data-tab="tab-singular">Singular</button>
+                <button class="tab-link" data-tab="tab-plural">Plural</button>
+                <button class="tab-link" data-tab="tab-verbs">Verb Forms</button>
+                <button class="tab-link" data-tab="tab-infinitives">Infinitives</button>
+            </div>
+            <div class="tab-content">
+                <div id="tab-singular" class="tab active">
+                    ${this.renderNounForms(wordEntry.forms.singular, "Singular")}
+                </div>
+                <div id="tab-plural" class="tab">
+                    ${this.renderNounForms(wordEntry.forms.plural, "Plural")}
+                </div>
+                <div id="tab-verbs" class="tab">
+                    ${this.renderVerbForms(wordEntry.forms)}
+                </div>
+                <div id="tab-infinitives" class="tab">
+                    ${this.renderInfinitives(wordEntry.forms.infinitives)}
+                </div>
+            </div>
+        `;
 
         return outputHTML;
     }
 
-    matchNounForms(form) {
-        return form.toLowerCase() === this.inputWord
-            ? `<span class="matched">${form}</span>` // Apply the 'matched' CSS class
-            : form;
-    }
-}
+    renderNounForms(forms, label) {
+        if (!forms || Object.keys(forms).length === 0) {
+            return `<p>No ${label.toLowerCase()} forms available.</p>`;
+        }
 
-class Verb {
-    constructor(wordEntry, inputWord) {
-        this.wordEntry = wordEntry;
-        this.inputWord = inputWord;
+        let formHTML = `<h4>${label} Forms:</h4>`;
+        for (const [caseName, form] of Object.entries(forms)) {
+            formHTML += `<p><strong>${caseName}:</strong> ${form}</p>`;
+        }
+        return formHTML;
     }
 
-    render() {
-        let outputHTML = `<h4>Verb Forms:</h4>`;
+    renderVerbForms(forms) {
+        if (!forms) {
+            return `<p>No verb forms available.</p>`;
+        }
+
         const verbForms = [
-            "infinitives",
             "indicative_present",
             "indicative_imperfect",
             "indicative_future",
@@ -138,90 +126,43 @@ class Verb {
             "subjunctive_pluperfect"
         ];
 
+        let formHTML = `<h4>Verb Forms:</h4>`;
         verbForms.forEach(formType => {
-            if (this.wordEntry.forms[formType]) {
+            if (forms[formType]) {
                 const readableKey = formType.replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
-                const matchedForms = this.matchVerbForms(this.wordEntry.forms[formType]);
-                outputHTML += `<p><strong>${readableKey}:</strong> ${matchedForms}</p>`;
+                formHTML += `<p><strong>${readableKey}:</strong> ${forms[formType].join(", ")}</p>`;
             }
         });
 
-        return outputHTML;
+        return formHTML;
     }
 
-    matchVerbForms(forms) {
-        return forms.map(form =>
-            form.toLowerCase() === this.inputWord
-                ? `<span class="matched">${form}</span>` // Apply the 'matched' CSS class
-                : form
-        ).join(", ");
-    }
-}
-
-class Adjective {
-    constructor(wordEntry, inputWord) {
-        this.wordEntry = wordEntry;
-        this.inputWord = inputWord;
-    }
-
-    render() {
-        let outputHTML = `<h4>Adjective Degrees:</h4>`;
-
-        if (this.wordEntry.degrees.positive) {
-            const positiveForms = this.wordEntry.degrees.positive;
-            outputHTML += `<h5>Positive Forms:</h5>`;
-            for (const [number, genderForms] of Object.entries(positiveForms)) {
-                outputHTML += `<p><strong>${number}:</strong></p>`;
-                for (const [gender, caseForms] of Object.entries(genderForms)) {
-                    outputHTML += `<p>${gender}:</p>`;
-                    for (const [caseName, form] of Object.entries(caseForms)) {
-                        const highlight = this.matchAdjectiveForms(form);
-                        outputHTML += `<p>${caseName}: ${highlight}</p>`;
-                    }
-                }
-            }
+    renderInfinitives(infinitives) {
+        if (!infinitives || infinitives.length === 0) {
+            return `<p>No infinitives available.</p>`;
         }
 
-        if (this.wordEntry.degrees.comparative) {
-            const highlight = this.matchAdjectiveForms(this.wordEntry.degrees.comparative);
-            outputHTML += `<p><strong>Comparative:</strong> ${highlight}</p>`;
-        }
-
-        if (this.wordEntry.degrees.superlative) {
-            const highlight = this.matchAdjectiveForms(this.wordEntry.degrees.superlative);
-            outputHTML += `<p><strong>Superlative:</strong> ${highlight}</p>`;
-        }
-
-        return outputHTML;
+        return `
+            <h4>Infinitives:</h4>
+            <p>${infinitives.join(", ")}</p>
+        `;
     }
 
-    matchAdjectiveForms(form) {
-        return form.toLowerCase() === this.inputWord
-            ? `<span class="matched">${form}</span>` // Apply the 'matched' CSS class
-            : form;
-    }
-}
+    setupTabListeners() {
+        const tabLinks = document.querySelectorAll(".tab-link");
+        const tabs = document.querySelectorAll(".tab");
 
-class Adverb {
-    constructor(wordEntry, inputWord) {
-        this.wordEntry = wordEntry;
-        this.inputWord = inputWord;
-    }
+        tabLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                // Remove active class from all tabs and tab links
+                tabLinks.forEach(l => l.classList.remove("active"));
+                tabs.forEach(tab => tab.classList.remove("active"));
 
-    render() {
-        let outputHTML = `<h4>Adverb Degrees:</h4>`;
-        ["positive", "comparative", "superlative"].forEach(degree => {
-            const form = this.wordEntry.degrees[degree];
-            const highlight = this.matchAdverbForms(form);
-            outputHTML += `<p><strong>${degree.charAt(0).toUpperCase() + degree.slice(1)}:</strong> ${highlight}</p>`;
+                // Add active class to clicked tab and its content
+                link.classList.add("active");
+                document.getElementById(link.dataset.tab).classList.add("active");
+            });
         });
-        return outputHTML;
-    }
-
-    matchAdverbForms(form) {
-        return form.toLowerCase() === this.inputWord
-            ? `<span class="matched">${form}</span>` // Apply the 'matched' CSS class
-            : form;
     }
 }
 
