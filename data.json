@@ -296,5 +296,83 @@
       "Errarem", "Errares", "Erraret", "Erraremus", "Erraretis", "Errarent",
       "Erraverim", "Erraveris", "Erraverit", "Erraverimus", "Erraveritis", "Erraverint",
       "Erravissem", "Erravisses", "Erravisset", "Erravissemus", "Erravissetis", "Erravissent"]
+  },
+   {
+    "latin": "antrum",
+    "part_of_speech": "Noun (n.)",
+    "definition": "cave",
+    "gender": "Neuter",
+    "declension": "2nd Declension",
+    "forms": {
+      "singular": {
+        "Nominative": "Antrum",
+        "Genitive": "Antri",
+        "Dative": "Antro",
+        "Accusative": "Antrum",
+        "Ablative": "Antro",
+        "Vocative": "Antrum"
+      },
+      "plural": {
+        "Nominative": "Antra",
+        "Genitive": "Antrorum",
+        "Dative": "Antris",
+        "Accusative": "Antra",
+        "Ablative": "Antris",
+        "Vocative": "Antra"
+      }
+    },
+    "all_forms": ["Antrum", "Antri", "Antro", "Antrum", "Antro", "Antra", "Antrorum", "Antris"]
+  },
+  {
+    "latin": "argentum",
+    "part_of_speech": "Noun (n.)",
+    "definition": "silver",
+    "gender": "Neuter",
+    "declension": "2nd Declension",
+    "forms": {
+      "singular": {
+        "Nominative": "Argentum",
+        "Genitive": "Argenti",
+        "Dative": "Argento",
+        "Accusative": "Argentum",
+        "Ablative": "Argento",
+        "Vocative": "Argentum"
+      },
+      "plural": {
+        "Nominative": "Argenta",
+        "Genitive": "Argentorum",
+        "Dative": "Argentis",
+        "Accusative": "Argenta",
+        "Ablative": "Argentis",
+        "Vocative": "Argenta"
+      }
+    },
+    "all_forms": ["Argentum", "Argenti", "Argento", "Argentum", "Argento", "Argenta", "Argentorum", "Argentis"]
+  },
+  {
+    "latin": "as",
+    "part_of_speech": "Noun (m.)",
+    "definition": "an as (small denomination of currency), penny",
+    "gender": "Masculine",
+    "declension": "3rd Declension",
+    "forms": {
+      "singular": {
+        "Nominative": "As",
+        "Genitive": "Assis",
+        "Dative": "Assi",
+        "Accusative": "Assem",
+        "Ablative": "Asse",
+        "Vocative": "As"
+      },
+      "plural": {
+        "Nominative": "Asses",
+        "Genitive": "Assium",
+        "Dative": "Assibus",
+        "Accusative": "Asses",
+        "Ablative": "Assibus",
+        "Vocative": "Asses"
+      }
+    },
+    "all_forms": ["As", "Assis", "Assi", "Assem", "Asse", "Asses", "Assium", "Assibus"]
   }
 ]
