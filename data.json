@@ -210,30 +210,30 @@
     ]
   },
   {
-  "latin": "astrum",
-  "part_of_speech": "Noun (n.)",
-  "definition": "Star",
-  "gender": "Neuter",
-  "declension": "2nd Declension",
-  "forms": {
-    "singular": {
-      "Nominative": "Astrum",
-      "Genitive": "Astri",
-      "Dative": "Astro",
-      "Accusative": "Astrum",
-      "Ablative": "Astro",
-      "Vocative": "Astrum"
+    "latin": "astrum",
+    "part_of_speech": "Noun (n.)",
+    "definition": "Star, heavenly body, planet/sun/moon; the stars, constellation; sky, heaven",
+    "gender": "Neuter",
+    "declension": "2nd Declension",
+    "forms": {
+        "singular": {
+            "Nominative": "Astrum",
+            "Genitive": "Astrī",
+            "Dative": "Astrō",
+            "Accusative": "Astrum",
+            "Ablative": "Astrō",
+            "Vocative": "Astrum"
+        },
+        "plural": {
+            "Nominative": "Astra",
+            "Genitive": "Astrōrum",
+            "Dative": "Astrīs",
+            "Accusative": "Astra",
+            "Ablative": "Astrīs",
+            "Vocative": "Astra"
+        }
     },
-    "plural": {
-      "Nominative": "Astra",
-      "Genitive": "Astrorum",
-      "Dative": "Astris",
-      "Accusative": "Astra",
-      "Ablative": "Astris",
-      "Vocative": "Astra"
-    }
-  },
-  "all_forms": ["Astrum", "Astri", "Astro", "Astrum", "Astro", "Astra", "Astrorum", "Astris"]
+    "all_forms": ["Astrum", "Astrī", "Astrō", "Astrōrum", "Astrīs", "Astra"]
 }
 
 ]
