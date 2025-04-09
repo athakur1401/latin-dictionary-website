@@ -66,6 +66,7 @@ class DictionaryApp {
         switch (wordEntry.part_of_speech.toLowerCase()) {
             case "noun (m.)":
             case "noun (f.)":
+            case "noun (n.)":
                 return outputHTML + new Noun(wordEntry, inputWord).render();
             case "verb":
                 return outputHTML + new Verb(wordEntry, inputWord).render();
