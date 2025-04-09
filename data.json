@@ -1,291 +1,239 @@
 [
   {
-      "latin": "aqua",
-      "part_of_speech": "Noun (f.)",
-      "definition": "Water",
-      "gender": "Feminine",
-      "declension": "1st Declension",
-      "forms": {
-          "singular": {
-              "Nominative": "Aqua",
-              "Genitive": "Aquae",
-              "Dative": "Aquae",
-              "Accusative": "Aquam",
-              "Ablative": "Aquā",
-              "Vocative": "Aqua"
+    "latin": "aqua",
+    "part_of_speech": "Noun (f.)",
+    "definition": "Water",
+    "gender": "Feminine",
+    "declension": "1st Declension",
+    "forms": {
+      "singular": {
+        "Nominative": "Aqua",
+        "Genitive": "Aquae",
+        "Dative": "Aquae",
+        "Accusative": "Aquam",
+        "Ablative": "Aquā",
+        "Vocative": "Aqua"
+      },
+      "plural": {
+        "Nominative": "Aquae",
+        "Genitive": "Aquārum",
+        "Dative": "Aquis",
+        "Accusative": "Aquas",
+        "Ablative": "Aquis",
+        "Vocative": "Aquae"
+      }
+    },
+    "all_forms": ["Aqua", "Aquae", "Aquam", "Aquā", "Aquārum", "Aquis", "Aquas"]
+  },
+  {
+    "latin": "amare",
+    "part_of_speech": "Verb",
+    "definition": "To love",
+    "conjugation": "1st Conjugation",
+    "forms": {
+      "infinitives": ["Amare", "Amari", "Amabisse", "Amatum esse", "Amaturum esse", "Amatum iri"],
+      "indicative_present": ["Amo", "Amas", "Amat", "Amamus", "Amatis", "Amant"],
+      "indicative_imperfect": ["Amabam", "Amabas", "Amabat", "Amabamus", "Amabatis", "Amabant"],
+      "indicative_future": ["Amabo", "Amabis", "Amabit", "Amabimus", "Amabitis", "Amabunt"],
+      "subjunctive_present": ["Amem", "Ames", "Amet", "Amemus", "Ametis", "Ament"],
+      "subjunctive_imperfect": ["Amarem", "Amares", "Amaret", "Amaremus", "Amaretis", "Amarent"],
+      "subjunctive_perfect": ["Amaverim", "Amaveris", "Amaverit", "Amaverimus", "Amaveritis", "Amaverint"],
+      "subjunctive_pluperfect": ["Amavissem", "Amavisses", "Amavisset", "Amavissemus", "Amavissetis", "Amavissent"]
+    },
+    "all_forms": [
+      "Amo", "Amas", "Amat", "Amamus", "Amatis", "Amant",
+      "Amabam", "Amabas", "Amabat", "Amabamus", "Amabatis", "Amabant",
+      "Amabo", "Amabis", "Amabit", "Amabimus", "Amabitis", "Amabunt",
+      "Amem", "Ames", "Amet", "Amemus", "Ametis", "Ament",
+      "Amarem", "Amares", "Amaret", "Amaremus", "Amaretis", "Amarent",
+      "Amaverim", "Amaveris", "Amaverit", "Amaverimus", "Amaveritis", "Amaverint",
+      "Amavissem", "Amavisses", "Amavisset", "Amavissemus", "Amavissetis", "Amavissent",
+      "Amare", "Amari", "Amabisse", "Amatum esse", "Amaturum esse", "Amatum iri"
+    ]
+  },
+  {
+    "latin": "bonus",
+    "part_of_speech": "Adjective",
+    "definition": "Good",
+    "declension": "First/Second Declension",
+    "degrees": {
+      "positive": {
+        "singular": {
+          "Masculine": {
+            "Nominative": "Bonus",
+            "Genitive": "Boni",
+            "Dative": "Bono",
+            "Accusative": "Bonum",
+            "Ablative": "Bono",
+            "Vocative": "Bone"
           },
-          "plural": {
-              "Nominative": "Aquae",
-              "Genitive": "Aquārum",
-              "Dative": "Aquis",
-              "Accusative": "Aquas",
-              "Ablative": "Aquis",
-              "Vocative": "Aquae"
+          "Feminine": {
+            "Nominative": "Bona",
+            "Genitive": "Bonae",
+            "Dative": "Bonae",
+            "Accusative": "Bonam",
+            "Ablative": "Bona",
+            "Vocative": "Bona"
+          },
+          "Neuter": {
+            "Nominative": "Bonum",
+            "Genitive": "Boni",
+            "Dative": "Bono",
+            "Accusative": "Bonum",
+            "Ablative": "Bono",
+            "Vocative": "Bonum"
           }
-      },
-      "all_forms": ["Aqua", "Aquae", "Aquam", "Aquā", "Aquārum", "Aquis", "Aquas"]
-  },
-  {
-      "latin": "amare",
-      "part_of_speech": "Verb",
-      "definition": "To love",
-      "conjugation": "1st Conjugation",
-     "forms": {
-          "infinitives": ["Amare", "Amari", "Amabisse", "Amatum esse", "Amaturum esse", "Amatum iri"],
-          "indicative_present": ["Amo", "Amas", "Amat", "Amamus", "Amatis", "Amant"],
-          "indicative_imperfect": ["Amabam", "Amabas", "Amabat", "Amabamus", "Amabatis", "Amabant"],
-          "indicative_future": ["Amabo", "Amabis", "Amabit", "Amabimus", "Amabitis", "Amabunt"],
-          "subjunctive_present": ["Amem", "Ames", "Amet", "Amemus", "Ametis", "Ament"],
-          "subjunctive_imperfect": ["Amarem", "Amares", "Amaret", "Amaremus", "Amaretis", "Amarent"],
-          "subjunctive_perfect": ["Amaverim", "Amaveris", "Amaverit", "Amaverimus", "Amaveritis", "Amaverint"],
-          "subjunctive_pluperfect": ["Amavissem", "Amavisses", "Amavisset", "Amavissemus", "Amavissetis", "Amavissent"]
-      },
-      "all_forms": [
-          "Amo", "Amas", "Amat", "Amamus", "Amatis", "Amant",
-          "Amabam", "Amabas", "Amabat", "Amabamus", "Amabatis", "Amabant",
-          "Amabo", "Amabis", "Amabit", "Amabimus", "Amabitis", "Amabunt",
-          "Amem", "Ames", "Amet", "Amemus", "Ametis", "Ament",
-          "Amarem", "Amares", "Amaret", "Amaremus", "Amaretis", "Amarent",
-          "Amaverim", "Amaveris", "Amaverit", "Amaverimus", "Amaveritis", "Amaverint",
-          "Amavissem", "Amavisses", "Amavisset", "Amavissemus", "Amavissetis", "Amavissent",
-        "Amare", "Amari", "Amabisse", "Amatum esse", "Amaturum esse", "Amatum iri"
-      ]
-  },
-  {
-      "latin": "bonus",
-      "part_of_speech": "Adjective",
-      "definition": "Good",
-      "declension": "First/Second Declension",
-      "degrees": {
-          "positive": {
-              "singular": {
-                  "Masculine": {
-                      "Nominative": "Bonus",
-                      "Genitive": "Boni",
-                      "Dative": "Bono",
-                      "Accusative": "Bonum",
-                      "Ablative": "Bono",
-                      "Vocative": "Bone"
-                  },
-                  "Feminine": {
-                      "Nominative": "Bona",
-                      "Genitive": "Bonae",
-                      "Dative": "Bonae",
-                      "Accusative": "Bonam",
-                      "Ablative": "Bona",
-                      "Vocative": "Bona"
-                  },
-                  "Neuter": {
-                      "Nominative": "Bonum",
-                      "Genitive": "Boni",
-                      "Dative": "Bono",
-                      "Accusative": "Bonum",
-                      "Ablative": "Bono",
-                      "Vocative": "Bonum"
-                  }
-              },
-              "plural": {
-                  "Masculine": {
-                      "Nominative": "Boni",
-                      "Genitive": "Bonorum",
-                      "Dative": "Bonis",
-                      "Accusative": "Bonos",
-                      "Ablative": "Bonis",
-                      "Vocative": "Boni"
-                  },
-                  "Feminine": {
-                      "Nominative": "Bonae",
-                      "Genitive": "Bonarum",
-                      "Dative": "Bonis",
-                      "Accusative": "Bonas",
-                      "Ablative": "Bonis",
-                      "Vocative": "Bonae"
-                  },
-                  "Neuter": {
-                      "Nominative": "Bona",
-                      "Genitive": "Bonorum",
-                      "Dative": "Bonis",
-                      "Accusative": "Bona",
-                      "Ablative": "Bonis",
-                      "Vocative": "Bona"
-                  }
-              }
+        },
+        "plural": {
+          "Masculine": {
+            "Nominative": "Boni",
+            "Genitive": "Bonorum",
+            "Dative": "Bonis",
+            "Accusative": "Bonos",
+            "Ablative": "Bonis",
+            "Vocative": "Boni"
           },
-          "comparative": "Melior",
-          "superlative": "Optimus"
-      },
-      "all_forms": [
-          "Bonus", "Boni", "Bono", "Bonum", "Bone", "Bona",
-          "Bonae", "Bonarum", "Bonis", "Bonos",
-          "Bona", "Melior", "Optimus"
-      ]
-  },
-  {
-      "latin": "celeriter",
-      "part_of_speech": "Adverb",
-      "definition": "Quickly",
-      "degrees": {
-          "positive": "Celeriter",
-          "comparative": "Celerius",
-          "superlative": "Celerrime"
-      },
-      "all_forms": ["Celeriter", "Celerius", "Celerrime"]
-  },
-  {
-      "latin": "puer",
-      "part_of_speech": "Noun (m.)",
-      "definition": "Boy",
-      "gender": "Masculine",
-      "declension": "2nd Declension",
-      "forms": {
-          "singular": {
-              "Nominative": "Puer",
-              "Genitive": "Pueri",
-              "Dative": "Puero",
-              "Accusative": "Puerum",
-              "Ablative": "Puero",
-              "Vocative": "Puer"
+          "Feminine": {
+            "Nominative": "Bonae",
+            "Genitive": "Bonarum",
+            "Dative": "Bonis",
+            "Accusative": "Bonas",
+            "Ablative": "Bonis",
+            "Vocative": "Bonae"
           },
-          "plural": {
-              "Nominative": "Pueri",
-              "Genitive": "Puerorum",
-              "Dative": "Pueris",
-              "Accusative": "Pueros",
-              "Ablative": "Pueris",
-              "Vocative": "Pueri"
+          "Neuter": {
+            "Nominative": "Bona",
+            "Genitive": "Bonorum",
+            "Dative": "Bonis",
+            "Accusative": "Bona",
+            "Ablative": "Bonis",
+            "Vocative": "Bona"
           }
+        }
       },
-      "all_forms": ["Puer", "Pueri", "Puero", "Puerum", "Puerorum", "Pueris", "Pueros"]
+      "comparative": "Melior",
+      "superlative": "Optimus"
+    },
+    "all_forms": [
+      "Bonus", "Boni", "Bono", "Bonum", "Bone", "Bona",
+      "Bonae", "Bonarum", "Bonis", "Bonos",
+      "Bona", "Melior", "Optimus"
+    ]
   },
-    {
-  "latin": "amicitia",
-  "part_of_speech": "Noun (f.)",
-  "definition": "Friendship",
-  "gender": "Feminine",
-  "declension": "1st Declension",
+  {
+    "latin": "celeriter",
+    "part_of_speech": "Adverb",
+    "definition": "Quickly",
+    "degrees": {
+      "positive": "Celeriter",
+      "comparative": "Celerius",
+      "superlative": "Celerrime"
+    },
+    "all_forms": ["Celeriter", "Celerius", "Celerrime"]
+  },
+  {
+    "latin": "puer",
+    "part_of_speech": "Noun (m.)",
+    "definition": "Boy",
+    "gender": "Masculine",
+    "declension": "2nd Declension",
+    "forms": {
+      "singular": {
+        "Nominative": "Puer",
+        "Genitive": "Pueri",
+        "Dative": "Puero",
+        "Accusative": "Puerum",
+        "Ablative": "Puero",
+        "Vocative": "Puer"
+      },
+      "plural": {
+        "Nominative": "Pueri",
+        "Genitive": "Puerorum",
+        "Dative": "Pueris",
+        "Accusative": "Pueros",
+        "Ablative": "Pueris",
+        "Vocative": "Pueri"
+      }
+    },
+    "all_forms": ["Puer", "Pueri", "Puero", "Puerum", "Puerorum", "Pueris", "Pueros"]
+  },
+  {
+    "latin": "amicitia",
+    "part_of_speech": "Noun (f.)",
+    "definition": "Friendship",
+    "gender": "Feminine",
+    "declension": "1st Declension",
+    "forms": {
+      "singular": {
+        "Nominative": "Amicitia",
+        "Genitive": "Amicitiae",
+        "Dative": "Amicitiae",
+        "Accusative": "Amicitiam",
+        "Ablative": "Amicitiā",
+        "Vocative": "Amicitia"
+      },
+      "plural": {
+        "Nominative": "Amicitiae",
+        "Genitive": "Amicitiārum",
+        "Dative": "Amicitiis",
+        "Accusative": "Amicitias",
+        "Ablative": "Amicitiis",
+        "Vocative": "Amicitiae"
+      }
+    },
+    "all_forms": ["Amicitia", "Amicitiae", "Amicitiam", "Amicitiā", "Amicitiārum", "Amicitiis", "Amicitias"]
+  },
+  {
+    "latin": "liberare",
+    "part_of_speech": "Verb",
+    "definition": "To free, liberate",
+    "conjugation": "1st Conjugation",
+    "forms": {
+      "infinitives": ["Liberare", "Liberari", "Liberavisse", "Liberatum esse", "Liberaturum esse", "Liberatum iri"],
+      "indicative_present": ["Libero", "Liberas", "Liberat", "Liberamus", "Liberatis", "Liberant"],
+      "indicative_imperfect": ["Liberabam", "Liberabas", "Liberabat", "Liberabamus", "Liberabatis", "Liberabant"],
+      "indicative_future": ["Liberabo", "Liberabis", "Liberabit", "Liberabimus", "Liberabitis", "Liberabunt"],
+      "subjunctive_present": ["Liberem", "Liberes", "Liberet", "Liberemus", "Liberetis", "Liberent"],
+      "subjunctive_imperfect": ["Liberarem", "Liberares", "Liberaret", "Liberaremus", "Liberaretis", "Liberarent"],
+      "subjunctive_perfect": ["Liberaverim", "Liberaveris", "Liberaverit", "Liberaverimus", "Liberaveritis", "Liberaverint"],
+      "subjunctive_pluperfect": ["Liberavissem", "Liberavisses", "Liberavisset", "Liberavissemus", "Liberavissetis", "Liberavissent"]
+    },
+    "all_forms": [
+      "Libero", "Liberas", "Liberat", "Liberamus", "Liberatis", "Liberant",
+      "Liberabam", "Liberabas", "Liberabat", "Liberabamus", "Liberabatis", "Liberabant",
+      "Liberabo", "Liberabis", "Liberabit", "Liberabimus", "Liberabitis", "Liberabunt",
+      "Liberem", "Liberes", "Liberet", "Liberemus", "Liberetis", "Liberent",
+      "Liberarem", "Liberares", "Liberaret", "Liberaremus", "Liberaretis", "Liberarent",
+      "Liberaverim", "Liberaveris", "Liberaverit", "Liberaverimus", "Liberaveritis", "Liberaverint",
+      "Liberavissem", "Liberavisses", "Liberavisset", "Liberavissemus", "Liberavissetis", "Liberavissent",
+      "Liberare", "Liberari", "Liberavisse", "Liberatum esse", "Liberaturum esse", "Liberatum iri"
+    ]
+  },
+  {
+  "latin": "astrum",
+  "part_of_speech": "Noun (n.)",
+  "definition": "Star",
+  "gender": "Neuter",
+  "declension": "2nd Declension",
   "forms": {
     "singular": {
-      "Nominative": "Amicitia",
-      "Genitive": "Amicitiae",
-      "Dative": "Amicitiae",
-      "Accusative": "Amicitiam",
-      "Ablative": "Amicitiā",
-      "Vocative": "Amicitia"
+      "Nominative": "Astrum",
+      "Genitive": "Astri",
+      "Dative": "Astro",
+      "Accusative": "Astrum",
+      "Ablative": "Astro",
+      "Vocative": "Astrum"
     },
     "plural": {
-      "Nominative": "Amicitiae",
-      "Genitive": "Amicitiārum",
-      "Dative": "Amicitiis",
-      "Accusative": "Amicitias",
-      "Ablative": "Amicitiis",
-      "Vocative": "Amicitiae"
+      "Nominative": "Astra",
+      "Genitive": "Astrorum",
+      "Dative": "Astris",
+      "Accusative": "Astra",
+      "Ablative": "Astris",
+      "Vocative": "Astra"
     }
   },
-  "all_forms": ["Amicitia", "Amicitiae", "Amicitiam", "Amicitiā", "Amicitiārum", "Amicitiis", "Amicitias"]
+  "all_forms": ["Astrum", "Astri", "Astro", "Astrum", "Astro", "Astra", "Astrorum", "Astris"]
 }
-{
-  "latin": "liberare",
-  "part_of_speech": "Verb",
-  "definition": "To free, liberate",
-  "conjugation": "1st Conjugation",
-  "forms": {
-    "infinitives": ["Liberare", "Liberari", "Liberavisse", "Liberatum esse", "Liberaturum esse", "Liberatum iri"],
-    "indicative_present": ["Libero", "Liberas", "Liberat", "Liberamus", "Liberatis", "Liberant"],
-    "indicative_imperfect": ["Liberabam", "Liberabas", "Liberabat", "Liberabamus", "Liberabatis", "Liberabant"],
-    "indicative_future": ["Liberabo", "Liberabis", "Liberabit", "Liberabimus", "Liberabitis", "Liberabunt"],
-    "subjunctive_present": ["Liberem", "Liberes", "Liberet", "Liberemus", "Liberetis", "Liberent"],
-    "subjunctive_imperfect": ["Liberarem", "Liberares", "Liberaret", "Liberaremus", "Liberaretis", "Liberarent"],
-    "subjunctive_perfect": ["Liberaverim", "Liberaveris", "Liberaverit", "Liberaverimus", "Liberaveritis", "Liberaverint"],
-    "subjunctive_pluperfect": ["Liberavissem", "Liberavisses", "Liberavisset", "Liberavissemus", "Liberavissetis", "Liberavissent"]
-  },
-  "all_forms": [
-    "Libero", "Liberas", "Liberat", "Liberamus", "Liberatis", "Liberant",
-    "Liberabam", "Liberabas", "Liberabat", "Liberabamus", "Liberabatis", "Liberabant",
-    "Liberabo", "Liberabis", "Liberabit", "Liberabimus", "Liberabitis", "Liberabunt",
-    "Liberem", "Liberes", "Liberet", "Liberemus", "Liberetis", "Liberent",
-    "Liberarem", "Liberares", "Liberaret", "Liberaremus", "Liberaretis", "Liberarent",
-    "Liberaverim", "Liberaveris", "Liberaverit", "Liberaverimus", "Liberaveritis", "Liberaverint",
-    "Liberavissem", "Liberavisses", "Liberavisset", "Liberavissemus", "Liberavissetis", "Liberavissent",
-    "Liberare", "Liberari", "Liberavisse", "Liberatum esse", "Liberaturum esse", "Liberatum iri"
-  ]
-}
-{
-  "latin": "lex",
-  "part_of_speech": "Noun (f.)",
-  "definition": "Law",
-  "gender": "Feminine",
-  "declension": "3rd Declension",
-  "forms": {
-    "singular": {
-      "Nominative": "Lex",
-      "Genitive": "Legis",
-      "Dative": "Legi",
-      "Accusative": "Legem",
-      "Ablative": "Lege",
-      "Vocative": "Lex"
-    },
-    "plural": {
-      "Nominative": "Leges",
-      "Genitive": "Legum",
-      "Dative": "Legibus",
-      "Accusative": "Leges",
-      "Ablative": "Legibus",
-      "Vocative": "Leges"
-    }
-  },
-  "all_forms": ["Lex", "Legis", "Legi", "Legem", "Lege", "Leges", "Legum", "Legibus"]
-}
-{
-  "latin": "errare",
-  "part_of_speech": "Verb",
-  "definition": "To wander, to make a mistake",
-  "conjugation": "1st Conjugation",
-  "forms": {
-    "infinitives": ["Errare", "Errari", "Erravisse", "Erratum esse", "Erraturum esse", "Erratum iri"],
-    "indicative_present": ["Erro", "Erras", "Errat", "Erramus", "Erratis", "Errant"],
-    "indicative_imperfect": ["Errabam", "Errabas", "Errabat", "Errabamus", "Errabatis", "Errabant"],
-    "indicative_future": ["Errabo", "Errabis", "Errabit", "Errabimus", "Errabitis", "Errabunt"],
-    "subjunctive_present": ["Errem", "Erres", "Erret", "Erremus", "Erretis", "Errent"],
-    "subjunctive_imperfect": ["Errarem", "Errares", "Erraret", "Erraremus", "Erraretis", "Errarent"],
-    "subjunctive_perfect": ["Erraverim", "Erraveris", "Erraverit", "Erraverimus", "Erraveritis", "Erraverint"],
-    "subjunctive_pluperfect": ["Erravissem", "Erravisses", "Erravisset", "Erravissemus", "Erravissetis", "Erravissent"]
-  },
-  "all_forms": [
-    "Erro", "Erras", "Errat", "Erramus", "Erratis", "Errant",
-    "Errabam", "Errabas", "Errabat", "Errabamus", "Errabatis", "Errabant",
-    "Errabo", "Errabis", "Errabit", "Errabimus", "Errabitis", "Errabunt",
-    "Errem", "Erres", "Erret", "Erremus", "Erretis", "Errent",
-    "Errarem", "Errares", "Erraret", "Erraremus", "Erraretis", "Errarent",
-    "Erraverim", "Erraveris", "Erraverit", "Erraverimus", "Erraveritis", "Erraverint",
-    "Erravissem", "Erravisses", "Erravisset", "Erravissemus", "Erravissetis", "Erravissent",
-    "Errare", "Errari", "Erravisse", "Erratum esse", "Erraturum esse", "Erratum iri"
-  ]
-}
-{
-      "latin": "astrum",
-      "part_of_speech": "Noun (f.)",
-      "definition": "star, heavenly body, planet/sun/moon; the stars, constellation; sky, heaven", 
-      "gender": "Neuter",
-      "declension": "2nd Declension",
-      "forms": {
-          "singular": {
-              "Nominative": "astrum",
-              "Genitive": "astrī",
-              "Dative": "astrō",
-              "Accusative": "astrum",
-              "Ablative": "astrō",
-              "Vocative": "astrum"
-          },
-          "plural": {
-              "Nominative": "astra",
-              "Genitive": "astrōrum",
-              "Dative": "astrīs",
-              "Accusative": "astra",
-              "Ablative": "astris",
-              "Vocative": "astra"
-          }
-      },
 
-"all_forms": ["astrum", "astrī", "astrō", "astrōrum", "astris"]
-  }
 ]
