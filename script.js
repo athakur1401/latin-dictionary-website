@@ -19,6 +19,7 @@ class DictionaryApp {
             const response = await fetch('data.json');
             if (!response.ok) throw new Error("Failed to load dictionary data");
             this.dictionary = await response.json();
+            console.log(`Number of words stored in the dictionary: ${this.dictionary.length}`);
         } catch (error) {
             console.error("Error fetching dictionary data:", error);
         }
