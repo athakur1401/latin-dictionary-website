@@ -41,30 +41,36 @@ class DictionaryApp {
     });
   }
 
-  performSearch() {
+performSearch() {
     const inputWord = this.inputField.value.trim().toLowerCase();
     console.log("User entered:", inputWord);
 
     if (!inputWord) {
-      alert("Please enter a word.");
-      return;
+        alert("Please enter a word.");
+        return;
     }
 
     // Search for the word in all_forms
     const foundWord = this.dictionary.find(entry =>
-      entry.all_forms &&
-      entry.all_forms.some(form => form.toLowerCase() === inputWord)
+        entry.all_forms &&
+        entry.all_forms.some(form => form.toLowerCase() === inputWord)
     );
 
     if (foundWord) {
-      if (!this.tabs[inputWord]) {
-        this.createTab(inputWord, foundWord);
-      }
-      this.updateTabContent(inputWord, foundWord);
+        // Ensure resultContainer exists before updating its content
+        if (!this.resultContainer) {
+            console.error("Result container is missing in the DOM!");
+            return;
+        }
+        this.resultContainer.innerHTML = this.processWord(foundWord, inputWord);
     } else {
-      this.resultContainer.innerHTML = `<p>Word not found in the dictionary.</p>`;
+        if (!this.resultContainer) {
+            console.error("Result container is missing in the DOM!");
+            return;
+        }
+        this.resultContainer.innerHTML = `<p>Word not found in the dictionary.</p>`;
     }
-  }
+}
 
   createTab(word, wordEntry) {
     const tab = document.createElement("button");
