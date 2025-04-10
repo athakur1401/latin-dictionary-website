@@ -37,7 +37,9 @@ button {
     padding: 10px;
     background: #e0ffe0;
     border-radius: 5px;
-    display: none;
+    display: flex; /* Enable flexbox layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
 /* Highlight matched forms */
