@@ -4,8 +4,11 @@ class DictionaryApp {
     this.resultContainer = document.getElementById("resultContainer");
     this.inputField = document.getElementById("inputField");
     this.lookupButton = document.getElementById("lookupButton");
+    this.tabsContainer = document.getElementById("tabsContainer");
+    this.tabContentsContainer = document.getElementById("tabContentsContainer");
+    this.tabs = {};
 
-    if (!this.resultContainer || !this.inputField || !this.lookupButton) {
+    if (!this.resultContainer || !this.inputField || !this.lookupButton || !this.tabsContainer || !this.tabContentsContainer) {
       console.error("Required elements are missing!");
       return;
     }
@@ -54,10 +57,39 @@ class DictionaryApp {
     );
 
     if (foundWord) {
-      this.resultContainer.innerHTML = this.processWord(foundWord, inputWord);
+      if (!this.tabs[inputWord]) {
+        this.createTab(inputWord, foundWord);
+      }
+      this.updateTabContent(inputWord, foundWord);
     } else {
       this.resultContainer.innerHTML = `<p>Word not found in the dictionary.</p>`;
     }
+  }
+
+  createTab(word, wordEntry) {
+    const tab = document.createElement("button");
+    tab.textContent = word;
+    tab.classList.add("tab");
+    tab.addEventListener("click", () => this.showTabContent(word));
+    this.tabsContainer.appendChild(tab);
+
+    const tabContent = document.createElement("div");
+    tabContent.id = `tabContent-${word}`;
+    tabContent.classList.add("tabContent");
+    this.tabContentsContainer.appendChild(tabContent);
+
+    this.tabs[word] = tabContent;
+  }
+
+  updateTabContent(word, wordEntry) {
+    const tabContent = this.tabs[word];
+    tabContent.innerHTML = this.processWord(wordEntry, word);
+    this.showTabContent(word);
+  }
+
+  showTabContent(word) {
+    Object.values(this.tabs).forEach(tabContent => tabContent.style.display = "none");
+    this.tabs[word].style.display = "block";
   }
 
   processWord(wordEntry, inputWord) {
