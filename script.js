@@ -55,63 +55,32 @@ class DictionaryApp {
 
     if (foundWord) {
       this.resultContainer.innerHTML = this.processWord(foundWord, inputWord);
-      this.attachTabListeners();
     } else {
       this.resultContainer.innerHTML = `<p>Word not found in the dictionary.</p>`;
     }
   }
 
- processWord(wordEntry, inputWord) {
-  let html = `<div class="definition-card">`;
+  processWord(wordEntry, inputWord) {
+    let outputHTML = `<h3>${wordEntry.latin}</h3>`;
+    outputHTML += `<p><strong>Part of Speech:</strong> ${wordEntry.part_of_speech}</p>`;
+    outputHTML += `<p><strong>Definition:</strong> ${wordEntry.definition}</p>`;
 
-  html += `<h2 class="latin-word">${wordEntry.latin}</h2>`;
-  html += `<p><strong>Part of Speech:</strong> ${wordEntry.part_of_speech}</p>`;
-  html += `<p><strong>Definition:</strong> ${wordEntry.definition}</p>`;
-
-  switch (wordEntry.part_of_speech.toLowerCase()) {
-    case "noun (m.)":
-    case "noun (f.)":
-    case "noun (n.)":
-      html += new Noun(wordEntry, inputWord).render();
-      break;
-    case "verb":
-      html += new Verb(wordEntry, inputWord).render();
-      break;
-    case "adjective":
-      html += new Adjective(wordEntry, inputWord).render();
-      break;
-    case "adverb":
-      html += new Adverb(wordEntry, inputWord).render();
-      break;
-    default:
-      html += `<p>Details for this part of speech are not supported yet.</p>`;
+    // Delegate processing based on part of speech
+    switch (wordEntry.part_of_speech.toLowerCase()) {
+      case "noun (m.)":
+      case "noun (f.)":
+      case "noun (n.)":
+        return outputHTML + new Noun(wordEntry, inputWord).render();
+      case "verb":
+        return outputHTML + new Verb(wordEntry, inputWord).render();
+      case "adjective":
+        return outputHTML + new Adjective(wordEntry, inputWord).render();
+      case "adverb":
+        return outputHTML + new Adverb(wordEntry, inputWord).render();
+      default:
+        return outputHTML + `<p>Details for this part of speech are not supported yet.</p>`;
+    }
   }
-
-  html += `</div>`;
-  return html;
-}
-
-attachTabListeners() {
-  // find all cards in the result area
-  const cards = this.resultContainer.querySelectorAll('.definition-card');
-
-  cards.forEach(card => {
-    const tabButtons = card.querySelectorAll('.tab-btn');
-    const tabContents = card.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // deactivate all tabs + hide all contents
-        tabButtons.forEach(b => b.classList.remove('active'));
-        tabContents.forEach(c => c.classList.add('hidden'));
-
-        // activate the one we clicked
-        button.classList.add('active');
-        const target = card.querySelector(`#${button.dataset.group}`);
-        if (target) target.classList.remove('hidden');
-      });
-    });
-  });
 }
 
 class Noun {
@@ -158,8 +127,8 @@ class Verb {
   }
 
   render() {
-    // the list of all possible verb‐form keys
-    const formKeys = [
+    let outputHTML = `<h4>Verb Forms:</h4>`;
+    const verbForms = [
       "infinitives",
       "indicative_present",
       "indicative_imperfect",
@@ -171,49 +140,25 @@ class Verb {
       "subjunctive_pluperfect"
     ];
 
-    // 1) build the tab buttons
-    let tabsHTML = `<div class="tabs">`;
-    formKeys.forEach((key, i) => {
-      const forms = this.wordEntry.forms[key];
-      if (!forms) return;
-      const label = key.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
-      const id = `${key}-${this.wordEntry.latin}`;
-      tabsHTML += `<button
-                     class="tab-btn ${i===0?'active':''}"
-                     data-group="${id}"
-                   >${label}</button>`;
-    });
-    tabsHTML += `</div>`;
-
-    // 2) build each panel
-    let contentHTML = '';
-    formKeys.forEach((key, i) => {
-      const forms = this.wordEntry.forms[key];
-      if (!forms) return;
-      const label = key.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
-      const id = `${key}-${this.wordEntry.latin}`;
-      const matched = this.matchVerbForms(forms);
-      contentHTML += `<div
-                        class="tab-content ${i===0?'':'hidden'}"
-                        id="${id}"
-                      >
-                        <p><strong>${label}:</strong> ${matched}</p>
-                      </div>`;
+    verbForms.forEach(formType => {
+      if (this.wordEntry.forms[formType]) {
+        const readableKey = formType.replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
+        const matchedForms = this.matchVerbForms(this.wordEntry.forms[formType]);
+        outputHTML += `<p><strong>${readableKey}:</strong> ${matchedForms}</p>`;
+      }
     });
 
-    return tabsHTML + contentHTML;
+    return outputHTML;
   }
 
   matchVerbForms(forms) {
-    return forms
-      .map(f => f.toLowerCase() === this.inputWord
-        ? `<span class="matched">${f}</span>`
-        : f
-      )
-      .join(', ');
+    return forms.map(form =>
+      form.toLowerCase() === this.inputWord
+        ? `<span class="matched">${form}</span>` // Apply the 'matched' CSS class
+        : form
+    ).join(", ");
   }
 }
-
 
 class Adjective {
   constructor(wordEntry, inputWord) {
