@@ -49,33 +49,3 @@ button {
     border-radius: 3px;      /* Slightly rounded edges for the highlight */
     padding: 2px 4px;        /* Add some padding inside the highlight */
 }
-
-/* Styles for tabs and their contents */
-#tabsContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.tab {
-    padding: 10px 20px;
-    background-color: #ddd;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    border-radius: 5px 5px 0 0;
-    margin-right: 5px;
-}
-
-.tab:hover {
-    background-color: #bbb;
-}
-
-.tabContent {
-    display: none;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-radius: 0 0 5px 5px;
-    margin-top: -1px;
-}
