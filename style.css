@@ -6,17 +6,15 @@ body {
     padding: 0;
 }
 
-/* lookup container */
 .container {
     max-width: 500px;
     margin: 100px auto;
     padding: 20px;
     background: white;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
-/* input + button */
 input {
     width: 80%;
     padding: 10px;
@@ -34,69 +32,18 @@ button {
     border-radius: 5px;
 }
 
-/* result wrapper (always visible, cards inside) */
-#resultContainer {
+#result {
     margin-top: 20px;
-    text-align: left;
-}
-
-/* each lookup result */
-.definition-card {
+    padding: 10px;
     background: #e0ffe0;
-    padding: 20px;
-    margin-bottom: 20px;
     border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-}
-
-/* highlight matched forms */
-.matched {
-    background-color: yellow;
-    font-weight: bold;
-    border-radius: 3px;
-    padding: 2px 4px;
-}
-
-/* Tabs Container */
-.tabs {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 20px;
-}
-
-/* Tab Buttons */
-.tab-btn {
-    background-color: #f4f4f4;
-    border: 1px solid #ccc;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px 5px 0 0;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.tab-btn:hover {
-    background-color: #ddd;
-}
-
-.tab-btn.active {
-    background-color: white;
-    border-bottom: 2px solid white;
-}
-
-/* Tab Content Panels */
-.tab-content {
-    border: 1px solid #ccc;
-    border-top: none;
-    padding: 20px;
-    background-color: white;
-    border-radius: 0 0 5px 5px;
-    margin-top: -1px;
-}
-
-/* hide panels */
-.hidden {
     display: none;
+}
+
+/* Highlight matched forms */
+.matched {
+    background-color: yellow; /* Highlight color */
+    font-weight: bold;       /* Bold matched text */
+    border-radius: 3px;      /* Slightly rounded edges for the highlight */
+    padding: 2px 4px;        /* Add some padding inside the highlight */
 }
