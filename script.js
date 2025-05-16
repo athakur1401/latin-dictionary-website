@@ -1,22 +1,16 @@
 /* -------------  Dictionary app ------------- */
 class DictionaryApp {
   constructor() {
-    this.dictionary   = [];                 // array of lemma records
-    this.formIndex    = new Map();          // Map<form, lemmaID>
+    // DOM refs
     this.resultContainer      = document.getElementById("resultContainer");
     this.inputField           = document.getElementById("inputField");
     this.lookupButton         = document.getElementById("lookupButton");
-    this.tabsContainer        = document.getElementById("tabsContainer");
-    this.tabContentsContainer = document.getElementById("tabContentsContainer");
-    this.tabs = {};
 
-    if (!this.resultContainer || !this.inputField || !this.lookupButton ||
-        !this.tabsContainer  || !this.tabContentsContainer) {
-      console.error("Required elements are missing!");
-      return;
-    }
+    // data holders
+    this.dictionary = [];        // array of lemma records
+    this.formIndex  = new Map(); // Map<form, lemmaID>
 
-    this.init();   // async
+    this.init();                 // kick off async loader
   }
 
   /* -----------  load slim JSON files ----------- */
@@ -28,13 +22,13 @@ class DictionaryApp {
       ]);
       this.dictionary = lemmas;
       this.formIndex  = new Map(Object.entries(idxObj));
-      console.log(`Loaded ${lemmas.length} lemmas, ${this.formIndex.size} index keys`);
+      console.log(`Loaded ${lemmas.length} lemmas, ${this.formIndex.size} keys`);
     } catch (err) {
-      console.error("Error fetching dictionary data:", err);
+      console.error("Dictionary load failed:", err);
       return;
     }
 
-    /* event listeners */
+    // event listeners
     this.lookupButton.addEventListener("click", e => {
       e.preventDefault();
       this.performSearch();
@@ -47,7 +41,7 @@ class DictionaryApp {
     });
   }
 
-  /* constant-time lookup */
+  /* constant-time look-up */
   lookup(form) {
     const id = this.formIndex.get(form.toLowerCase());
     return id == null ? null : this.dictionary[id];
@@ -56,51 +50,24 @@ class DictionaryApp {
   /* -------------- search -------------- */
   performSearch() {
     const inputWord = this.inputField.value.trim().toLowerCase();
-    if (!inputWord) {
-      alert("Please enter a word.");
-      return;
-    }
+    if (!inputWord) return alert("Please enter a word.");
 
     const foundWord = this.lookup(inputWord);
 
-    if (foundWord) {
-      this.resultContainer.innerHTML = this.processWord(foundWord, inputWord);
-    } else {
-      this.resultContainer.innerHTML = `<p>Word not found in the dictionary.</p>`;
-    }
+    this.resultContainer.innerHTML = foundWord
+      ? this.renderEntry(foundWord)
+      : "<p>Word not found in the dictionary.</p>";
   }
 
-  /* ---------- tab helpers (unchanged) ---------- */
-  createTab(word) { /* your previous code if you still use tabs */ }
-  updateTabContent(word, entry) { /* … */ }
-  showTabContent(word) { /* … */ }
-
-  /* ------------ render one entry ------------ */
-  processWord(wordEntry, inputWord) {
-    /* Whitaker fields */
-    let html = `<h3>${wordEntry.lemma}</h3>`;
-    html    += `<p><strong>Part of Speech:</strong> ${wordEntry.pos || "—"}</p>`;
-    html    += `<p><strong>Definition:</strong> ${wordEntry.definition}</p>`;
-
-    /* specialised tables come later, once POS parsing & forms exist */
-    switch ((wordEntry.pos || "").toLowerCase()) {
-      case "noun":
-        return html + new Noun(wordEntry, inputWord).render();
-      case "verb":
-        return html + new Verb(wordEntry, inputWord).render();
-      case "adj":
-      case "adjective":
-        return html + new Adjective(wordEntry, inputWord).render();
-      case "adv":
-      case "adverb":
-        return html + new Adverb(wordEntry, inputWord).render();
-      default:
-        return html + `<p>(Detailed tables not available yet.)</p>`;
-    }
+  /* ------------- render one lemma ------------- */
+  renderEntry(entry) {
+    return `
+      <h3>${entry.lemma}</h3>
+      <p><strong>Part of Speech:</strong> ${entry.pos || "—"}</p>
+      <p><strong>Definition:</strong> ${entry.definition}</p>
+      <p>(Detailed tables will return once we add the inflection engine.)</p>
+    `;
   }
 }
-
-/* ---------- Noun / Verb / Adjective / Adverb classes (unchanged) ---------- */
-/* paste your existing class definitions here */
 
 document.addEventListener("DOMContentLoaded", () => new DictionaryApp());
