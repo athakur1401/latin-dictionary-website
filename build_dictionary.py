@@ -1,22 +1,20 @@
 #!/usr/bin/env python3
 """
-Turn Whitaker’s DICTLINE.GEN/RAW -> two compact JSON files
+Build two compact files from Whitaker’s DICTLINE.GEN / DICTLINE.RAW
 
-• dist/lemmas.json  – one record per unique lemma (keeps macrons)
-• dist/forms.json   – { form : lemma_id }  <- *includes* macron-less keys
-
-Run:  python build_dictionary.py
+• dist/lemmas.json – one record per lemma (keeps macrons)
+• dist/forms.json  – { form : lemma_id }   ← includes BOTH macron + ASCII keys
 """
 import json, pathlib, unicodedata
 
-RAW      = "dictline.raw"                 # make sure this file exists
-OUT_DIR  = pathlib.Path("dist")
-OUT_DIR.mkdir(exist_ok=True)
+RAW = "dictline.raw"                     # <-- make sure this exists
+OUT = pathlib.Path("dist")
+OUT.mkdir(exist_ok=True)
 
-def demacron(text: str) -> str:
-    """Remove macrons (and any other combining marks) from Latin strings."""
+def demacron(txt: str) -> str:
+    """remove macrons (all combining marks) from a Latin word"""
     return ''.join(
-        c for c in unicodedata.normalize("NFD", text)
+        c for c in unicodedata.normalize("NFD", txt)
         if unicodedata.category(c) != "Mn"
     )
 
@@ -26,34 +24,26 @@ with open(RAW, encoding="latin-1") as f:
     for line in f:
         if not line.strip():
             continue
-        head, *rest = line.split(None, 1)           # lemma, then gloss
-        lemma = head.lower()                        # keep macrons here
+        head, *rest = line.split(None, 1)       # lemma, then gloss
+        lemma = head.lower()                    # keeps macron
         if lemma in seen:
             continue
         seen.add(lemma)
 
         gloss = rest[0].strip() if rest else ""
         lemma_id = len(lemmas)
-
-        # -------- store lemma record ----------
         lemmas.append({
-            "lemma": lemma,         # macronised form
+            "lemma": lemma,
             "definition": gloss,
-            "pos": "",              # (parse later if desired)
+            "pos": "",
             "irregular": {}
         })
 
-        # -------- index keys ----------
-        form_index[lemma] = lemma_id                 # macronised
+        form_index[lemma] = lemma_id              # macron key
         plain = demacron(lemma)
-        if plain != lemma:
-            form_index[plain] = lemma_id             # ASCII key
+        form_index[plain] = lemma_id              # plain ASCII key (no if-test)
 
-# ---------- write compact JSON (no pretty indent) ----------
-json.dump(lemmas,      open(OUT_DIR / "lemmas.json", "w"), ensure_ascii=False)
-json.dump(form_index, open(OUT_DIR / "forms.json",  "w"))
-
-print(f"✅  wrote {len(lemmas):,} lemmas & {len(form_index):,} forms "
-      f"(includes macron-less index keys)")
-
-
+# write (no pretty-print → small)
+json.dump(lemmas,      open(OUT / "lemmas.json", "w"), ensure_ascii=False)
+json.dump(form_index, open(OUT / "forms.json",  "w"))
+print(f"✅  wrote {len(lemmas):,} lemmas & {len(form_index):,} forms")
