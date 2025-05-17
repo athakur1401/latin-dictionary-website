@@ -1,3 +1,8 @@
+function stripMacrons(str) {
+  // NFC→NFD, then drop every combining mark
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 /* -------------  Dictionary app ------------- */
 class DictionaryApp {
   constructor() {
@@ -42,14 +47,14 @@ class DictionaryApp {
   }
 
   /* constant-time look-up */
-  lookup(form) {
-    const id = this.formIndex.get(form.toLowerCase());
-    return id == null ? null : this.dictionary[id];
-  }
-  lookup(form) {
-  const id = this.formIndex.get(form.toLowerCase());
+lookup(form) {
+  const plain = stripMacrons(form.toLowerCase());
+
+  // try ASCII first, then original (macron) spelling
+  const id = this.formIndex.get(plain) ?? this.formIndex.get(form.toLowerCase());
   return id == null ? null : this.dictionary[id];
 }
+
 
 
   /* -------------- search -------------- */
