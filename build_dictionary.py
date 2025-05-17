@@ -20,8 +20,9 @@ def demacron(txt: str) -> str:
 
 lemmas, form_index, seen = [], {}, set()
 
-with open(RAW, encoding="latin-1") as f:
-    for line in f:
+with open(RAW, "rb") as f:                       # read raw bytes
+    for raw in f:
+        line = raw.decode("utf-8", errors="replace")  # utf-8 → “�” if bad
         if not line.strip():
             continue
         head, *rest = line.split(None, 1)       # lemma, then gloss
