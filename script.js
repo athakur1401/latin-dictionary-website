@@ -19,23 +19,34 @@ class DictionaryApp {
   }
 
   /* -------- load slim JSON -------- */
+/* -------- load slim JSON -------- */
 async init() {
   try {
     const lemmas = await (await fetch("assets/lemmas.json")).json();
     this.dictionary = lemmas;
 
-    // Build an index with just the plain lemma keys for now
+    // head-word index
     this.formIndex = new Map(
       lemmas.map((l, i) => [stripMacrons(l.lemma), i])
     );
 
     console.log(`Loaded ${lemmas.length} lemmas`);
+
+    /* ---------- RESTORE THE LISTENERS ---------- */
+    this.lookupButton.addEventListener("click", e => {
+      e.preventDefault();
+      this.performSearch();
+    });
+    this.inputField.addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        this.performSearch();
+      }
+    });
+
   } catch (err) {
     console.error("Dictionary load failed:", err);
-    return;
   }
-
-  /* … event listeners stay the same … */
 }
 
   /* constant-time look-up */
