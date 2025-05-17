@@ -46,6 +46,11 @@ class DictionaryApp {
     const id = this.formIndex.get(form.toLowerCase());
     return id == null ? null : this.dictionary[id];
   }
+  lookup(form) {
+  const id = this.formIndex.get(form.toLowerCase());
+  return id == null ? null : this.dictionary[id];
+}
+
 
   /* -------------- search -------------- */
   performSearch() {
