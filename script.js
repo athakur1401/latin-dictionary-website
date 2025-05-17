@@ -18,33 +18,25 @@ class DictionaryApp {
     this.init();                 // kick off async loader
   }
 
-  /* -----------  load slim JSON files ----------- */
-  async init() {
-    try {
-      const [lemmas, idxObj] = await Promise.all([
-        fetch("assets/lemmas.json").then(r => r.json()),
-        fetch("assets/forms.json").then(r => r.json())
-      ]);
-      this.dictionary = lemmas;
-      this.formIndex  = new Map(Object.entries(idxObj));
-      console.log(`Loaded ${lemmas.length} lemmas, ${this.formIndex.size} keys`);
-    } catch (err) {
-      console.error("Dictionary load failed:", err);
-      return;
-    }
+  /* -------- load slim JSON -------- */
+async init() {
+  try {
+    const lemmas = await (await fetch("assets/lemmas.json")).json();
+    this.dictionary = lemmas;
 
-    // event listeners
-    this.lookupButton.addEventListener("click", e => {
-      e.preventDefault();
-      this.performSearch();
-    });
-    this.inputField.addEventListener("keydown", e => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        this.performSearch();
-      }
-    });
+    // Build an index with just the plain lemma keys for now
+    this.formIndex = new Map(
+      lemmas.map((l, i) => [stripMacrons(l.lemma), i])
+    );
+
+    console.log(`Loaded ${lemmas.length} lemmas`);
+  } catch (err) {
+    console.error("Dictionary load failed:", err);
+    return;
   }
+
+  /* … event listeners stay the same … */
+}
 
   /* constant-time look-up */
 lookup(form) {
