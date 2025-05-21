@@ -20,7 +20,7 @@ class DictionaryApp {
     this.init();                 // kick off async loader
   }
 
-  /* -------- load slim JSON & build index -------- */
+  /* -------- load JSON & build index -------- */
   async init() {
     try {
       const lemmas = await (await fetch("assets/lemmas.json")).json();
@@ -33,13 +33,11 @@ class DictionaryApp {
 
       // 2) pre-index all 1st-conj verb & 1st-decl noun forms
       lemmas.forEach((entry, idx) => {
-        // 1st-conj verbs
         if (entry.pos === "verb" && entry.decl === 1 && entry.stems.present) {
           conjugateV1(entry.stems.present).forEach(form =>
             this.formIndex.set(stripMacrons(form), idx)
           );
         }
-        // 1st-decl nouns
         if (entry.pos === "noun" && entry.decl === 1 && entry.stems.stem) {
           declineN1(entry.stems.stem).forEach(form =>
             this.formIndex.set(stripMacrons(form), idx)
@@ -51,7 +49,7 @@ class DictionaryApp {
         `Loaded ${lemmas.length} lemmas, indexed ${this.formIndex.size} forms`
       );
 
-      // 3) lookup form listeners
+      // 3) form listeners
       this.lookupButton.addEventListener("click", e => {
         e.preventDefault();
         this.performSearch();
@@ -66,7 +64,6 @@ class DictionaryApp {
       // 4) tabs switcher
       document.querySelectorAll(".tab-button").forEach(btn => {
         btn.addEventListener("click", () => {
-          // deactivate all
           document
             .querySelectorAll(".tab-button")
             .forEach(b => b.classList.remove("active"));
@@ -74,7 +71,6 @@ class DictionaryApp {
             .querySelectorAll(".tab-panel")
             .forEach(p => p.classList.remove("active"));
 
-          // activate this one
           btn.classList.add("active");
           document.getElementById(btn.dataset.tab).classList.add("active");
         });
@@ -84,7 +80,7 @@ class DictionaryApp {
     }
   }
 
-  /* -------- constant-time look-up -------- */
+  /* -------- constant-time lookup -------- */
   lookup(form) {
     const plain = stripMacrons(form.toLowerCase());
     const id = this.formIndex.get(plain);
@@ -100,11 +96,14 @@ class DictionaryApp {
     if (found) {
       // show definition
       this.resultContainer.innerHTML = this.renderEntry(found);
+      // populate inflections
+      this.renderInflections(found);
       // switch to the Definition tab
       document.querySelector(".tab-button[data-tab=definition]").click();
     } else {
       this.resultContainer.innerHTML =
         "<p>Word not found in the dictionary.</p>";
+      document.getElementById("inflContainer").innerHTML = "";
     }
   }
 
@@ -114,12 +113,62 @@ class DictionaryApp {
       <h3>${entry.lemma}</h3>
       <p><strong>Part of Speech:</strong> ${entry.pos || "—"}</p>
       <p><strong>Definition:</strong> ${entry.definition}</p>
-      <p>(Detailed tables will return once we add the inflection engine.)</p>
     `;
+  }
+
+  /* ------------- render inflection tables ------------- */
+  renderInflections(entry) {
+    const cont = document.getElementById("inflContainer");
+    cont.innerHTML = "";  // clear old content
+
+    // 1st-conjugation verbs → Present Indicative
+    if (entry.pos === "verb" && entry.decl === 1 && entry.stems.present) {
+      const forms  = conjugateV1(entry.stems.present);
+      const persons = ["1 Sg","2 Sg","3 Sg","1 Pl","2 Pl","3 Pl"];
+      const header = persons.map(p => `<th>${p}</th>`).join("");
+      const row    = forms.map(f => `<td>${f}</td>`).join("");
+
+      cont.innerHTML = `
+        <h4>Present Indicative (1st Conjugation)</h4>
+        <table>
+          <thead><tr>${header}</tr></thead>
+          <tbody><tr>${row}</tr></tbody>
+        </table>
+      `;
+      return;
+    }
+
+    // 1st-declension nouns
+    if (entry.pos === "noun" && entry.decl === 1 && entry.stems.stem) {
+      const forms = declineN1(entry.stems.stem);
+      const cases = ["Nom","Gen","Dat","Acc","Abl","Voc"];
+      const sg    = forms.slice(0,6);
+      const pl    = forms.slice(6,12);
+
+      const rows = cases.map((c,i) => `
+        <tr>
+          <td>${c}</td>
+          <td>${sg[i]}</td>
+          <td>${pl[i]}</td>
+        </tr>
+      `).join("");
+
+      cont.innerHTML = `
+        <h4>First Declension Noun Forms</h4>
+        <table>
+          <thead><tr><th>Case</th><th>Singular</th><th>Plural</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      `;
+      return;
+    }
+
+    // fallback
+    cont.innerHTML = `<p>No inflections available for <strong>${entry.lemma}</strong>.</p>`;
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // expose for console testing
+  // expose for debugging
   window.app = new DictionaryApp();
 });
