@@ -1,0 +1,5478 @@
+[
+  {
+    "lemma": "abūtor",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to use fully, use up"
+  },
+  {
+    "lemma": "accedo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to approach, be added, be included"
+  },
+  {
+    "lemma": "adiungo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to join to, connect"
+  },
+  {
+    "lemma": "aestimo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "aestim",
+      "perfect": "aestimavi",
+      "supine": "aestimatum"
+    },
+    "definition": "to value"
+  },
+  {
+    "lemma": "aio",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to say, affirm, say yes"
+  },
+  {
+    "lemma": "alienus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "alienu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "strange, unrelated, another's"
+  },
+  {
+    "lemma": "ambo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "both"
+  },
+  {
+    "lemma": "amicio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "amici",
+      "perfect": "amixi",
+      "supine": "amictum"
+    },
+    "definition": "to cover"
+  },
+  {
+    "lemma": "amitto",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to send away, lose"
+  },
+  {
+    "lemma": "antrum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "antru"
+    },
+    "definition": "n. cave"
+  },
+  {
+    "lemma": "argentum",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "silver"
+  },
+  {
+    "lemma": "astrum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "astru"
+    },
+    "definition": "n.star, planet"
+  },
+  {
+    "lemma": "attineo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to hold near, keep; be connected with; (impersonal) it concerns"
+  },
+  {
+    "lemma": "audācia",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "courage, audacity, boldness"
+  },
+  {
+    "lemma": "audeo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "aude",
+      "perfect": "ausus",
+      "supine": "sum"
+    },
+    "definition": "to dare"
+  },
+  {
+    "lemma": "augeo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to increase"
+  },
+  {
+    "lemma": "ausculto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "auscult",
+      "perfect": "-avi",
+      "supine": "-atum"
+    },
+    "definition": "to listen, overhear, eavesdrop on"
+  },
+  {
+    "lemma": "basium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "basiu",
+      "perfect": "basii",
+      "supine": "n."
+    },
+    "definition": "kiss"
+  },
+  {
+    "lemma": "basium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "basiu"
+    },
+    "definition": "n. kiss"
+  },
+  {
+    "lemma": "beneficium",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "service, kindness"
+  },
+  {
+    "lemma": "blanditia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "blanditi",
+      "perfect": "blanditiae",
+      "supine": "f."
+    },
+    "definition": "flattery, compliment"
+  },
+  {
+    "lemma": "callidus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "callidu",
+      "perfect": "callida",
+      "supine": "callidum"
+    },
+    "definition": "clever"
+  },
+  {
+    "lemma": "carus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "caru",
+      "perfect": "cara",
+      "supine": "carum"
+    },
+    "definition": "dear, expensive"
+  },
+  {
+    "lemma": "censeo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to assess"
+  },
+  {
+    "lemma": "cesso",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to cease"
+  },
+  {
+    "lemma": "cingo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cing",
+      "perfect": "cinxi",
+      "supine": "cinctum"
+    },
+    "definition": "to surround, enclose"
+  },
+  {
+    "lemma": "committo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to join, entrust"
+  },
+  {
+    "lemma": "concedo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to withdraw, allow, concede"
+  },
+  {
+    "lemma": "concursus",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "crowd"
+  },
+  {
+    "lemma": "coniūrātiō",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "conspiracy"
+  },
+  {
+    "lemma": "cōnstringō",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "confine, hinder, constrict"
+  },
+  {
+    "lemma": "convocō",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to call together"
+  },
+  {
+    "lemma": "cruento",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cruent",
+      "perfect": "cruentavi",
+      "supine": "cruentatum"
+    },
+    "definition": "to stain with blood"
+  },
+  {
+    "lemma": "decet",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "adorn, become, grace; (impers.) it is fitting (to)"
+  },
+  {
+    "lemma": "desino",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to leave off, cease"
+  },
+  {
+    "lemma": "dico",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to devote"
+  },
+  {
+    "lemma": "dignus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "dignu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "worthy"
+  },
+  {
+    "lemma": "discindo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "discind",
+      "perfect": "-scidi",
+      "supine": "-scissus"
+    },
+    "definition": "to tear asunder"
+  },
+  {
+    "lemma": "diversus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "diversu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "different"
+  },
+  {
+    "lemma": "divitia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "diviti"
+    },
+    "definition": "f. riches, wealth"
+  },
+  {
+    "lemma": "doleo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "dole",
+      "perfect": "dolui",
+      "supine": "dolitum"
+    },
+    "definition": "to hurt, suffer"
+  },
+  {
+    "lemma": "dolus",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "artifice, device, trick"
+  },
+  {
+    "lemma": "dubium",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "doubt, hesitation"
+  },
+  {
+    "lemma": "effrēnātus",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "unrestrained"
+  },
+  {
+    "lemma": "egeo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to want, need"
+  },
+  {
+    "lemma": "egredior",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "egredio",
+      "perfect": "egressus",
+      "supine": "sum"
+    },
+    "definition": "go/march/come out; set sail; land, disembark; surpass, go beyond"
+  },
+  {
+    "lemma": "ēlūdō",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to mock"
+  },
+  {
+    "lemma": "excrucio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "excruci",
+      "perfect": "excruciavi",
+      "supine": "excruciatum"
+    },
+    "definition": "to torture"
+  },
+  {
+    "lemma": "experior",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to test, try, experience"
+  },
+  {
+    "lemma": "explico",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "explic",
+      "perfect": "explicavi",
+      "supine": "explicatus"
+    },
+    "definition": "to explain, set forth"
+  },
+  {
+    "lemma": "fama",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "rumor, fame"
+  },
+  {
+    "lemma": "faveo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "fave",
+      "perfect": "favi",
+      "supine": "fautum"
+    },
+    "definition": "to support, favor (+dative)"
+  },
+  {
+    "lemma": "ferus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "feru"
+    },
+    "definition": "wild animal"
+  },
+  {
+    "lemma": "festivus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "festivu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "agreeable, humorous"
+  },
+  {
+    "lemma": "fleo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "fle",
+      "perfect": "flevi",
+      "supine": "fletum"
+    },
+    "definition": "weep, cry, mourn"
+  },
+  {
+    "lemma": "fletus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "fletu",
+      "perfect": "fletus",
+      "supine": "m."
+    },
+    "definition": "lament, weeping, grief"
+  },
+  {
+    "lemma": "fulgeo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "fulge",
+      "perfect": "fulgēre",
+      "supine": "fulsi"
+    },
+    "definition": "to shine, sparkle, be bright"
+  },
+  {
+    "lemma": "germanus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "germanu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "having the same parents, true, real"
+  },
+  {
+    "lemma": "gratus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "gratu",
+      "perfect": "grata",
+      "supine": "gratum"
+    },
+    "definition": "pleasing, welcome, thankful"
+  },
+  {
+    "lemma": "gremium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "gremiu",
+      "perfect": "gremi",
+      "supine": "n."
+    },
+    "definition": "lap, hollow, womb"
+  },
+  {
+    "lemma": "haereo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to stick to, hang on to"
+  },
+  {
+    "lemma": "iactō",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to throw"
+  },
+  {
+    "lemma": "īgnōrō",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to not know; ignore"
+  },
+  {
+    "lemma": "indicium",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "information, evidence"
+  },
+  {
+    "lemma": "indignus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "indignu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "unworthy (of)"
+  },
+  {
+    "lemma": "iniustus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "iniustu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "unjust"
+  },
+  {
+    "lemma": "invideo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "invide",
+      "perfect": "invidi",
+      "supine": "invisum"
+    },
+    "definition": "to envy, be jealous"
+  },
+  {
+    "lemma": "invidus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "invidu",
+      "perfect": "invida",
+      "supine": "invidum"
+    },
+    "definition": "hateful, ill disposed, hostile, malevolent; envious, jealous, grudging"
+  },
+  {
+    "lemma": "irascor",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to grow angry"
+  },
+  {
+    "lemma": "iuvenis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "iuveni"
+    },
+    "definition": "young, youth, young person"
+  },
+  {
+    "lemma": "lacrima",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "lacrim",
+      "perfect": "lacrimae",
+      "supine": "f."
+    },
+    "definition": "tear, teardrop"
+  },
+  {
+    "lemma": "lateo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "late",
+      "perfect": "latere",
+      "supine": "latui"
+    },
+    "definition": "lie hidden, lurk; live a retired life, escape notice"
+  },
+  {
+    "lemma": "lepidus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "lepidu",
+      "perfect": "lepida",
+      "supine": "lepidum"
+    },
+    "definition": "charming, delightful"
+  },
+  {
+    "lemma": "lugeo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "luge",
+      "perfect": "luxi",
+      "supine": "luctum"
+    },
+    "definition": "to mourn, grieve"
+  },
+  {
+    "lemma": "maledico",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "maledic",
+      "perfect": "-xi",
+      "supine": "-ctum"
+    },
+    "definition": "to insult"
+  },
+  {
+    "lemma": "metus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "metu",
+      "perfect": "metus",
+      "supine": "m."
+    },
+    "definition": "fear, dread, anxiety"
+  },
+  {
+    "lemma": "metus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "metu"
+    },
+    "definition": "m. fear, dread"
+  },
+  {
+    "lemma": "mordeo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "morde",
+      "perfect": "momordi",
+      "supine": "morsum"
+    },
+    "definition": "to bite"
+  },
+  {
+    "lemma": "munio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "muni",
+      "perfect": "munivi",
+      "supine": "munitum"
+    },
+    "definition": "fortify"
+  },
+  {
+    "lemma": "noceo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "noce",
+      "perfect": "nocui",
+      "supine": "nocitum"
+    },
+    "definition": "to harm, injure"
+  },
+  {
+    "lemma": "nocturnus",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "nocturnal"
+  },
+  {
+    "lemma": "nuga",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "nug",
+      "perfect": "nugae",
+      "supine": "f."
+    },
+    "definition": "trifle, nonsense"
+  },
+  {
+    "lemma": "oblecto",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to please, amuse"
+  },
+  {
+    "lemma": "obsecro",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to beseech"
+  },
+  {
+    "lemma": "obsto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "obst",
+      "perfect": "obstare",
+      "supine": "obstiti"
+    },
+    "definition": "oppose, hinder (+dat.)"
+  },
+  {
+    "lemma": "obvio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "obvi"
+    },
+    "definition": "to meet, resist"
+  },
+  {
+    "lemma": "oleo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ole",
+      "perfect": "olēre",
+      "supine": "olui"
+    },
+    "definition": "to smell like"
+  },
+  {
+    "lemma": "olfacio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "olfaci",
+      "perfect": "olfeci",
+      "supine": "olfactum"
+    },
+    "definition": "to smell"
+  },
+  {
+    "lemma": "opportunus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "opportunu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "suitable, convenient"
+  },
+  {
+    "lemma": "opto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "opt",
+      "perfect": "optavi",
+      "supine": "optatum"
+    },
+    "definition": "choose, select; wish, wish for, desire"
+  },
+  {
+    "lemma": "osculum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "osculu"
+    },
+    "definition": "n. kiss"
+  },
+  {
+    "lemma": "ostendo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to show"
+  },
+  {
+    "lemma": "pactum",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "agreement, compact"
+  },
+  {
+    "lemma": "Palātium",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "Palatine hill"
+  },
+  {
+    "lemma": "parco",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to spare (+ dat.)"
+  },
+  {
+    "lemma": "pateō",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "To be open, exposed"
+  },
+  {
+    "lemma": "patientia",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "f . endurance patience"
+  },
+  {
+    "lemma": "peccatum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "peccatu",
+      "perfect": "-i",
+      "supine": "n."
+    },
+    "definition": "fault"
+  },
+  {
+    "lemma": "pendo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to weigh; have a weight of (a particular amount)"
+  },
+  {
+    "lemma": "perdo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "perd",
+      "perfect": "perdidi",
+      "supine": "perditum"
+    },
+    "definition": "to lose, destroy"
+  },
+  {
+    "lemma": "plenus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "plenu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "full of (+genitive)"
+  },
+  {
+    "lemma": "pomum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "pomu",
+      "perfect": "pomi",
+      "supine": "n."
+    },
+    "definition": "fruit"
+  },
+  {
+    "lemma": "postremus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "postremu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "last, latest"
+  },
+  {
+    "lemma": "poto",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to drink"
+  },
+  {
+    "lemma": "praebeo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "praebe",
+      "perfect": "praebui",
+      "supine": "praebitum"
+    },
+    "definition": "to present, offer, make available"
+  },
+  {
+    "lemma": "praefero",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "praefer",
+      "perfect": "praetuli",
+      "supine": "praelatus"
+    },
+    "definition": "carry in front; prefer; display; offer; give preference to"
+  },
+  {
+    "lemma": "praesidium",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "protection guard"
+  },
+  {
+    "lemma": "probus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "probu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "good"
+  },
+  {
+    "lemma": "produco",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to bring forward"
+  },
+  {
+    "lemma": "purgo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to clean"
+  },
+  {
+    "lemma": "quaero",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "quaer",
+      "perfect": "quaesivi",
+      "supine": "quaesitum"
+    },
+    "definition": "to search for, ask, demand"
+  },
+  {
+    "lemma": "quidquid",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "whatever, anything that..."
+  },
+  {
+    "lemma": "quisquis",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "whoever, anyone who..."
+  },
+  {
+    "lemma": "quivis",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "who or what you please"
+  },
+  {
+    "lemma": "ramus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ramu"
+    },
+    "definition": "m. branch"
+  },
+  {
+    "lemma": "rectus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "rectu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "straight, direct"
+  },
+  {
+    "lemma": "reddo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to return"
+  },
+  {
+    "lemma": "remotus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "remotu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "removed, distant, remote"
+  },
+  {
+    "lemma": "reprehendo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to seize"
+  },
+  {
+    "lemma": "reprimo",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to restrain"
+  },
+  {
+    "lemma": "revello",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "revell",
+      "perfect": "revelli",
+      "supine": "revulsum"
+    },
+    "definition": "to remove, tear away"
+  },
+  {
+    "lemma": "rima",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "rim",
+      "perfect": "rimae",
+      "supine": "f."
+    },
+    "definition": "crack"
+  },
+  {
+    "lemma": "rumpo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "rump",
+      "perfect": "rupi",
+      "supine": "ruptum"
+    },
+    "definition": "break, burst"
+  },
+  {
+    "lemma": "saeculum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "saeculu"
+    },
+    "definition": "n. age, generation, century"
+  },
+  {
+    "lemma": "saevus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "saevu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "savage, cruel"
+  },
+  {
+    "lemma": "sanus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "sanu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "sound"
+  },
+  {
+    "lemma": "scientia",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "Knowledge"
+  },
+  {
+    "lemma": "sedulus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "sedulu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "careful, cautious, purposeful"
+  },
+  {
+    "lemma": "semel",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "once, one time"
+  },
+  {
+    "lemma": "sentiō",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "Feel, perceive, sense"
+  },
+  {
+    "lemma": "sinus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "sinu"
+    },
+    "definition": "m. curved surface: lap, bay, pocket"
+  },
+  {
+    "lemma": "soleo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "sole",
+      "perfect": "solitus",
+      "supine": "sum"
+    },
+    "definition": "to be accustomed, to be used to (doing something)"
+  },
+  {
+    "lemma": "suavis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "suavi"
+    },
+    "definition": "smooth, pleasant"
+  },
+  {
+    "lemma": "superior",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "superio"
+    },
+    "definition": "Above, earlier, before, prior"
+  },
+  {
+    "lemma": "taeda",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "taed"
+    },
+    "definition": "torch"
+  },
+  {
+    "lemma": "telum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "telu"
+    },
+    "definition": "n. weapon"
+  },
+  {
+    "lemma": "tenebra",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tenebr",
+      "perfect": "tenebrae",
+      "supine": "f."
+    },
+    "definition": "darkness, shadow"
+  },
+  {
+    "lemma": "timidus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "timidu",
+      "perfect": "timida",
+      "supine": "-um"
+    },
+    "definition": "fearful"
+  },
+  {
+    "lemma": "tinguo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tingu",
+      "perfect": "tinxi",
+      "supine": "tinctum"
+    },
+    "definition": "wet, soak, dye"
+  },
+  {
+    "lemma": "tumulus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tumulu",
+      "perfect": "-i",
+      "supine": "m."
+    },
+    "definition": "mound, tomb"
+  },
+  {
+    "lemma": "unus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "unu",
+      "perfect": "una",
+      "supine": "unum"
+    },
+    "definition": "one, together"
+  },
+  {
+    "lemma": "vacuus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vacuu",
+      "perfect": "vacua",
+      "supine": "vacuum"
+    },
+    "definition": "empty"
+  },
+  {
+    "lemma": "vapulo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vapul"
+    },
+    "definition": "to get beaten up, get clobbered"
+  },
+  {
+    "lemma": "vestigium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vestigiu",
+      "perfect": "vestigii",
+      "supine": "n."
+    },
+    "definition": "track, footprint, trace"
+  },
+  {
+    "lemma": "videor",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "video",
+      "perfect": "visum",
+      "supine": "sum"
+    },
+    "definition": "to seem, appear"
+  },
+  {
+    "lemma": "vigilia",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "vigilance"
+  },
+  {
+    "lemma": "visito",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "visit",
+      "perfect": "visitavi",
+      "supine": "visitatum"
+    },
+    "definition": "to visit, see often"
+  },
+  {
+    "lemma": "vitium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vitiu"
+    },
+    "definition": "n. fault, vice, crime, sin; defect"
+  },
+  {
+    "lemma": "vivo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "viv",
+      "perfect": "vixi",
+      "supine": "victum"
+    },
+    "definition": "to live, be alive"
+  },
+  {
+    "lemma": "obliviscor",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to forget"
+  },
+  {
+    "lemma": "fruor",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "fruo",
+      "perfect": "fructus",
+      "supine": "sum"
+    },
+    "definition": "to enjoy, profit from"
+  },
+  {
+    "lemma": "vereor",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vereo",
+      "perfect": "veritus",
+      "supine": "sum"
+    },
+    "definition": "dread, respect, fear"
+  },
+  {
+    "lemma": "cerno",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cern",
+      "perfect": "crevi",
+      "supine": "cretus"
+    },
+    "definition": "to discern, distinguish, sift, sort"
+  },
+  {
+    "lemma": "memini",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "memin"
+    },
+    "definition": "to remember (always past)"
+  },
+  {
+    "lemma": "superus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "superu",
+      "perfect": "supera",
+      "supine": "superum"
+    },
+    "definition": "above, higher, greater"
+  },
+  {
+    "lemma": "inferus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "inferu",
+      "perfect": "infera",
+      "supine": "inferum"
+    },
+    "definition": "below, lower"
+  },
+  {
+    "lemma": "rusticus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "rusticu",
+      "perfect": "rustica",
+      "supine": "rusticum"
+    },
+    "definition": "rural, country; a peasant"
+  },
+  {
+    "lemma": "totiens",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "as many times, as often"
+  },
+  {
+    "lemma": "caecus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "caecu",
+      "perfect": "caeca",
+      "supine": "caecum"
+    },
+    "definition": "blind"
+  },
+  {
+    "lemma": "tantus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tantu",
+      "perfect": "tanta",
+      "supine": "tantum"
+    },
+    "definition": "so great, so much"
+  },
+  {
+    "lemma": "posterus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "posteru"
+    },
+    "definition": "m. descendents, posterity"
+  },
+  {
+    "lemma": "aeternus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "aeternu",
+      "perfect": "aeterna",
+      "supine": "aeternum"
+    },
+    "definition": "eternal, perpetual"
+  },
+  {
+    "lemma": "verto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vert",
+      "perfect": "versi",
+      "supine": "versum"
+    },
+    "definition": "to turn, change, alter, overthrow (verso = frequentative, to keep turning)"
+  },
+  {
+    "lemma": "forma",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "form"
+    },
+    "definition": "f. form, shape, beauty, appearance"
+  },
+  {
+    "lemma": "talis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tali",
+      "perfect": "talis",
+      "supine": "tale"
+    },
+    "definition": "such, such quality"
+  },
+  {
+    "lemma": "inquam",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "say, speak"
+  },
+  {
+    "lemma": "-ve",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "or"
+  },
+  {
+    "lemma": "iaceo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "iace",
+      "perfect": "iacui",
+      "supine": "iacitus"
+    },
+    "definition": "to lie down, sleep"
+  },
+  {
+    "lemma": "pius",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "piu",
+      "perfect": "pia",
+      "supine": "pium"
+    },
+    "definition": "pious, religious, having pietas"
+  },
+  {
+    "lemma": "reperio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "reperi",
+      "perfect": "repperi",
+      "supine": "repertus"
+    },
+    "definition": "to discover, learn, find out"
+  },
+  {
+    "lemma": "aedificium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "aedificiu"
+    },
+    "definition": "n. building"
+  },
+  {
+    "lemma": "aedifico",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "aedific",
+      "perfect": "aedificavi",
+      "supine": "aedificatum"
+    },
+    "definition": "to build, construct"
+  },
+  {
+    "lemma": "ago",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ag",
+      "perfect": "egi",
+      "supine": "actum"
+    },
+    "definition": "to do, act, drive"
+  },
+  {
+    "lemma": "agricola",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "agricol"
+    },
+    "definition": "m. farmer"
+  },
+  {
+    "lemma": "albus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "albu",
+      "perfect": "alba",
+      "supine": "album"
+    },
+    "definition": "white, blank"
+  },
+  {
+    "lemma": "aliquis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "aliqui",
+      "perfect": "aliquis",
+      "supine": "aliquid"
+    },
+    "definition": "something, someone, anything, anyone"
+  },
+  {
+    "lemma": "altus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "altu",
+      "perfect": "alta",
+      "supine": "altum"
+    },
+    "definition": "high, deep, tall"
+  },
+  {
+    "lemma": "amicus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "amicu",
+      "perfect": "amica",
+      "supine": "amicum"
+    },
+    "definition": "friendly"
+  },
+  {
+    "lemma": "amo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "am",
+      "perfect": "amavi",
+      "supine": "amatum"
+    },
+    "definition": "to love"
+  },
+  {
+    "lemma": "amphitheatrum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "amphitheatru"
+    },
+    "definition": "n. amphitheater"
+  },
+  {
+    "lemma": "amphora",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "amphor"
+    },
+    "definition": "f. jar"
+  },
+  {
+    "lemma": "animus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "animu"
+    },
+    "definition": "m. spirit, soul, mind, courage, breath"
+  },
+  {
+    "lemma": "annus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "annu"
+    },
+    "definition": "m. year"
+  },
+  {
+    "lemma": "antiquus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "antiquu",
+      "perfect": "antiqua",
+      "supine": "antiquum"
+    },
+    "definition": "ancient, very old"
+  },
+  {
+    "lemma": "aperio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "aperi",
+      "perfect": "aperui",
+      "supine": "apertum"
+    },
+    "definition": "to open"
+  },
+  {
+    "lemma": "aqua",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "aqu"
+    },
+    "definition": "f. water"
+  },
+  {
+    "lemma": "ara",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ar"
+    },
+    "definition": "f. altar"
+  },
+  {
+    "lemma": "atrium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "atriu"
+    },
+    "definition": "n. receiving room, hall"
+  },
+  {
+    "lemma": "audio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "audi",
+      "perfect": "audivi",
+      "supine": "auditum"
+    },
+    "definition": "to hear, listen to"
+  },
+  {
+    "lemma": "auriga",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "aurig"
+    },
+    "definition": "f. charioteer"
+  },
+  {
+    "lemma": "ava",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "av"
+    },
+    "definition": "f. grandmother"
+  },
+  {
+    "lemma": "avus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "avu"
+    },
+    "definition": "m. grandfather"
+  },
+  {
+    "lemma": "bonus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "bonu",
+      "perfect": "bona",
+      "supine": "bonum"
+    },
+    "definition": "good, kind"
+  },
+  {
+    "lemma": "brachium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "brachiu"
+    },
+    "definition": "n. arm"
+  },
+  {
+    "lemma": "caelum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "caelu"
+    },
+    "definition": "n. sky, heaven"
+  },
+  {
+    "lemma": "caeruleus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "caeruleu",
+      "perfect": "caerulea",
+      "supine": "caeruleum"
+    },
+    "definition": "blue"
+  },
+  {
+    "lemma": "cano",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "can",
+      "perfect": "cecini",
+      "supine": "cantum"
+    },
+    "definition": "to sing, recite, play"
+  },
+  {
+    "lemma": "carrus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "carru"
+    },
+    "definition": "m. cart"
+  },
+  {
+    "lemma": "casa",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cas"
+    },
+    "definition": "f. house, cottage, hut"
+  },
+  {
+    "lemma": "caseus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "caseu"
+    },
+    "definition": "m. cheese"
+  },
+  {
+    "lemma": "cena",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cen"
+    },
+    "definition": "f. dinner, meal"
+  },
+  {
+    "lemma": "ceno",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cen",
+      "perfect": "cenavi",
+      "supine": "cenatum"
+    },
+    "definition": "to dine"
+  },
+  {
+    "lemma": "cibus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cibu"
+    },
+    "definition": "m. food"
+  },
+  {
+    "lemma": "circus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "circu"
+    },
+    "definition": "m. racetrack, circle"
+  },
+  {
+    "lemma": "clamo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "clam",
+      "perfect": "clamavi",
+      "supine": "clamatum"
+    },
+    "definition": "to shout, yell"
+  },
+  {
+    "lemma": "claudo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "claud",
+      "perfect": "clausi",
+      "supine": "clausum"
+    },
+    "definition": "to close, shut, finish"
+  },
+  {
+    "lemma": "collum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "collu"
+    },
+    "definition": "n. neck"
+  },
+  {
+    "lemma": "consilium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "consiliu"
+    },
+    "definition": "n. plan, advice (+ capere = make a plan)"
+  },
+  {
+    "lemma": "consisto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "consist",
+      "perfect": "constiti",
+      "supine": "constitum"
+    },
+    "definition": "halt, stop"
+  },
+  {
+    "lemma": "consultus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "consultu"
+    },
+    "definition": "m. lawyer, expert"
+  },
+  {
+    "lemma": "coquo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "coqu",
+      "perfect": "coxi",
+      "supine": "coctus"
+    },
+    "definition": "to cook"
+  },
+  {
+    "lemma": "culina",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "culin"
+    },
+    "definition": "f. kitchen"
+  },
+  {
+    "lemma": "cultellus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cultellu"
+    },
+    "definition": "m. knife"
+  },
+  {
+    "lemma": "curro",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "curr",
+      "perfect": "cucurri",
+      "supine": "cursum"
+    },
+    "definition": "I run, to run, I ran, having been run"
+  },
+  {
+    "lemma": "currus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "curru"
+    },
+    "definition": "m. chariot"
+  },
+  {
+    "lemma": "dea",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "de"
+    },
+    "definition": "f. goddess (dat./abl. plural deabus)"
+  },
+  {
+    "lemma": "debeo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "debe",
+      "perfect": "debui",
+      "supine": "debitum"
+    },
+    "definition": "ought, must, should; to owe"
+  },
+  {
+    "lemma": "delicia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "delici"
+    },
+    "definition": "f. pet"
+  },
+  {
+    "lemma": "demonstro",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "demonstr",
+      "perfect": "demonstravi",
+      "supine": "demonstratum"
+    },
+    "definition": "to show, point out"
+  },
+  {
+    "lemma": "deus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "deu"
+    },
+    "definition": "m. god"
+  },
+  {
+    "lemma": "dico",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "dic",
+      "perfect": "dixi",
+      "supine": "dictum"
+    },
+    "definition": "to say, speak (imperative dic)"
+  },
+  {
+    "lemma": "dies",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "die"
+    },
+    "definition": "m. day"
+  },
+  {
+    "lemma": "digitus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "digitu"
+    },
+    "definition": "m. finger, toe, digit"
+  },
+  {
+    "lemma": "disco",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "disc",
+      "perfect": "discere",
+      "supine": "didici"
+    },
+    "definition": "to learn, study"
+  },
+  {
+    "lemma": "do",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "d",
+      "perfect": "dedi",
+      "supine": "datum"
+    },
+    "definition": "to give"
+  },
+  {
+    "lemma": "domus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "domu"
+    },
+    "definition": "f. home"
+  },
+  {
+    "lemma": "donum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "donu"
+    },
+    "definition": "n. gift"
+  },
+  {
+    "lemma": "duco",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "duc",
+      "perfect": "duxi",
+      "supine": "ductum"
+    },
+    "definition": "to lead (imperative duc)"
+  },
+  {
+    "lemma": "duo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "du",
+      "perfect": "duae",
+      "supine": "duo"
+    },
+    "definition": "two"
+  },
+  {
+    "lemma": "edo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ed",
+      "perfect": "edi",
+      "supine": "esum"
+    },
+    "definition": "to eat"
+  },
+  {
+    "lemma": "equus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "equu"
+    },
+    "definition": "m. horse"
+  },
+  {
+    "lemma": "exspecto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "exspect",
+      "perfect": "exspectavi",
+      "supine": "exspectatum"
+    },
+    "definition": "to wait for, to await, to expect"
+  },
+  {
+    "lemma": "facio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "faci",
+      "perfect": "feci",
+      "supine": "factum"
+    },
+    "definition": "to do, to make (imperative fac)"
+  },
+  {
+    "lemma": "flavius",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "flaviu",
+      "perfect": "flavia",
+      "supine": "flavium"
+    },
+    "definition": "yellow, blonde"
+  },
+  {
+    "lemma": "fortis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "forti",
+      "perfect": "fortis",
+      "supine": "forte"
+    },
+    "definition": "brave, strong"
+  },
+  {
+    "lemma": "fugio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "fugi",
+      "perfect": "fugere",
+      "supine": "fugi"
+    },
+    "definition": "to run away, escape, flee"
+  },
+  {
+    "lemma": "fuscus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "fuscu",
+      "perfect": "fusca",
+      "supine": "fuscum"
+    },
+    "definition": "brown"
+  },
+  {
+    "lemma": "gero",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ger",
+      "perfect": "gessi",
+      "supine": "gestum"
+    },
+    "definition": "to bear, carry on, wear, wage, conduct"
+  },
+  {
+    "lemma": "gladius",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "gladiu"
+    },
+    "definition": "m. sword"
+  },
+  {
+    "lemma": "gravis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "gravi",
+      "perfect": "gravis",
+      "supine": "grave"
+    },
+    "definition": "heavy, important, serious"
+  },
+  {
+    "lemma": "griseus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "griseu",
+      "perfect": "grisea",
+      "supine": "griseum"
+    },
+    "definition": "gray"
+  },
+  {
+    "lemma": "gusto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "gust",
+      "perfect": "gustavi",
+      "supine": "gustatum"
+    },
+    "definition": "to taste"
+  },
+  {
+    "lemma": "habeo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "habe",
+      "perfect": "habui",
+      "supine": "habitum"
+    },
+    "definition": "I have, to have, I had, having been had"
+  },
+  {
+    "lemma": "habito",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "habit",
+      "perfect": "habitavi",
+      "supine": "habitatum"
+    },
+    "definition": "to live (in a place)"
+  },
+  {
+    "lemma": "harena",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "haren"
+    },
+    "definition": "f. sand, arena"
+  },
+  {
+    "lemma": "hora",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "hor"
+    },
+    "definition": "f. hour, time"
+  },
+  {
+    "lemma": "hortus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "hortu"
+    },
+    "definition": "m. garden"
+  },
+  {
+    "lemma": "humerus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "humeru"
+    },
+    "definition": "m. shoulder"
+  },
+  {
+    "lemma": "iacio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "iaci",
+      "perfect": "ieci",
+      "supine": "iactum"
+    },
+    "definition": "to throw"
+  },
+  {
+    "lemma": "ianua",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ianu"
+    },
+    "definition": "f. door"
+  },
+  {
+    "lemma": "ientaculum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ientaculu"
+    },
+    "definition": "n. breakfast"
+  },
+  {
+    "lemma": "incipio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "incipi",
+      "perfect": "incepi",
+      "supine": "inceptum"
+    },
+    "definition": "to begin"
+  },
+  {
+    "lemma": "incola",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "incol"
+    },
+    "definition": "m. settler, inhabitant, resident"
+  },
+  {
+    "lemma": "infernus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "infernu",
+      "perfect": "inferna",
+      "supine": "infernum"
+    },
+    "definition": "lower, lowest m. underworld"
+  },
+  {
+    "lemma": "insula",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "insul"
+    },
+    "definition": "f. island, apartment building"
+  },
+  {
+    "lemma": "interficio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "interfici",
+      "perfect": "interfeci",
+      "supine": "interfectum"
+    },
+    "definition": "to kill"
+  },
+  {
+    "lemma": "invenio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "inveni",
+      "perfect": "inveni",
+      "supine": "inventum"
+    },
+    "definition": "to find, discover"
+  },
+  {
+    "lemma": "is",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "i",
+      "perfect": "ea",
+      "supine": "id"
+    },
+    "definition": "this, that"
+  },
+  {
+    "lemma": "iuvo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "iuv",
+      "perfect": "iuvi",
+      "supine": "iutum"
+    },
+    "definition": "to help, aid, assist"
+  },
+  {
+    "lemma": "laboro",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "labor",
+      "perfect": "laboravi",
+      "supine": "laboratum"
+    },
+    "definition": "to work, suffer, toil"
+  },
+  {
+    "lemma": "lacus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "lacu"
+    },
+    "definition": "m. lake"
+  },
+  {
+    "lemma": "laetus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "laetu",
+      "perfect": "laeta",
+      "supine": "laetum"
+    },
+    "definition": "happy"
+  },
+  {
+    "lemma": "lego",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "leg",
+      "perfect": "legi",
+      "supine": "lectum"
+    },
+    "definition": "to read, choose,gather, pick"
+  },
+  {
+    "lemma": "lentus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "lentu",
+      "perfect": "lenta",
+      "supine": "lentum"
+    },
+    "definition": "slow, sluggish"
+  },
+  {
+    "lemma": "liberi",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "liber"
+    },
+    "definition": "m. pl. children"
+  },
+  {
+    "lemma": "libertus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "libertu"
+    },
+    "definition": "m. freed man (formerly enslaved)"
+  },
+  {
+    "lemma": "longus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "longu",
+      "perfect": "longa",
+      "supine": "longum"
+    },
+    "definition": "long, far"
+  },
+  {
+    "lemma": "ludo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "lud",
+      "perfect": "lusi",
+      "supine": "lusum"
+    },
+    "definition": "to play, tease"
+  },
+  {
+    "lemma": "luna",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "lun"
+    },
+    "definition": "f. moon"
+  },
+  {
+    "lemma": "luteus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "luteu",
+      "perfect": "lutea",
+      "supine": "luteum"
+    },
+    "definition": "orange"
+  },
+  {
+    "lemma": "magnus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "magnu",
+      "perfect": "magna",
+      "supine": "magnum"
+    },
+    "definition": "big, large, great, important"
+  },
+  {
+    "lemma": "malo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "mal",
+      "perfect": "malle",
+      "supine": "malui"
+    },
+    "definition": "to prefer, want more"
+  },
+  {
+    "lemma": "malus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "malu",
+      "perfect": "mala",
+      "supine": "malum"
+    },
+    "definition": "bad, evil"
+  },
+  {
+    "lemma": "maneo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "mane",
+      "perfect": "mansi",
+      "supine": "mansum"
+    },
+    "definition": "to stay, remain"
+  },
+  {
+    "lemma": "manus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "manu"
+    },
+    "definition": "f. hand"
+  },
+  {
+    "lemma": "mappa",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "mapp"
+    },
+    "definition": "f. napkin"
+  },
+  {
+    "lemma": "maritus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "maritu"
+    },
+    "definition": "m. husband"
+  },
+  {
+    "lemma": "medica",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "medic"
+    },
+    "definition": "f. doctor, nurse"
+  },
+  {
+    "lemma": "medicus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "medicu"
+    },
+    "definition": "m. doctor, nurse"
+  },
+  {
+    "lemma": "membrum",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "part (of the body), organ, limb"
+  },
+  {
+    "lemma": "meridies",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "meridie"
+    },
+    "definition": "South, midday"
+  },
+  {
+    "lemma": "Mihi",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "My name is"
+  },
+  {
+    "lemma": "mitto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "mitt",
+      "perfect": "misi",
+      "supine": "missum"
+    },
+    "definition": "to send, let go"
+  },
+  {
+    "lemma": "moneo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "mone",
+      "perfect": "monui",
+      "supine": "monitum"
+    },
+    "definition": "to remind, warn, advise"
+  },
+  {
+    "lemma": "monstrum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "monstru"
+    },
+    "definition": "n. monster"
+  },
+  {
+    "lemma": "moveo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "move",
+      "perfect": "movi",
+      "supine": "motum"
+    },
+    "definition": "to move, affect"
+  },
+  {
+    "lemma": "multus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "multu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "much, many"
+  },
+  {
+    "lemma": "murus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "muru"
+    },
+    "definition": "m. wall"
+  },
+  {
+    "lemma": "narro",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "narr",
+      "perfect": "narravi",
+      "supine": "narratum"
+    },
+    "definition": "to tell"
+  },
+  {
+    "lemma": "nasus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "nasu"
+    },
+    "definition": "m. nose"
+  },
+  {
+    "lemma": "nauta",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "naut"
+    },
+    "definition": "m. sailor"
+  },
+  {
+    "lemma": "neco",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "nec",
+      "perfect": "necavi",
+      "supine": "necatum"
+    },
+    "definition": "to kill"
+  },
+  {
+    "lemma": "nolo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "nol",
+      "perfect": "nolle",
+      "supine": "nolui"
+    },
+    "definition": "to not want, refuse, be unwilling"
+  },
+  {
+    "lemma": "novus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "novu",
+      "perfect": "nova",
+      "supine": "novum"
+    },
+    "definition": "new, fresh, recent"
+  },
+  {
+    "lemma": "oculus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "oculu"
+    },
+    "definition": "m. eye"
+  },
+  {
+    "lemma": "oppugno",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "oppugn",
+      "perfect": "oppugnavi",
+      "supine": "oppugnatum"
+    },
+    "definition": "to attack"
+  },
+  {
+    "lemma": "paro",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "par",
+      "perfect": "paravi",
+      "supine": "paratum"
+    },
+    "definition": "to prepare, to get ready"
+  },
+  {
+    "lemma": "parvus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "parvu",
+      "perfect": "parva",
+      "supine": "parvum"
+    },
+    "definition": "small, unimportant"
+  },
+  {
+    "lemma": "patria",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "patri"
+    },
+    "definition": "fatherland, country"
+  },
+  {
+    "lemma": "pauci",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "pauc",
+      "perfect": "paucae",
+      "supine": "pauca"
+    },
+    "definition": "few"
+  },
+  {
+    "lemma": "pecunia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "pecuni"
+    },
+    "definition": "f. money"
+  },
+  {
+    "lemma": "pello",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "pell",
+      "perfect": "pepuli",
+      "supine": "pulsum"
+    },
+    "definition": "to hit, beat, push"
+  },
+  {
+    "lemma": "periculum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "periculu"
+    },
+    "definition": "n. danger, risk"
+  },
+  {
+    "lemma": "peto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "pet",
+      "perfect": "petivi",
+      "supine": "petitum"
+    },
+    "definition": "to seek, aim at, beg, attack"
+  },
+  {
+    "lemma": "poculum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "poculu"
+    },
+    "definition": "n. cup, bowl"
+  },
+  {
+    "lemma": "poeta",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "poet"
+    },
+    "definition": "m. poet"
+  },
+  {
+    "lemma": "pompa",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "pomp"
+    },
+    "definition": "f. parade"
+  },
+  {
+    "lemma": "pomum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "pomu",
+      "perfect": "pomi",
+      "supine": "n."
+    },
+    "definition": "fruit"
+  },
+  {
+    "lemma": "pono",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "pon",
+      "perfect": "posui",
+      "supine": "positum"
+    },
+    "definition": "to put, place"
+  },
+  {
+    "lemma": "porcus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "porcu"
+    },
+    "definition": "m. pig"
+  },
+  {
+    "lemma": "porta",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "port"
+    },
+    "definition": "f. gate, gateway"
+  },
+  {
+    "lemma": "possum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "possu",
+      "perfect": "posse",
+      "supine": "potui"
+    },
+    "definition": "to be able"
+  },
+  {
+    "lemma": "prandium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "prandiu"
+    },
+    "definition": "n. lunch"
+  },
+  {
+    "lemma": "provincia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "provinci"
+    },
+    "definition": "f. province"
+  },
+  {
+    "lemma": "proximus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "proximu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "nearest, next"
+  },
+  {
+    "lemma": "puella",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "puell"
+    },
+    "definition": "f. girl"
+  },
+  {
+    "lemma": "pugna",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "pugn"
+    },
+    "definition": "f. fight"
+  },
+  {
+    "lemma": "pugno",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "pugn",
+      "perfect": "pugnavi",
+      "supine": "pugnatum"
+    },
+    "definition": "to fight"
+  },
+  {
+    "lemma": "purpureus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "purpureu",
+      "perfect": "purpurea",
+      "supine": "purpureum"
+    },
+    "definition": "purple"
+  },
+  {
+    "lemma": "-que",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "and"
+  },
+  {
+    "lemma": "Quid",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "What is your name?"
+  },
+  {
+    "lemma": "regina",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "regin"
+    },
+    "definition": "f. queen"
+  },
+  {
+    "lemma": "regnum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "regnu"
+    },
+    "definition": "n. kingdom, royal power"
+  },
+  {
+    "lemma": "rogo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "rog",
+      "perfect": "rogavi",
+      "supine": "rogatum"
+    },
+    "definition": "to ask"
+  },
+  {
+    "lemma": "roseus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "roseu",
+      "perfect": "rosea",
+      "supine": "roseum"
+    },
+    "definition": "pink, rosy"
+  },
+  {
+    "lemma": "salio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "sali",
+      "perfect": "salui",
+      "supine": "salsum"
+    },
+    "definition": "I jump, to jump, I jumped, having been jumped"
+  },
+  {
+    "lemma": "salvus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "salvu",
+      "perfect": "salva",
+      "supine": "salvum"
+    },
+    "definition": "safe, well"
+  },
+  {
+    "lemma": "scala",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "scal"
+    },
+    "definition": "f. staircase, ladder"
+  },
+  {
+    "lemma": "seco",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "sec",
+      "perfect": "secavi",
+      "supine": "secatum"
+    },
+    "definition": "to cut"
+  },
+  {
+    "lemma": "septentrionalis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "septentrionali",
+      "perfect": "is",
+      "supine": "e"
+    },
+    "definition": "North"
+  },
+  {
+    "lemma": "serva",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "serv"
+    },
+    "definition": "f. enslaved woman"
+  },
+  {
+    "lemma": "servo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "serv",
+      "perfect": "servavi",
+      "supine": "servatum"
+    },
+    "definition": "to preserve, save, keep, guard"
+  },
+  {
+    "lemma": "servus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "servu"
+    },
+    "definition": "m. enslaved man"
+  },
+  {
+    "lemma": "silva",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "silv"
+    },
+    "definition": "f. forest"
+  },
+  {
+    "lemma": "solus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "solu",
+      "perfect": "sola",
+      "supine": "solum"
+    },
+    "definition": "alone, only"
+  },
+  {
+    "lemma": "specto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "spect",
+      "perfect": "spectavi",
+      "supine": "spectatum"
+    },
+    "definition": "look at, face"
+  },
+  {
+    "lemma": "sto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "st",
+      "perfect": "steti",
+      "supine": "statum"
+    },
+    "definition": "I stand, to stand, I stood, having been stood"
+  },
+  {
+    "lemma": "taberna",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tabern"
+    },
+    "definition": "f. shop"
+  },
+  {
+    "lemma": "tablinum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tablinu"
+    },
+    "definition": "n. office"
+  },
+  {
+    "lemma": "tabulatum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tabulatu"
+    },
+    "definition": "floor, story"
+  },
+  {
+    "lemma": "tango",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tang",
+      "perfect": "tetigi",
+      "supine": "tactum"
+    },
+    "definition": "to touch"
+  },
+  {
+    "lemma": "taurus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tauru"
+    },
+    "definition": "m. bull"
+  },
+  {
+    "lemma": "tectum",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "n. roof, house"
+  },
+  {
+    "lemma": "templum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "templu"
+    },
+    "definition": "n. temple"
+  },
+  {
+    "lemma": "tempto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tempt",
+      "perfect": "temptavi",
+      "supine": "temptatum"
+    },
+    "definition": "to try"
+  },
+  {
+    "lemma": "tendo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tend",
+      "perfect": "tetendi",
+      "supine": "tentum"
+    },
+    "definition": "to stretch, extend, head in a direction"
+  },
+  {
+    "lemma": "tergum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tergu"
+    },
+    "definition": "n. back, rear"
+  },
+  {
+    "lemma": "terra",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "terr"
+    },
+    "definition": "f. land, earth"
+  },
+  {
+    "lemma": "terreo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "terre",
+      "perfect": "terrui",
+      "supine": "territum"
+    },
+    "definition": "to frighten, scare"
+  },
+  {
+    "lemma": "timeo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "time",
+      "perfect": "timēre",
+      "supine": "timui"
+    },
+    "definition": "to fear, be afraid of"
+  },
+  {
+    "lemma": "tres",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tre",
+      "perfect": "tres",
+      "supine": "tria"
+    },
+    "definition": "three"
+  },
+  {
+    "lemma": "triclinium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tricliniu"
+    },
+    "definition": "n. dining-room"
+  },
+  {
+    "lemma": "turba",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "turb"
+    },
+    "definition": "f. crowd"
+  },
+  {
+    "lemma": "unus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "unu",
+      "perfect": "una",
+      "supine": "unum"
+    },
+    "definition": "one, single, alone"
+  },
+  {
+    "lemma": "vacca",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vacc"
+    },
+    "definition": "f. cow"
+  },
+  {
+    "lemma": "Vale",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "Val"
+    },
+    "definition": "Goodbye"
+  },
+  {
+    "lemma": "venio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "veni",
+      "perfect": "veni",
+      "supine": "ventum"
+    },
+    "definition": "to come"
+  },
+  {
+    "lemma": "verbum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "verbu"
+    },
+    "definition": "n. word"
+  },
+  {
+    "lemma": "verto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vert",
+      "perfect": "verti",
+      "supine": "versum"
+    },
+    "definition": "to turn"
+  },
+  {
+    "lemma": "verus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "veru",
+      "perfect": "vera",
+      "supine": "verum"
+    },
+    "definition": "true, real"
+  },
+  {
+    "lemma": "victoria",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "victori"
+    },
+    "definition": "f. victory"
+  },
+  {
+    "lemma": "video",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vide",
+      "perfect": "vidi",
+      "supine": "visum"
+    },
+    "definition": "to see"
+  },
+  {
+    "lemma": "villa",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vill"
+    },
+    "definition": "f. farmhouse"
+  },
+  {
+    "lemma": "vinco",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vinc",
+      "perfect": "vici",
+      "supine": "victum"
+    },
+    "definition": "to conquer, overcome"
+  },
+  {
+    "lemma": "vinum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vinu"
+    },
+    "definition": "n. wine"
+  },
+  {
+    "lemma": "viridis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "viridi",
+      "perfect": "viridis",
+      "supine": "viride"
+    },
+    "definition": "green, fresh, young"
+  },
+  {
+    "lemma": "vulnero",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vulner",
+      "perfect": "vulneravi",
+      "supine": "vulneratum"
+    },
+    "definition": "to hurt, wound"
+  },
+  {
+    "lemma": "vultus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vultu"
+    },
+    "definition": "m. face, expression, looks"
+  },
+  {
+    "lemma": "misceo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "misce",
+      "perfect": "miscui",
+      "supine": "mictum"
+    },
+    "definition": "mix"
+  },
+  {
+    "lemma": "filius",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "filiu",
+      "perfect": "fili",
+      "supine": "m."
+    },
+    "definition": "son"
+  },
+  {
+    "lemma": "filia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "fili",
+      "perfect": "filiae",
+      "supine": "f."
+    },
+    "definition": "daughter (dat./abl. plural filiabus)"
+  },
+  {
+    "lemma": "scribo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "scrib",
+      "perfect": "scripsi",
+      "supine": "scriptum"
+    },
+    "definition": "write"
+  },
+  {
+    "lemma": "dissimilis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "dissimili",
+      "perfect": "dissimilis",
+      "supine": "dissimile"
+    },
+    "definition": "unlike, differegnt"
+  },
+  {
+    "lemma": "sedeo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "sede",
+      "perfect": "sēdi",
+      "supine": "sessum"
+    },
+    "definition": "sit"
+  },
+  {
+    "lemma": "posterum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "posteru"
+    },
+    "definition": "n. the future"
+  },
+  {
+    "lemma": "numerus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "numeru"
+    },
+    "definition": "m. number, group"
+  },
+  {
+    "lemma": "tristis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tristi"
+    },
+    "definition": "sad"
+  },
+  {
+    "lemma": "herba",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "herb",
+      "perfect": "herbae",
+      "supine": "f."
+    },
+    "definition": "grass"
+  },
+  {
+    "lemma": "gratia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "grati",
+      "perfect": "gratiae",
+      "supine": "f."
+    },
+    "definition": "gratitude, influence; (abl.) for the sake of"
+  },
+  {
+    "lemma": "vicinus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vicinu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "neighboring"
+  },
+  {
+    "lemma": "abeo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "abe",
+      "perfect": "abii",
+      "supine": "abitum"
+    },
+    "definition": "to go away"
+  },
+  {
+    "lemma": "accido",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "accid",
+      "perfect": "accidere",
+      "supine": "accidi"
+    },
+    "definition": "to happen"
+  },
+  {
+    "lemma": "accipio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "accipi",
+      "perfect": "accepi",
+      "supine": "acceptum"
+    },
+    "definition": "to accept, receive, get"
+  },
+  {
+    "lemma": "acies",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "acie"
+    },
+    "definition": "f. sharp edge; keenness; battle line"
+  },
+  {
+    "lemma": "appello",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "appell",
+      "perfect": "appellavi",
+      "supine": "appellatum"
+    },
+    "definition": "to speak to, address, name, call"
+  },
+  {
+    "lemma": "arbitror",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "arbitro",
+      "perfect": "arbitratus",
+      "supine": "sum"
+    },
+    "definition": "v. to decide, judge, testify, think"
+  },
+  {
+    "lemma": "ardeo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "arde",
+      "perfect": "arsi",
+      "supine": "arsum"
+    },
+    "definition": "to burn"
+  },
+  {
+    "lemma": "arma",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "arm"
+    },
+    "definition": "n. pl. arms, weapons"
+  },
+  {
+    "lemma": "aureus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "aureu",
+      "perfect": "aurea",
+      "supine": "aureum"
+    },
+    "definition": "gold, golden"
+  },
+  {
+    "lemma": "auxilium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "auxiliu"
+    },
+    "definition": "n. help, aid, support, reinforcements"
+  },
+  {
+    "lemma": "bellum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "bellu"
+    },
+    "definition": "n. war"
+  },
+  {
+    "lemma": "benignus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "benignu",
+      "perfect": "benigna",
+      "supine": "benignum"
+    },
+    "definition": "kind, nice"
+  },
+  {
+    "lemma": "cado",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cad",
+      "perfect": "cecidi",
+      "supine": "casum"
+    },
+    "definition": "to fall, die, sink"
+  },
+  {
+    "lemma": "caedo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "caed",
+      "perfect": "cecidi",
+      "supine": "caesum"
+    },
+    "definition": "to cut down, strike, slaughter"
+  },
+  {
+    "lemma": "castra",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "castr"
+    },
+    "definition": "n. military camp, fort"
+  },
+  {
+    "lemma": "cedo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ced",
+      "perfect": "cessi",
+      "supine": "cessum"
+    },
+    "definition": "to yield, go, move"
+  },
+  {
+    "lemma": "certus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "certu",
+      "perfect": "certa",
+      "supine": "certum"
+    },
+    "definition": "certain"
+  },
+  {
+    "lemma": "ceterus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ceteru",
+      "perfect": "cetera",
+      "supine": "ceterum"
+    },
+    "definition": "the rest, remaining"
+  },
+  {
+    "lemma": "clarus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "claru",
+      "perfect": "clara",
+      "supine": "clarum"
+    },
+    "definition": "clear, bright, famous"
+  },
+  {
+    "lemma": "cogito",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cogit",
+      "perfect": "cogitavi",
+      "supine": "cogitatum"
+    },
+    "definition": "to think, consider, imagine"
+  },
+  {
+    "lemma": "cognosco",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cognosc",
+      "perfect": "cognovi",
+      "supine": "cognotum"
+    },
+    "definition": "to learn, recognize (sometimes nosco)"
+  },
+  {
+    "lemma": "cogo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cog",
+      "perfect": "coegi",
+      "supine": "coactum"
+    },
+    "definition": "(+inf) compel, force; (+acc.) collect"
+  },
+  {
+    "lemma": "conficio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "confici",
+      "perfect": "confeci",
+      "supine": "confectum"
+    },
+    "definition": "to finish, accomplish, destroy, kill"
+  },
+  {
+    "lemma": "conor",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cono",
+      "perfect": "conatus",
+      "supine": "sum"
+    },
+    "definition": "v. to try"
+  },
+  {
+    "lemma": "constituo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "constitu",
+      "perfect": "constitui",
+      "supine": "constitutum"
+    },
+    "definition": "to set up, arrange, decide"
+  },
+  {
+    "lemma": "copia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "copi"
+    },
+    "definition": "f. plenty, supply, troops"
+  },
+  {
+    "lemma": "copia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "copi"
+    },
+    "definition": "f. plenty, supply; if plural: troops"
+  },
+  {
+    "lemma": "credo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cred",
+      "perfect": "credidi",
+      "supine": "creditum"
+    },
+    "definition": "to believe, trust"
+  },
+  {
+    "lemma": "crudelis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "crudeli",
+      "perfect": "crudelis",
+      "supine": "crudele"
+    },
+    "definition": "cruel"
+  },
+  {
+    "lemma": "cura",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cur"
+    },
+    "definition": "f. care, anxiety, worry"
+  },
+  {
+    "lemma": "dies",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "die"
+    },
+    "definition": "m. day"
+  },
+  {
+    "lemma": "discedo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "disced",
+      "perfect": "discessi",
+      "supine": "discessum"
+    },
+    "definition": "to leave, depart"
+  },
+  {
+    "lemma": "doceo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "doce",
+      "perfect": "docui",
+      "supine": "doctum"
+    },
+    "definition": "to teach, point out"
+  },
+  {
+    "lemma": "domus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "domu"
+    },
+    "definition": "f. house, home"
+  },
+  {
+    "lemma": "eligo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "elig",
+      "perfect": "elegi",
+      "supine": "electum"
+    },
+    "definition": "to choose, select"
+  },
+  {
+    "lemma": "exercitus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "exercitu"
+    },
+    "definition": "m. army"
+  },
+  {
+    "lemma": "fallo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "fall",
+      "perfect": "fefelli",
+      "supine": "falsum"
+    },
+    "definition": "to deceive"
+  },
+  {
+    "lemma": "fero",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "fer",
+      "perfect": "tuli",
+      "supine": "latus"
+    },
+    "definition": "to bring, put up with (imperative fer)"
+  },
+  {
+    "lemma": "fio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "fi",
+      "perfect": "factus",
+      "supine": "sum"
+    },
+    "definition": "to become"
+  },
+  {
+    "lemma": "frango",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "frang",
+      "perfect": "fregi",
+      "supine": "fractum"
+    },
+    "definition": "to break, shatter"
+  },
+  {
+    "lemma": "frumentum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "frumentu"
+    },
+    "definition": "n. grain"
+  },
+  {
+    "lemma": "gaudium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "gaudiu"
+    },
+    "definition": "n. joy, happiness"
+  },
+  {
+    "lemma": "geminus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "geminu"
+    },
+    "definition": "m. twin"
+  },
+  {
+    "lemma": "gradior",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "gradio",
+      "perfect": "gressus",
+      "supine": "sum"
+    },
+    "definition": "to step, walk, go (many compounds become -gredior)"
+  },
+  {
+    "lemma": "hortor",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "horto",
+      "perfect": "hortatus",
+      "supine": "sum"
+    },
+    "definition": "to encourage"
+  },
+  {
+    "lemma": "iam",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "adv. now, already"
+  },
+  {
+    "lemma": "iam",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "adv. now, already, +non = no longer"
+  },
+  {
+    "lemma": "imperium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "imperiu"
+    },
+    "definition": "n. power, command"
+  },
+  {
+    "lemma": "impetus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "impetu"
+    },
+    "definition": "m. attack"
+  },
+  {
+    "lemma": "incito",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "incit",
+      "perfect": "incitavi",
+      "supine": "incitatum"
+    },
+    "definition": "to incite, excite, motivate"
+  },
+  {
+    "lemma": "insidia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "insidi"
+    },
+    "definition": "f. plot; if plural: ambush"
+  },
+  {
+    "lemma": "ipse",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ips",
+      "perfect": "ipsa",
+      "supine": "ipsum"
+    },
+    "definition": "-self (emphatic)"
+  },
+  {
+    "lemma": "ira",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ir"
+    },
+    "definition": "f. anger, rage"
+  },
+  {
+    "lemma": "iubeo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "iube",
+      "perfect": "iussi",
+      "supine": "iussum"
+    },
+    "definition": "to order"
+  },
+  {
+    "lemma": "iudex",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "iude"
+    },
+    "definition": "m. judge"
+  },
+  {
+    "lemma": "iudicium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "iudiciu"
+    },
+    "definition": "n. trial"
+  },
+  {
+    "lemma": "iungo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "iung",
+      "perfect": "iunxi",
+      "supine": "iunctum"
+    },
+    "definition": "to join, connect, unite, hold hands"
+  },
+  {
+    "lemma": "iuro",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "iur",
+      "perfect": "iuravi",
+      "supine": "iuratum"
+    },
+    "definition": "to swear, take an oath"
+  },
+  {
+    "lemma": "iuvenis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "iuveni",
+      "perfect": "iuvenis",
+      "supine": "iuvene"
+    },
+    "definition": "young"
+  },
+  {
+    "lemma": "legatus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "legatu"
+    },
+    "definition": "m. ambassador, lieutenant"
+  },
+  {
+    "lemma": "loquor",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "loquo",
+      "perfect": "locutus",
+      "supine": "sum"
+    },
+    "definition": "to talk"
+  },
+  {
+    "lemma": "merior",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "merio",
+      "perfect": "meritus",
+      "supine": "sum"
+    },
+    "definition": "to earn"
+  },
+  {
+    "lemma": "metus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "metu"
+    },
+    "definition": "m. fear, dread"
+  },
+  {
+    "lemma": "mirabilis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "mirabili"
+    },
+    "definition": "strange, wonderful"
+  },
+  {
+    "lemma": "miror",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "miro",
+      "perfect": "miratus",
+      "supine": "sum"
+    },
+    "definition": "to be amazed at, marvel at (+ad- to admire, be inspired by)"
+  },
+  {
+    "lemma": "modus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "modu"
+    },
+    "definition": "m. manner, way, rule, rhythm"
+  },
+  {
+    "lemma": "morior",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "morio",
+      "perfect": "mortuus",
+      "supine": "sum"
+    },
+    "definition": "v. to die"
+  },
+  {
+    "lemma": "neglego",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "negleg",
+      "perfect": "neglexi",
+      "supine": "neglectum"
+    },
+    "definition": "to ignore, neglect"
+  },
+  {
+    "lemma": "nego",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "neg",
+      "perfect": "negavi",
+      "supine": "negatum"
+    },
+    "definition": "to deny, say (not)"
+  },
+  {
+    "lemma": "negotium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "negotiu"
+    },
+    "definition": "n. business, work, trouble, pain"
+  },
+  {
+    "lemma": "nescio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "nesci",
+      "perfect": "nescivi",
+      "supine": "nescitum"
+    },
+    "definition": "to not know"
+  },
+  {
+    "lemma": "notus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "notu",
+      "perfect": "nota",
+      "supine": "notum"
+    },
+    "definition": "adj. well-known, famous"
+  },
+  {
+    "lemma": "nullus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "nullu",
+      "perfect": "nulla",
+      "supine": "nullum"
+    },
+    "definition": "none, not any, no"
+  },
+  {
+    "lemma": "nuntio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "nunti",
+      "perfect": "nuntiavi",
+      "supine": "nuntiatum"
+    },
+    "definition": "to announce, report, deliver (as message)"
+  },
+  {
+    "lemma": "occido",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "occid",
+      "perfect": "occidi",
+      "supine": "occasus"
+    },
+    "definition": "to fall, die, end (the PAP, occidens, is used for sunset and West)"
+  },
+  {
+    "lemma": "opinor",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "opino",
+      "perfect": "opinatus",
+      "supine": "sum"
+    },
+    "definition": "v. to suppose, imagine, believe"
+  },
+  {
+    "lemma": "orior",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "orio",
+      "perfect": "ortus",
+      "supine": "sum"
+    },
+    "definition": "to rise, emerge, get up (the PAP, oriens, orientis, is used for sunrise and East)"
+  },
+  {
+    "lemma": "otium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "otiu"
+    },
+    "definition": "n. leisure, free time, holiday"
+  },
+  {
+    "lemma": "patior",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "patio",
+      "perfect": "passus",
+      "supine": "sum"
+    },
+    "definition": "to suffer, endure; to allow"
+  },
+  {
+    "lemma": "perpetuus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "perpetuu",
+      "perfect": "perpetua",
+      "supine": "perpetuum"
+    },
+    "definition": "perpetual, lasting, uninterrupted, continuous"
+  },
+  {
+    "lemma": "pervenio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "perveni",
+      "perfect": "perveni",
+      "supine": "perventum"
+    },
+    "definition": "to arrive, reach"
+  },
+  {
+    "lemma": "poena",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "poen"
+    },
+    "definition": "f. penalty, punishment (+ dare to pay the penalty)"
+  },
+  {
+    "lemma": "praemium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "praemiu"
+    },
+    "definition": "n. reward, bounty"
+  },
+  {
+    "lemma": "proelium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "proeliu"
+    },
+    "definition": "n. battle"
+  },
+  {
+    "lemma": "promitto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "promitt",
+      "perfect": "promisi",
+      "supine": "promissum"
+    },
+    "definition": "send forth, (+dat. = promise)"
+  },
+  {
+    "lemma": "pudicitia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "pudiciti"
+    },
+    "definition": "f. shame, modesty, chastity"
+  },
+  {
+    "lemma": "pugna",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "pugn"
+    },
+    "definition": "f. fight"
+  },
+  {
+    "lemma": "puto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "put",
+      "perfect": "putavi",
+      "supine": "putatum"
+    },
+    "definition": "to think, suppose"
+  },
+  {
+    "lemma": "redeo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "rede",
+      "perfect": "redii",
+      "supine": "reditum"
+    },
+    "definition": "to go back, return"
+  },
+  {
+    "lemma": "relinquo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "relinqu",
+      "perfect": "reliqui",
+      "supine": "relictum"
+    },
+    "definition": "to leave behind, give up"
+  },
+  {
+    "lemma": "rich",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "dives, divitis"
+  },
+  {
+    "lemma": "rideo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ride",
+      "perfect": "risi",
+      "supine": "risum"
+    },
+    "definition": "to laugh, smile"
+  },
+  {
+    "lemma": "sapientia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "sapienti"
+    },
+    "definition": "f. wisdom"
+  },
+  {
+    "lemma": "scio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "sci",
+      "perfect": "scivi",
+      "supine": "scitum"
+    },
+    "definition": "to know"
+  },
+  {
+    "lemma": "secundus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "secundu",
+      "perfect": "secunda",
+      "supine": "secundum"
+    },
+    "definition": "second, favorable"
+  },
+  {
+    "lemma": "senatus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "senatu"
+    },
+    "definition": "m. senate"
+  },
+  {
+    "lemma": "sententia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "sententi"
+    },
+    "definition": "f. feeling, thought, opinion, +capere = have an idea"
+  },
+  {
+    "lemma": "sentio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "senti",
+      "perfect": "sensi",
+      "supine": "sensum"
+    },
+    "definition": "to feel, perceive, experience"
+  },
+  {
+    "lemma": "sequor",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "sequo",
+      "perfect": "secutus",
+      "supine": "sum"
+    },
+    "definition": "to follow"
+  },
+  {
+    "lemma": "similis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "simili"
+    },
+    "definition": "similar, like (use with dative, i.e. similar to)"
+  },
+  {
+    "lemma": "socius",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "sociu"
+    },
+    "definition": "m. ally"
+  },
+  {
+    "lemma": "somnus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "somnu"
+    },
+    "definition": "m. sleep, (pl.) dream"
+  },
+  {
+    "lemma": "spero",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "sper",
+      "perfect": "speravi",
+      "supine": "speratum"
+    },
+    "definition": "to hope"
+  },
+  {
+    "lemma": "superbus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "superbu",
+      "perfect": "superba",
+      "supine": "superbum"
+    },
+    "definition": "proud, arrogant"
+  },
+  {
+    "lemma": "supero",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "super",
+      "perfect": "superavi",
+      "supine": "superatum"
+    },
+    "definition": "to overcome, defeat, surpass"
+  },
+  {
+    "lemma": "teneo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "tene",
+      "perfect": "tenui",
+      "supine": "tentum"
+    },
+    "definition": "to hold, keep, possess"
+  },
+  {
+    "lemma": "tollo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "toll",
+      "perfect": "sustuli",
+      "supine": "sublatum"
+    },
+    "definition": "to raise, lift, steal"
+  },
+  {
+    "lemma": "trado",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "trad",
+      "perfect": "tradidi",
+      "supine": "traditum"
+    },
+    "definition": "to hand over, surrender, pass down"
+  },
+  {
+    "lemma": "ulterior",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ulterio"
+    },
+    "definition": "farther, more remote"
+  },
+  {
+    "lemma": "ultimus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ultimu",
+      "perfect": "-a",
+      "supine": "-um"
+    },
+    "definition": "furthest, last"
+  },
+  {
+    "lemma": "verbum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "verbu"
+    },
+    "definition": "n. word"
+  },
+  {
+    "lemma": "vivus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vivu",
+      "perfect": "viva",
+      "supine": "vivum"
+    },
+    "definition": "alive, living, lively (related verb: vivo, vivere, vixi, victum to live)"
+  },
+  {
+    "lemma": "legatus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "legatu"
+    },
+    "definition": "m. ambassador, legionary commander, lieutenant"
+  },
+  {
+    "lemma": "constantia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "constanti"
+    },
+    "definition": "f. reliability, constancy"
+  },
+  {
+    "lemma": "clementia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "clementi"
+    },
+    "definition": "f. mercy, compassion"
+  },
+  {
+    "lemma": "cupio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cupi",
+      "perfect": "cupivi",
+      "supine": "cupitum"
+    },
+    "definition": "to desire, want"
+  },
+  {
+    "lemma": "humilis",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "humili",
+      "perfect": "humilis",
+      "supine": "humile"
+    },
+    "definition": "low, humble, lowly"
+  },
+  {
+    "lemma": "signum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "signu"
+    },
+    "definition": "n. sign, signal"
+  },
+  {
+    "lemma": "nascor",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "nasco",
+      "perfect": "natus",
+      "supine": "sum"
+    },
+    "definition": "to be born"
+  },
+  {
+    "lemma": "cursus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "cursu"
+    },
+    "definition": "m. course, series, race, charge, forward movement"
+  },
+  {
+    "lemma": "copia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "copi"
+    },
+    "definition": "f. plenty, supply; troops (only if plural)"
+  },
+  {
+    "lemma": "publicus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "publicu",
+      "perfect": "publica",
+      "supine": "publicum"
+    },
+    "definition": "public, common to all"
+  },
+  {
+    "lemma": "prefix",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "to, toward"
+  },
+  {
+    "lemma": "usus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "usu"
+    },
+    "definition": "m. use, enjoyment, advantage"
+  },
+  {
+    "lemma": "colo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "col",
+      "perfect": "colui",
+      "supine": "cultum"
+    },
+    "definition": "to cultivate, foster, take care of"
+  },
+  {
+    "lemma": "ius",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "iu"
+    },
+    "definition": "n. justice, law, right"
+  },
+  {
+    "lemma": "fama",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "fam"
+    },
+    "definition": "f. rumor, reputation"
+  },
+  {
+    "lemma": "aurum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "auru"
+    },
+    "definition": "n. gold"
+  },
+  {
+    "lemma": "studium",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "studiu"
+    },
+    "definition": "n. passion, study, interest"
+  },
+  {
+    "lemma": "telum",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "telu"
+    },
+    "definition": "n. weapon, projectile"
+  },
+  {
+    "lemma": "emo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "em",
+      "perfect": "emi",
+      "supine": "emptum"
+    },
+    "definition": "to buy"
+  },
+  {
+    "lemma": "vendo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "vend",
+      "perfect": "vendidi",
+      "supine": "venditum"
+    },
+    "definition": "to sell"
+  },
+  {
+    "lemma": "nuntius",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "nuntiu"
+    },
+    "definition": "m. messenger, news"
+  },
+  {
+    "lemma": "libero",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "liber",
+      "perfect": "liberavi",
+      "supine": "liberatum"
+    },
+    "definition": "to free, liberate"
+  },
+  {
+    "lemma": "campus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "campu"
+    },
+    "definition": "m. field, battlefield"
+  },
+  {
+    "lemma": "rego",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "reg",
+      "perfect": "rexi",
+      "supine": "rectum"
+    },
+    "definition": "to rule"
+  },
+  {
+    "lemma": "prefix",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "prefi",
+      "perfect": "(conspicio",
+      "supine": "confirmo)"
+    },
+    "definition": "with, together; very much"
+  },
+  {
+    "lemma": "prefix",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "out of, from"
+  },
+  {
+    "lemma": "amicitia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "amiciti"
+    },
+    "definition": "f. friendship"
+  },
+  {
+    "lemma": "prefix",
+    "pos": "particle/preposition",
+    "decl": null,
+    "stems": {},
+    "definition": "back, backwards; again"
+  },
+  {
+    "lemma": "ara",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ar"
+    },
+    "definition": "f. altar"
+  },
+  {
+    "lemma": "careo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "care",
+      "perfect": "carui",
+      "supine": "caritus"
+    },
+    "definition": "to lack, miss, need, lose"
+  },
+  {
+    "lemma": "aequus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "aequu",
+      "perfect": "aequa",
+      "supine": "aequum"
+    },
+    "definition": "level, even; calm; equal, fair; favorable"
+  },
+  {
+    "lemma": "dominus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "dominu"
+    },
+    "definition": "m. master"
+  },
+  {
+    "lemma": "inopia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "inopi"
+    },
+    "definition": "f. lack, scarcity, need"
+  },
+  {
+    "lemma": "captivus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "captivu"
+    },
+    "definition": "m. captive, prisoner"
+  },
+  {
+    "lemma": "propinquus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "propinquu",
+      "perfect": "propinqua",
+      "supine": "propinquum"
+    },
+    "definition": "near, neighboring; a relative"
+  },
+  {
+    "lemma": "quaero",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "quaer",
+      "perfect": "quaesivi",
+      "supine": "quaesitus"
+    },
+    "definition": "to ask, seek"
+  },
+  {
+    "lemma": "pellucidus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "pellucidu",
+      "perfect": "pellucida",
+      "supine": "pellucidum"
+    },
+    "definition": "clear, transparent"
+  },
+  {
+    "lemma": "ascensus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "ascensu",
+      "perfect": "/",
+      "supine": "m."
+    },
+    "definition": "ascent, rising"
+  },
+  {
+    "lemma": "terminus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "terminu",
+      "perfect": "/",
+      "supine": "m."
+    },
+    "definition": "boundary, limit"
+  },
+  {
+    "lemma": "figura",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "figur",
+      "perfect": "/",
+      "supine": "f."
+    },
+    "definition": "shape, figure"
+  },
+  {
+    "lemma": "fluo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "flu",
+      "perfect": "fluxi",
+      "supine": "fluxus"
+    },
+    "definition": "to flow"
+  },
+  {
+    "lemma": "condenso",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "condens",
+      "perfect": "condensavi",
+      "supine": "condensatus"
+    },
+    "definition": "to condense"
+  },
+  {
+    "lemma": "gutta",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "gutt",
+      "perfect": "/",
+      "supine": "f."
+    },
+    "definition": "drop (of liquid)"
+  },
+  {
+    "lemma": "forma",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "form",
+      "perfect": "/",
+      "supine": "f."
+    },
+    "definition": "inherent form"
+  },
+  {
+    "lemma": "archetypus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "archetypu",
+      "perfect": "/",
+      "supine": "m."
+    },
+    "definition": "archetype"
+  },
+  {
+    "lemma": "alveus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "alveu",
+      "perfect": "/",
+      "supine": "m."
+    },
+    "definition": "beehive cell, cavity"
+  },
+  {
+    "lemma": "portae",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "porta",
+      "perfect": "f.",
+      "supine": "pl."
+    },
+    "definition": "gates, openings"
+  },
+  {
+    "lemma": "obtusus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "obtusu",
+      "perfect": "obtusa",
+      "supine": "obtusum"
+    },
+    "definition": "blunt, obtuse"
+  },
+  {
+    "lemma": "carina",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "carin",
+      "perfect": "/",
+      "supine": "f."
+    },
+    "definition": "keel, bottom (of the cell)"
+  },
+  {
+    "lemma": "trilaterus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "trilateru",
+      "perfect": "trilatera",
+      "supine": "trilaterum"
+    },
+    "definition": "three-sided"
+  },
+  {
+    "lemma": "quadrilaterus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "quadrilateru",
+      "perfect": "quadrilatera",
+      "supine": "quadrilaterum"
+    },
+    "definition": "four-sided"
+  },
+  {
+    "lemma": "aversus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "aversu",
+      "perfect": "aversa",
+      "supine": "aversum"
+    },
+    "definition": "turned away, opposite"
+  },
+  {
+    "lemma": "stipatus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "stipatu",
+      "perfect": "stipata",
+      "supine": "stipatum"
+    },
+    "definition": "packed tightly"
+  },
+  {
+    "lemma": "rhombus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "rhombu",
+      "perfect": "/",
+      "supine": "m."
+    },
+    "definition": "rhombus, diamond shape"
+  },
+  {
+    "lemma": "geminus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "geminu",
+      "perfect": "/",
+      "supine": "m."
+    },
+    "definition": "double"
+  },
+  {
+    "lemma": "coapto",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "coapt",
+      "perfect": "coaptavi",
+      "supine": "coaptatus"
+    },
+    "definition": "to fit together"
+  },
+  {
+    "lemma": "impletrix",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "impletri",
+      "perfect": "/",
+      "supine": "f."
+    },
+    "definition": "filler"
+  },
+  {
+    "lemma": "domuncula",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "domuncul",
+      "perfect": "/",
+      "supine": "f."
+    },
+    "definition": "little house"
+  },
+  {
+    "lemma": "effingo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "effing",
+      "perfect": "effictus",
+      "supine": "/"
+    },
+    "definition": "to shape, form"
+  },
+  {
+    "lemma": "excedo",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "exced",
+      "perfect": "excessus",
+      "supine": "/"
+    },
+    "definition": "to go beyond"
+  },
+  {
+    "lemma": "protuberantia",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "protuberanti",
+      "perfect": "/",
+      "supine": "f."
+    },
+    "definition": "bulge, projection"
+  },
+  {
+    "lemma": "acinus",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "acinu",
+      "perfect": "/",
+      "supine": "m."
+    },
+    "definition": "seed (e.g., of pomegranate)"
+  },
+  {
+    "lemma": "succussio",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "succussi",
+      "perfect": "/",
+      "supine": "f."
+    },
+    "definition": "shaking, jostling"
+  },
+  {
+    "lemma": "siliqua",
+    "pos": "verb",
+    "decl": null,
+    "stems": {
+      "present": "siliqu",
+      "perfect": "/",
+      "supine": "f."
+    },
+    "definition": "pod (e.g., pea pod)"
+  }
+]
