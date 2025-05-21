@@ -107,4 +107,7 @@ async init() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => new DictionaryApp());
+document.addEventListener("DOMContentLoaded", () => {
+  // save the app on window so you can poke at it in the console
+  window.app = new DictionaryApp();
+});
