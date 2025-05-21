@@ -1,81 +1,90 @@
+:root {
+  --card-width: 480px;
+  --card-bg:    #fff;
+  --card-radius: 8px;
+  --card-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  --tab-active-bg: #007f00;
+  --tab-inactive-bg: #eee;
+  --tab-color: #333;
+  --tab-active-color: #fff;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+  background: #f5f5f5;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
-.container {
-    max-width: 500px;
-    margin: 100px auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+main {
+  text-align: center;
 }
 
-input {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.card {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  width: var(--card-width);
+  padding: 2rem;
+  margin: 1rem;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: green;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+#lookupForm {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
-#result {
-    margin-top: 20px;
-    padding: 10px;
-    background: #e0ffe0;
-    border-radius: 5px;
-    display: flex; /* Enable flexbox layout */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+#lookupForm input {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-/* Highlight matched forms */
-.matched {
-    background-color: yellow; /* Highlight color */
-    font-weight: bold;       /* Bold matched text */
-    border-radius: 3px;      /* Slightly rounded edges for the highlight */
-    padding: 2px 4px;        /* Add some padding inside the highlight */
+#lookupForm button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  background: #007f00;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#lookupForm button:hover {
+  background: #005f00;
 }
 
-/* Styles for tabs and their contents */
-#tabsContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+/* tabs */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+.tab-button {
+  flex: 1;
+  padding: 0.75rem;
+  background: var(--tab-inactive-bg);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--tab-color);
+}
+.tab-button.active {
+  background: var(--tab-active-bg);
+  color: var(--tab-active-color);
 }
 
-.tab {
-    padding: 10px 20px;
-    background-color: #ddd;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    border-radius: 5px 5px 0 0;
-    margin-right: 5px;
-}
+/* panels */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
 
-.tab:hover {
-    background-color: #bbb;
-}
-
-.tabContent {
-    display: none;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-radius: 0 0 5px 5px;
-    margin-top: -1px;
+/* placeholder text */
+.placeholder {
+  color: #666;
+  font-style: italic;
 }

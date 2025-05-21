@@ -1,22 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latin Dictionary</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Latin Dictionary</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to the Latin Dictionary</h1>
-        <p>Enter a Latin word below to look it up:</p>
-        <input type="text" id="inputField" placeholder="Enter a Latin word...">
-        <button id="lookupButton">LOOKUP</button>
-        <div id="tabsContainer"></div> <!-- Pf499 -->
-        <div id="tabContentsContainer"></div> <!-- P3f01 -->
-        <div id="resultContainer"></div>
-    </div>
-    <script type="module" src="script.js"></script>
+  <main>
+    <h1>Latin Dictionary</h1>
+    <div class="card">
+      <!-- Lookup form -->
+      <form id="lookupForm">
+        <input
+          id="inputField"
+          type="text"
+          placeholder="Enter a Latin word…"
+          autocomplete="off"
+        />
+        <button id="lookupButton">Lookup</button>
+      </form>
 
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-button active" data-tab="definition">
+          Definition
+        </button>
+        <button class="tab-button" data-tab="inflections">
+          Inflections
+        </button>
+      </div>
+
+      <!-- Definition panel -->
+      <div class="tab-panel active" id="definition">
+        <div id="resultContainer">
+          <!-- renderEntry() will inject HTML here -->
+        </div>
+      </div>
+
+      <!-- Inflections panel -->
+      <div class="tab-panel" id="inflections">
+        <div id="inflContainer">
+          <p class="placeholder">
+            Inflection tables will appear here once you look up a word.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- your dictionary logic -->
+  <script type="module" src="script.js"></script>
 </body>
 </html>

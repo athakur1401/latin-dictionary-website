@@ -9,9 +9,9 @@ function stripMacrons(str) {
 class DictionaryApp {
   constructor() {
     // DOM refs
-    this.resultContainer      = document.getElementById("resultContainer");
-    this.inputField           = document.getElementById("inputField");
-    this.lookupButton         = document.getElementById("lookupButton");
+    this.resultContainer = document.getElementById("resultContainer");
+    this.inputField      = document.getElementById("inputField");
+    this.lookupButton    = document.getElementById("lookupButton");
 
     // data holders
     this.dictionary = [];        // array of lemma records
@@ -20,80 +20,92 @@ class DictionaryApp {
     this.init();                 // kick off async loader
   }
 
-  /* -------- load slim JSON -------- */
-/* -------- load slim JSON -------- */
-async init() {
-  try {
-    const lemmas = await (await fetch("assets/lemmas.json")).json();
-    this.dictionary = lemmas;
+  /* -------- load slim JSON & build index -------- */
+  async init() {
+    try {
+      const lemmas = await (await fetch("assets/lemmas.json")).json();
+      this.dictionary = lemmas;
 
-    // head-word index
-    this.formIndex = new Map(
-      lemmas.map((l, i) => [stripMacrons(l.lemma), i])
-    );
+      // 1) index head-words
+      this.formIndex = new Map(
+        lemmas.map((l, i) => [stripMacrons(l.lemma), i])
+      );
 
-    console.log(`Loaded ${lemmas.length} lemmas`);
+      // 2) pre-index all 1st-conj verb & 1st-decl noun forms
+      lemmas.forEach((entry, idx) => {
+        // 1st-conj verbs
+        if (entry.pos === "verb" && entry.decl === 1 && entry.stems.present) {
+          conjugateV1(entry.stems.present).forEach(form =>
+            this.formIndex.set(stripMacrons(form), idx)
+          );
+        }
+        // 1st-decl nouns
+        if (entry.pos === "noun" && entry.decl === 1 && entry.stems.stem) {
+          declineN1(entry.stems.stem).forEach(form =>
+            this.formIndex.set(stripMacrons(form), idx)
+          );
+        }
+      });
 
-    /* ---------- RESTORE THE LISTENERS ---------- */
-    this.lookupButton.addEventListener("click", e => {
-      e.preventDefault();
-      this.performSearch();
-    });
-    this.inputField.addEventListener("keydown", e => {
-      if (e.key === "Enter") {
+      console.log(
+        `Loaded ${lemmas.length} lemmas, indexed ${this.formIndex.size} forms`
+      );
+
+      // 3) lookup form listeners
+      this.lookupButton.addEventListener("click", e => {
         e.preventDefault();
         this.performSearch();
-      }
-    });
+      });
+      this.inputField.addEventListener("keydown", e => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          this.performSearch();
+        }
+      });
 
-  } catch (err) {
-    console.error("Dictionary load failed:", err);
+      // 4) tabs switcher
+      document.querySelectorAll(".tab-button").forEach(btn => {
+        btn.addEventListener("click", () => {
+          // deactivate all
+          document
+            .querySelectorAll(".tab-button")
+            .forEach(b => b.classList.remove("active"));
+          document
+            .querySelectorAll(".tab-panel")
+            .forEach(p => p.classList.remove("active"));
+
+          // activate this one
+          btn.classList.add("active");
+          document.getElementById(btn.dataset.tab).classList.add("active");
+        });
+      });
+    } catch (err) {
+      console.error("Dictionary load failed:", err);
+    }
   }
-}
 
-  /* constant-time look-up */
+  /* -------- constant-time look-up -------- */
   lookup(form) {
     const plain = stripMacrons(form.toLowerCase());
-
-    // 1. direct hit?
-    let id = this.formIndex.get(plain);
-    if (id != null) return this.dictionary[id];
-
-    // 2. on-the-fly generation for 1st-conj verbs & 1st-decl nouns
-    this.dictionary.forEach((entry, idx) => {
-      const key = stripMacrons(entry.lemma);
-      if (entry.pos === "verb" && entry.decl === 1) {
-        // 1st-conj verb: stems.present is like "am"
-        conjugateV1(entry.stems.present).forEach(f =>
-          this.formIndex.set(stripMacrons(f), idx)
-        );
-      }
-      if (entry.pos === "noun" && entry.decl === 1) {
-        // 1st-decl noun: stems.stem is like "puell"
-        declineN1(entry.stems.stem).forEach(f =>
-          this.formIndex.set(stripMacrons(f), idx)
-        );
-      }
-    });
-
-    // 3. try again
-    id = this.formIndex.get(plain);
+    const id = this.formIndex.get(plain);
     return id == null ? null : this.dictionary[id];
   }
 
-
-
-
   /* -------------- search -------------- */
   performSearch() {
-    const inputWord = this.inputField.value.trim().toLowerCase();
+    const inputWord = this.inputField.value.trim();
     if (!inputWord) return alert("Please enter a word.");
 
-    const foundWord = this.lookup(inputWord);
-
-    this.resultContainer.innerHTML = foundWord
-      ? this.renderEntry(foundWord)
-      : "<p>Word not found in the dictionary.</p>";
+    const found = this.lookup(inputWord);
+    if (found) {
+      // show definition
+      this.resultContainer.innerHTML = this.renderEntry(found);
+      // switch to the Definition tab
+      document.querySelector(".tab-button[data-tab=definition]").click();
+    } else {
+      this.resultContainer.innerHTML =
+        "<p>Word not found in the dictionary.</p>";
+    }
   }
 
   /* ------------- render one lemma ------------- */
@@ -108,6 +120,6 @@ async init() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // save the app on window so you can poke at it in the console
+  // expose for console testing
   window.app = new DictionaryApp();
 });
