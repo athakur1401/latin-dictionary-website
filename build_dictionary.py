@@ -55,23 +55,17 @@ with open(RAW, "rb") as fh:
             continue
         seen.add(lemma)
 
-        # — find the POS token index by either matching a full code
-        #   or the first letter of the token
+        # — find the POS token index by matching a full code or first letter
         try:
             pos_tok_i = next(
                 i for i, tok in enumerate(parts[1:], 1)
-                if tok in POS_MAP or tok and tok[0] in POS_MAP
+                if tok in POS_MAP or (tok and tok[0] in POS_MAP)
             )
         except StopIteration:
-            # if we can’t recognize a POS, drop this line
-            continue
+            continue  # unrecognized line
 
         tok = parts[pos_tok_i]
-        # normalize the POS
-        if tok in POS_MAP:
-            pos = POS_MAP[tok]
-        else:
-            pos = POS_MAP.get(tok[0], tok.lower())
+        pos = POS_MAP.get(tok, POS_MAP.get(tok[0], tok.lower()))
 
         # — get the conj/decl number
         decl_num = None
@@ -95,25 +89,23 @@ with open(RAW, "rb") as fh:
         elif pos == "noun" and stems_tokens:
             stems = {"stem": stems_tokens[0]}
 
-        # — extract the gloss
-        semi = line.find(";")
-        if semi != -1:
-            # RAW-style lines always have a “;” before the definition
-            gloss = line[semi+1:].strip(" ;")
-        else:
-            # GEN-only or your hotpatch extras never use “;”
-            # so just join everything after the POS/decl columns
-            gloss = " ".join(parts[pos_tok_i+1:]).strip()
+        # ◆◆ unified gloss extraction ◆◆
+        # skip any all-caps flag tokens immediately after POS/decl
+        j = pos_tok_i + 1
+        while j < len(parts) and parts[j].isalpha() and parts[j].isupper():
+            j += 1
+        # everything from there on is the definition, semicolons preserved
+        gloss = " ".join(parts[j:]).rstrip(";")
 
         lemmas.append({
-            "lemma":     lemma,
-            "pos":       pos,
-            "decl":      decl_num,
-            "stems":     stems,
+            "lemma":      lemma,
+            "pos":        pos,
+            "decl":       decl_num,
+            "stems":      stems,
             "definition": gloss,
         })
 
-# write it out
+# write out in UTF-8 (no ASCII escaping)
 with open(OUT_DIR / "lemmas.json", "w", encoding="utf-8") as out_f:
     json.dump(lemmas, out_f, ensure_ascii=False)
 
