@@ -16,13 +16,14 @@ Each record keeps only what we need for on-the-fly inflection:
   "definition": "to love, like, be fond of"
 }
 """
-import json, pathlib, re, unicodedata
+import json
+import pathlib
+import unicodedata
 
 RAW      = "dictline.raw"
 OUT_DIR  = pathlib.Path("dist")
 OUT_DIR.mkdir(exist_ok=True)
 
-# map letter-codes (and a few common full codes) to human POS
 POS_MAP = {
     "V":      "verb",
     "N":      "noun",
@@ -41,7 +42,8 @@ def demacron(s: str) -> str:
         if unicodedata.category(c) != "Mn"
     )
 
-lemmas, seen = [], set()
+lemmas = []
+seen = set()
 
 with open(RAW, "rb") as fh:
     for raw in fh:
@@ -60,31 +62,26 @@ with open(RAW, "rb") as fh:
         try:
             pos_tok_i = next(
                 i for i, tok in enumerate(parts[1:], 1)
-                if tok in POS_MAP or tok and tok[0] in POS_MAP
+                if tok in POS_MAP or (tok and tok[0] in POS_MAP)
             )
         except StopIteration:
-            # nothing we recognize as a part-of-speech: skip it
+            # no recognizable POS → skip
             continue
 
         tok = parts[pos_tok_i]
-        # map to our normalized POS
-        if tok in POS_MAP:
-            pos = POS_MAP[tok]
-        else:
-            pos = POS_MAP.get(tok[0], tok.lower())
+        pos = POS_MAP.get(tok, POS_MAP.get(tok[0], tok.lower()))
 
-        # — conj/decl number: first digit in that token or in the ones after it
+        # — conj/decl number: either in the POS token or the ones after it
         decl_num = None
-        # if the POS token itself has a digit, grab it
         if len(tok) > 1 and tok[1].isdigit():
             decl_num = int(tok[1])
         else:
-            for t in parts[pos_tok_i + 1:]:
+            for t in parts[pos_tok_i + 1 :]:
                 if t and t[0].isdigit():
                     decl_num = int(t[0])
                     break
 
-        # — collect any principal-parts tokens between lemma and POS
+        # — collect any principal-parts between the lemma and POS token
         stems_tokens = parts[1:pos_tok_i]
         stems = {}
         if pos == "verb" and len(stems_tokens) >= 3:
@@ -96,37 +93,22 @@ with open(RAW, "rb") as fh:
         elif pos == "noun" and stems_tokens:
             stems = {"stem": stems_tokens[0]}
 
-        # — extract the gloss after the first semicolon, if there is one
-          # … up above you still have your POS detection, stems, etc.
+        # ◆◆ improved gloss extraction ◆◆
+        semi = line.find(";")
+        if semi != -1:
+            # RAW lines usually have a semicolon before the definition
+            gloss = line[semi + 1 :].strip(" ;")
+        else:
+            # GEN-only lines don’t use semicolons — join everything after POS/decl
+            gloss = " ".join(parts[pos_tok_i + 1 :]).strip()
 
--        # ◆◆ improved gloss extraction ◆◆
--        semi = line.find(";")
--        if semi != -1:
--            gloss = line[semi + 1 :].strip(" ;")
--        else:
--            # no semicolon → skip flag columns and take the remainder
--            gloss_tokens = parts[pos_tok_i + 1 :]
--            gloss_tokens = [t for t in gloss_tokens if len(t) > 2 or not t.isalpha()]
--            gloss = " ".join(gloss_tokens)
-+        # ◆◆ improved gloss extraction ◆◆
-+        semi = line.find(";")
-+        if semi != -1:
-+            # RAW lines usually have a semicolon before the definition
-+            gloss = line[semi + 1 :].strip(" ;")
-+        else:
-+            # GEN‐only lines don’t use semicolons — just join everything after POS/decl
-+            gloss = " ".join(parts[pos_tok_i + 1 :]).strip()
-
-        lemmas.append(
-            {
-                "lemma": lemma,
-                "pos": pos,
-                "decl": decl_num,
-                "stems": stems,
-                "definition": gloss,
-            }
-        )
-
+        lemmas.append({
+            "lemma":     lemma,
+            "pos":       pos,
+            "decl":      decl_num,
+            "stems":     stems,
+            "definition": gloss,
+        })
 
 # write out in UTF-8 (no ASCII escaping)
 with open(OUT_DIR / "lemmas.json", "w", encoding="utf-8") as out_f:
