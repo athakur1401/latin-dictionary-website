@@ -58,7 +58,7 @@ with open(RAW, "rb") as fh:
             continue
         seen.add(lemma)
 
-        # — find the POS token index by matching a full code or first letter
+        # — find the POS token index by matching a full code or its first letter
         try:
             pos_tok_i = next(
                 i for i, tok in enumerate(parts[1:], 1)
@@ -93,24 +93,25 @@ with open(RAW, "rb") as fh:
         elif pos == "noun" and stems_tokens:
             stems = {"stem": stems_tokens[0]}
 
+        # — DERIVE a present-stem for every 1st-conj verb, even if no princ. parts
+        if pos == "verb" and decl_num == 1:
+            stems.setdefault("present", lemma[:-1])
+
         # ◆◆ improved gloss extraction ◆◆
         # skip over gender abbrevs (m., f., n.) and all-caps flags (X, POS, C, etc.)
         j = pos_tok_i + 1
         while j < len(parts):
             p = parts[j]
-            # gender tokens like "m.", "f.", "n."
-            if re.fullmatch(r'[mfn]\.', p):
+            if re.fullmatch(r'[mfn]\.', p):      # gender tokens
                 j += 1
                 continue
-            # all-caps flags (e.g. X, POS, C, D...)
-            if re.fullmatch(r'[A-Z]+', p):
+            if re.fullmatch(r'[A-Z]+', p):       # all-caps flags
                 j += 1
                 continue
             break
 
-        # rejoin the rest as the definition, preserving internal semicolons
+        # rejoin the remainder as the definition (keep internal semicolons)
         gloss = " ".join(parts[j:])
-        # strip only a single trailing semicolon if present
         if gloss.endswith(";"):
             gloss = gloss[:-1].strip()
 
