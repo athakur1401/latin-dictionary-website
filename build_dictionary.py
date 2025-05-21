@@ -94,7 +94,7 @@ with open(RAW, "rb") as fh:
             stems = {"stem": stems_tokens[0]}
 
         # ◆◆ improved gloss extraction ◆◆
-        # skip gender abbrevs (m., f., n.) and all-caps flags (X, POS, C, etc.)
+        # skip over gender abbrevs (m., f., n.) and all-caps flags (X, POS, C, etc.)
         j = pos_tok_i + 1
         while j < len(parts):
             p = parts[j]
@@ -107,7 +107,8 @@ with open(RAW, "rb") as fh:
                 j += 1
                 continue
             break
-        # rejoin the rest as definition, preserving any internal semicolons
+
+        # rejoin the rest as the definition, preserving internal semicolons
         gloss = " ".join(parts[j:])
         # strip only a single trailing semicolon if present
         if gloss.endswith(";"):
