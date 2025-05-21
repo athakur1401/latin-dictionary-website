@@ -1,3 +1,5 @@
+import { conjugateV1, declineN1 } from "./inflect.js";
+
 function stripMacrons(str) {
   // NFC→NFD, then drop every combining mark
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -50,13 +52,35 @@ async init() {
 }
 
   /* constant-time look-up */
-lookup(form) {
-  const plain = stripMacrons(form.toLowerCase());
+  lookup(form) {
+    const plain = stripMacrons(form.toLowerCase());
 
-  // try ASCII first, then original (macron) spelling
-  const id = this.formIndex.get(plain) ?? this.formIndex.get(form.toLowerCase());
-  return id == null ? null : this.dictionary[id];
-}
+    // 1. direct hit?
+    let id = this.formIndex.get(plain);
+    if (id != null) return this.dictionary[id];
+
+    // 2. on-the-fly generation for 1st-conj verbs & 1st-decl nouns
+    this.dictionary.forEach((entry, idx) => {
+      const key = stripMacrons(entry.lemma);
+      if (entry.pos === "verb" && entry.decl === 1) {
+        // 1st-conj verb: stems.present is like "am"
+        conjugateV1(entry.stems.present).forEach(f =>
+          this.formIndex.set(stripMacrons(f), idx)
+        );
+      }
+      if (entry.pos === "noun" && entry.decl === 1) {
+        // 1st-decl noun: stems.stem is like "puell"
+        declineN1(entry.stems.stem).forEach(f =>
+          this.formIndex.set(stripMacrons(f), idx)
+        );
+      }
+    });
+
+    // 3. try again
+    id = this.formIndex.get(plain);
+    return id == null ? null : this.dictionary[id];
+  }
+
 
 
 
