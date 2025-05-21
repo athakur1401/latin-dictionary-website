@@ -16,10 +16,13 @@ Each record keeps exactly what you need for on-the-fly inflection:
   "definition": "to love, like, be fond of"
 }
 """
-import json, pathlib, re, unicodedata
+import json
+import pathlib
+import re
+import unicodedata
 
-RAW      = "dictline.raw"
-OUT_DIR  = pathlib.Path("dist")
+RAW     = "dictline.raw"
+OUT_DIR = pathlib.Path("dist")
 OUT_DIR.mkdir(exist_ok=True)
 
 # letter-codes → human-readable POS
@@ -65,6 +68,7 @@ with open(RAW, "rb") as fh:
             continue  # unrecognized line
 
         tok = parts[pos_tok_i]
+        # normalize POS
         pos = POS_MAP.get(tok, POS_MAP.get(tok[0], tok.lower()))
 
         # — get the conj/decl number
@@ -89,13 +93,25 @@ with open(RAW, "rb") as fh:
         elif pos == "noun" and stems_tokens:
             stems = {"stem": stems_tokens[0]}
 
-        # ◆◆ unified gloss extraction ◆◆
-        # skip any all-caps flag tokens immediately after POS/decl
+        # ◆◆ improved gloss extraction ◆◆
+        # skip gender abbrevs (m., f., n.) and all-caps flags (X, POS, C, etc.)
         j = pos_tok_i + 1
-        while j < len(parts) and parts[j].isalpha() and parts[j].isupper():
-            j += 1
-        # everything from there on is the definition, semicolons preserved
-        gloss = " ".join(parts[j:]).rstrip(";")
+        while j < len(parts):
+            p = parts[j]
+            # gender tokens like "m.", "f.", "n."
+            if re.fullmatch(r'[mfn]\.', p):
+                j += 1
+                continue
+            # all-caps flags (e.g. X, POS, C, D...)
+            if re.fullmatch(r'[A-Z]+', p):
+                j += 1
+                continue
+            break
+        # rejoin the rest as definition, preserving any internal semicolons
+        gloss = " ".join(parts[j:])
+        # strip only a single trailing semicolon if present
+        if gloss.endswith(";"):
+            gloss = gloss[:-1].strip()
 
         lemmas.append({
             "lemma":      lemma,
