@@ -1,11 +1,10 @@
 // inflect.js
-// ———  Tiny on-the-fly inflector for 1st-conj verbs & 1st-decl nouns ———
+// ——— Tiny on-the-fly inflector for 1st-conj verbs & 1st-decl nouns ———
 
 export const V1_ENDINGS = {
   pres: ["o","as","at","amus","atis","ant"],
   impf:["abam","abas","abat","abamus","abatis","abant"],
   fut: ["abo","abis","abit","abimus","abitis","abunt"],
-  // you can add perf, supine participles later
 };
 
 export const N1_ENDINGS = {
@@ -14,16 +13,13 @@ export const N1_ENDINGS = {
 };
 
 export function conjugateV1(stem) {
-  // stem is the verb stem without final -o, e.g. "am" for amō
-  const forms = [];
-  Object.values(V1_ENDINGS).forEach(arr =>
-    arr.forEach(end => forms.push(stem + end))
-  );
-  return forms;
+  // stem = verb-stem without final -o ("am" for amō)
+  return Object.values(V1_ENDINGS)
+    .flatMap(arr => arr.map(end => stem + end));
 }
 
 export function declineN1(stem) {
-  // stem is noun-stem, e.g. "puell" for puella, puellae, etc.
+  // stem = noun-stem ("puell" for puella, puellae, etc.)
   return [
     ...N1_ENDINGS.sing.map(e => stem + e),
     ...N1_ENDINGS.plur.map(e => stem + e),

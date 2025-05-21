@@ -1,11 +1,11 @@
 import { conjugateV1, declineN1 } from "./inflect.js";
 
 function stripMacrons(str) {
-  // NFC→NFD, then drop every combining mark
+  // NFC → NFD, then drop every combining mark
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-/* -------------  Dictionary app ------------- */
+/* ------------- Dictionary app ------------- */
 class DictionaryApp {
   constructor() {
     // DOM refs
@@ -15,7 +15,7 @@ class DictionaryApp {
 
     // data holders
     this.dictionary = [];        // array of lemma records
-    this.formIndex  = new Map(); // Map<form, lemmaID>
+    this.formIndex  = new Map(); // Map<plainForm, lemmaIndex>
 
     this.init();                 // kick off async loader
   }
@@ -31,16 +31,19 @@ class DictionaryApp {
         lemmas.map((l, i) => [stripMacrons(l.lemma), i])
       );
 
-      // 2) pre-index all 1st-conj verb & 1st-decl noun forms
+      // 2) pre-index all 1st-conj verbs & 1st-decl nouns
       lemmas.forEach((entry, idx) => {
-        if (entry.pos === "verb" && entry.decl === 1 && entry.stems.present) {
-          conjugateV1(entry.stems.present).forEach(form =>
-            this.formIndex.set(stripMacrons(form), idx)
+        // verbs
+        if (entry.pos === "verb" && entry.decl === 1) {
+          const presStem = entry.stems.present || entry.lemma.slice(0, -1);
+          conjugateV1(presStem).forEach(f =>
+            this.formIndex.set(stripMacrons(f), idx)
           );
         }
+        // nouns
         if (entry.pos === "noun" && entry.decl === 1 && entry.stems.stem) {
-          declineN1(entry.stems.stem).forEach(form =>
-            this.formIndex.set(stripMacrons(form), idx)
+          declineN1(entry.stems.stem).forEach(f =>
+            this.formIndex.set(stripMacrons(f), idx)
           );
         }
       });
@@ -49,7 +52,7 @@ class DictionaryApp {
         `Loaded ${lemmas.length} lemmas, indexed ${this.formIndex.size} forms`
       );
 
-      // 3) form listeners
+      // 3) lookup listeners
       this.lookupButton.addEventListener("click", e => {
         e.preventDefault();
         this.performSearch();
@@ -64,12 +67,12 @@ class DictionaryApp {
       // 4) tabs switcher
       document.querySelectorAll(".tab-button").forEach(btn => {
         btn.addEventListener("click", () => {
-          document
-            .querySelectorAll(".tab-button")
-            .forEach(b => b.classList.remove("active"));
-          document
-            .querySelectorAll(".tab-panel")
-            .forEach(p => p.classList.remove("active"));
+          document.querySelectorAll(".tab-button").forEach(b =>
+            b.classList.remove("active")
+          );
+          document.querySelectorAll(".tab-panel").forEach(p =>
+            p.classList.remove("active")
+          );
 
           btn.classList.add("active");
           document.getElementById(btn.dataset.tab).classList.add("active");
@@ -83,22 +86,19 @@ class DictionaryApp {
   /* -------- constant-time lookup -------- */
   lookup(form) {
     const plain = stripMacrons(form.toLowerCase());
-    const id = this.formIndex.get(plain);
+    const id    = this.formIndex.get(plain);
     return id == null ? null : this.dictionary[id];
   }
 
   /* -------------- search -------------- */
   performSearch() {
-    const inputWord = this.inputField.value.trim();
-    if (!inputWord) return alert("Please enter a word.");
+    const w = this.inputField.value.trim();
+    if (!w) return alert("Please enter a word.");
 
-    const found = this.lookup(inputWord);
-    if (found) {
-      // show definition
-      this.resultContainer.innerHTML = this.renderEntry(found);
-      // populate inflections
-      this.renderInflections(found);
-      // switch to the Definition tab
+    const e = this.lookup(w);
+    if (e) {
+      this.resultContainer.innerHTML = this.renderEntry(e);
+      this.renderInflections(e);
       document.querySelector(".tab-button[data-tab=definition]").click();
     } else {
       this.resultContainer.innerHTML =
@@ -119,14 +119,15 @@ class DictionaryApp {
   /* ------------- render inflection tables ------------- */
   renderInflections(entry) {
     const cont = document.getElementById("inflContainer");
-    cont.innerHTML = "";  // clear old content
+    cont.innerHTML = "";
 
-    // 1st-conjugation verbs → Present Indicative
-    if (entry.pos === "verb" && entry.decl === 1 && entry.stems.present) {
-      const forms  = conjugateV1(entry.stems.present);
-      const persons = ["1 Sg","2 Sg","3 Sg","1 Pl","2 Pl","3 Pl"];
-      const header = persons.map(p => `<th>${p}</th>`).join("");
-      const row    = forms.map(f => `<td>${f}</td>`).join("");
+    // 1st-conj verbs: Present Indicative
+    if (entry.pos === "verb" && entry.decl === 1) {
+      const presStem = entry.stems.present || entry.lemma.slice(0, -1);
+      const forms    = conjugateV1(presStem);
+      const persons  = ["1 Sg","2 Sg","3 Sg","1 Pl","2 Pl","3 Pl"];
+      const header   = persons.map(p => `<th>${p}</th>`).join("");
+      const row      = forms.map(f => `<td>${f}</td>`).join("");
 
       cont.innerHTML = `
         <h4>Present Indicative (1st Conjugation)</h4>
@@ -138,7 +139,7 @@ class DictionaryApp {
       return;
     }
 
-    // 1st-declension nouns
+    // 1st-decl nouns
     if (entry.pos === "noun" && entry.decl === 1 && entry.stems.stem) {
       const forms = declineN1(entry.stems.stem);
       const cases = ["Nom","Gen","Dat","Acc","Abl","Voc"];
@@ -146,11 +147,7 @@ class DictionaryApp {
       const pl    = forms.slice(6,12);
 
       const rows = cases.map((c,i) => `
-        <tr>
-          <td>${c}</td>
-          <td>${sg[i]}</td>
-          <td>${pl[i]}</td>
-        </tr>
+        <tr><td>${c}</td><td>${sg[i]}</td><td>${pl[i]}</td></tr>
       `).join("");
 
       cont.innerHTML = `
@@ -169,6 +166,5 @@ class DictionaryApp {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // expose for debugging
-  window.app = new DictionaryApp();
+  window.app = new DictionaryApp();  // expose for console testing
 });
