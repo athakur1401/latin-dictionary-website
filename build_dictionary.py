@@ -97,22 +97,36 @@ with open(RAW, "rb") as fh:
             stems = {"stem": stems_tokens[0]}
 
         # — extract the gloss after the first semicolon, if there is one
-        semi = line.find(";")
-        if semi != -1:
-            gloss = line[semi + 1 :].strip(" ;")
-        else:
-            # no semicolon → drop any tiny flag tokens and rejoin the rest
-            tail = parts[pos_tok_i + 1 :]
-            gloss_tokens = [t for t in tail if len(t) > 2 or not t.isalpha()]
-            gloss = " ".join(gloss_tokens)
+          # … up above you still have your POS detection, stems, etc.
 
-        lemmas.append({
-            "lemma":      lemma,
-            "pos":        pos,
-            "decl":       decl_num,
-            "stems":      stems,
-            "definition": gloss
-        })
+-        # ◆◆ improved gloss extraction ◆◆
+-        semi = line.find(";")
+-        if semi != -1:
+-            gloss = line[semi + 1 :].strip(" ;")
+-        else:
+-            # no semicolon → skip flag columns and take the remainder
+-            gloss_tokens = parts[pos_tok_i + 1 :]
+-            gloss_tokens = [t for t in gloss_tokens if len(t) > 2 or not t.isalpha()]
+-            gloss = " ".join(gloss_tokens)
++        # ◆◆ improved gloss extraction ◆◆
++        semi = line.find(";")
++        if semi != -1:
++            # RAW lines usually have a semicolon before the definition
++            gloss = line[semi + 1 :].strip(" ;")
++        else:
++            # GEN‐only lines don’t use semicolons — just join everything after POS/decl
++            gloss = " ".join(parts[pos_tok_i + 1 :]).strip()
+
+        lemmas.append(
+            {
+                "lemma": lemma,
+                "pos": pos,
+                "decl": decl_num,
+                "stems": stems,
+                "definition": gloss,
+            }
+        )
+
 
 # write out in UTF-8 (no ASCII escaping)
 with open(OUT_DIR / "lemmas.json", "w", encoding="utf-8") as out_f:
