@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Convert Whitaker’s DICTLINE.* → dist/lemmas.json  (≈ 4 MB)
-Each record keeps only what we need for on-the-fly inflection.
+Convert Whitaker’s DICTLINE.GEN/RAW → dist/lemmas.json  (≈ 4 MB)
 
-Structure:
+Each record keeps only what we need for on-the-fly inflection:
+
 {
-  "lemma": "amō",
-  "pos":   "verb",
-  "decl":  1,                    # declension / conjugation number
-  "stems": {                     # keys vary by POS
+  "lemma":     "amō",
+  "pos":       "verb",
+  "decl":      1,                  # conj/decl number
+  "stems":     {                   # only when RAW gives them
       "present": "am",
       "perfect": "amav",
       "supine":  "amat"
@@ -22,7 +22,7 @@ RAW      = "dictline.raw"
 OUT_DIR  = pathlib.Path("dist")
 OUT_DIR.mkdir(exist_ok=True)
 
-# map exactly Whitaker’s codes to our nicer POS strings
+# map letter-codes (and a few common full codes) to human POS
 POS_MAP = {
     "V":      "verb",
     "N":      "noun",
@@ -30,7 +30,8 @@ POS_MAP = {
     "ADV":    "adverb",
     "PREP":   "preposition",
     "INTERJ": "interjection",
-    # (you can add e.g. “CONJ” → “conjunction” here, if it appears)
+    "CONJ":   "conjunction",
+    "PRON":   "pronoun",
 }
 
 def demacron(s: str) -> str:
@@ -54,53 +55,66 @@ with open(RAW, "rb") as fh:
             continue
         seen.add(lemma)
 
-        # — find the index of the POS code by matching exactly one of POS_MAP’s keys
+        # — find the POS token index by looking for either a full code
+        #   (e.g. "PREP", "ADJ") or a token whose first letter matches V/N/etc.
         try:
-            pos_tok_i = next(i for i, tok in enumerate(parts) if tok in POS_MAP)
+            pos_tok_i = next(
+                i for i, tok in enumerate(parts[1:], 1)
+                if tok in POS_MAP or tok and tok[0] in POS_MAP
+            )
         except StopIteration:
-            # skip any lines that don’t have a recognized POS code
+            # nothing we recognize as a part-of-speech: skip it
             continue
 
-        pos = POS_MAP[parts[pos_tok_i]]
+        tok = parts[pos_tok_i]
+        # map to our normalized POS
+        if tok in POS_MAP:
+            pos = POS_MAP[tok]
+        else:
+            pos = POS_MAP.get(tok[0], tok.lower())
 
-        # — after that comes a conj/decl number (e.g. “1” or “3”), pick the first token that starts with a digit
+        # — conj/decl number: first digit in that token or in the ones after it
         decl_num = None
-        for tok in parts[pos_tok_i + 1:]:
-            if tok and tok[0].isdigit():
-                decl_num = int(tok[0])
-                break
+        # if the POS token itself has a digit, grab it
+        if len(tok) > 1 and tok[1].isdigit():
+            decl_num = int(tok[1])
+        else:
+            for t in parts[pos_tok_i + 1:]:
+                if t and t[0].isdigit():
+                    decl_num = int(t[0])
+                    break
 
-        # — everything between parts[1] up to parts[pos_tok_i] are “stems tokens”
+        # — collect any principal-parts tokens between lemma and POS
         stems_tokens = parts[1:pos_tok_i]
         stems = {}
         if pos == "verb" and len(stems_tokens) >= 3:
             stems = {
-                "present": stems_tokens[0][:-1],   # drop final “-o”
+                "present": stems_tokens[0][:-1],  # drop final -o
                 "perfect": stems_tokens[-2],
                 "supine":  stems_tokens[-1],
             }
         elif pos == "noun" and stems_tokens:
             stems = {"stem": stems_tokens[0]}
 
-        # — robust gloss extraction: if there’s a “;” in the line, take everything after the first “;”
+        # — extract the gloss after the first semicolon, if there is one
         semi = line.find(";")
         if semi != -1:
             gloss = line[semi + 1 :].strip(" ;")
         else:
-            # otherwise, drop short alpha flags and join the rest
+            # no semicolon → drop any tiny flag tokens and rejoin the rest
             tail = parts[pos_tok_i + 1 :]
             gloss_tokens = [t for t in tail if len(t) > 2 or not t.isalpha()]
             gloss = " ".join(gloss_tokens)
 
         lemmas.append({
-            "lemma":     lemma,
-            "pos":       pos,
-            "decl":      decl_num,
-            "stems":     stems,
+            "lemma":      lemma,
+            "pos":        pos,
+            "decl":       decl_num,
+            "stems":      stems,
             "definition": gloss
         })
 
-# write it out
+# write out in UTF-8 (no ASCII escaping)
 with open(OUT_DIR / "lemmas.json", "w", encoding="utf-8") as out_f:
     json.dump(lemmas, out_f, ensure_ascii=False)
 
