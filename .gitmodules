@@ -1,0 +1,3 @@
+[submodule "assets/lewis-short"]
+	path = assets/lewis-short
+	url = https://github.com/IohannesArnold/lewis-short-json.git
