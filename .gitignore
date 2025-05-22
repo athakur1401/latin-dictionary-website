@@ -1,1 +1,13 @@
-data.json
+# your existing ignores
+/dist/
+/*.zip
+/*.csv
+/.DS_Store
+/.venv/
+
+# Python bytecode
+**/__pycache__/
+**/*.py[cod]
+
+# if you ever end up with git submodules, keep their metadata
+!/.gitmodules
