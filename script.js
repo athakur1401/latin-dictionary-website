@@ -28,9 +28,7 @@ class DictionaryApp {
 
       // 2) Build a map lemma→index (macron‐stripped)
       this.formIndex = new Map(
-        this.dictionary.map((entry, i) =>
-          [ stripMacrons(entry.lemma), i ]
-        )
+        this.dictionary.map((entry, i) => [stripMacrons(entry.lemma), i])
       );
 
       console.log(`Loaded ${this.dictionary.length} lemmas`);
@@ -53,7 +51,6 @@ class DictionaryApp {
           this.switchTab(btn.dataset.tab);
         });
       });
-
     } catch (err) {
       console.error("Failed to load lemmas.json:", err);
     }
@@ -61,7 +58,7 @@ class DictionaryApp {
 
   switchTab(tabId) {
     this.tabButtons.forEach(b => b.classList.remove("active"));
-    this.tabPanels .forEach(p => p.classList.remove("active"));
+    this.tabPanels.forEach(p => p.classList.remove("active"));
 
     document
       .querySelector(`.tab-button[data-tab="${tabId}"]`)
@@ -89,7 +86,7 @@ class DictionaryApp {
       // Render definition
       this.resultContainer.innerHTML = this.renderEntry(entry);
 
-      // Clear inflections placeholder
+      // Reset inflections panel
       this.inflContainer.innerHTML = `
         <p class="placeholder">
           Inflection tables will appear here once you add stems.
@@ -104,7 +101,7 @@ class DictionaryApp {
     }
   }
 
-    renderEntry(entry) {
+  renderEntry(entry) {
     // always show the crisp definition
     let html = `
       <h3>${entry.lemma}</h3>
@@ -124,7 +121,9 @@ class DictionaryApp {
 
     return html;
   }
+} // <<-- closing brace for DictionaryApp!
 
+// bootstrap
 document.addEventListener("DOMContentLoaded", () => {
   window.app = new DictionaryApp();
 });
