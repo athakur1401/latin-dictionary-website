@@ -1,58 +1,41 @@
-import { conjugateV1, declineN1 } from "./inflect.js";
+// script.js
 
+// Remove macrons for lookup keys
 function stripMacrons(str) {
-  // NFC → NFD, then drop every combining mark
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-/* ------------- Dictionary app ------------- */
 class DictionaryApp {
   constructor() {
     // DOM refs
-    this.resultContainer = document.getElementById("resultContainer");
     this.inputField      = document.getElementById("inputField");
     this.lookupButton    = document.getElementById("lookupButton");
+    this.resultContainer = document.getElementById("resultContainer");
+    this.inflContainer   = document.getElementById("inflContainer");
+    this.tabButtons      = document.querySelectorAll(".tab-button");
+    this.tabPanels       = document.querySelectorAll(".tab-panel");
 
-    // data holders
-    this.dictionary = [];        // array of lemma records
-    this.formIndex  = new Map(); // Map<plainForm, lemmaIndex>
+    this.dictionary = [];
+    this.formIndex  = new Map();
 
-    this.init();                 // kick off async loader
+    this.init();
   }
 
-  /* -------- load JSON & build index -------- */
   async init() {
     try {
-      const lemmas = await (await fetch("assets/lemmas.json")).json();
-      this.dictionary = lemmas;
+      // 1) Fetch the unified Lewis & Short lemmas
+      this.dictionary = await (await fetch("assets/lemmas.json")).json();
 
-      // 1) index head-words
+      // 2) Build a map lemma→index (macron‐stripped)
       this.formIndex = new Map(
-        lemmas.map((l, i) => [stripMacrons(l.lemma), i])
+        this.dictionary.map((entry, i) =>
+          [ stripMacrons(entry.lemma), i ]
+        )
       );
 
-      // 2) pre-index all 1st-conj verbs & 1st-decl nouns
-      lemmas.forEach((entry, idx) => {
-        // verbs
-        if (entry.pos === "verb" && entry.decl === 1) {
-          const presStem = entry.stems.present || entry.lemma.slice(0, -1);
-          conjugateV1(presStem).forEach(f =>
-            this.formIndex.set(stripMacrons(f), idx)
-          );
-        }
-        // nouns
-        if (entry.pos === "noun" && entry.decl === 1 && entry.stems.stem) {
-          declineN1(entry.stems.stem).forEach(f =>
-            this.formIndex.set(stripMacrons(f), idx)
-          );
-        }
-      });
+      console.log(`Loaded ${this.dictionary.length} lemmas`);
 
-      console.log(
-        `Loaded ${lemmas.length} lemmas, indexed ${this.formIndex.size} forms`
-      );
-
-      // 3) lookup listeners
+      // 3) Hook up lookup listeners
       this.lookupButton.addEventListener("click", e => {
         e.preventDefault();
         this.performSearch();
@@ -64,107 +47,72 @@ class DictionaryApp {
         }
       });
 
-      // 4) tabs switcher
-      document.querySelectorAll(".tab-button").forEach(btn => {
+      // 4) Tab switcher
+      this.tabButtons.forEach(btn => {
         btn.addEventListener("click", () => {
-          document.querySelectorAll(".tab-button").forEach(b =>
-            b.classList.remove("active")
-          );
-          document.querySelectorAll(".tab-panel").forEach(p =>
-            p.classList.remove("active")
-          );
-
-          btn.classList.add("active");
-          document.getElementById(btn.dataset.tab).classList.add("active");
+          this.switchTab(btn.dataset.tab);
         });
       });
+
     } catch (err) {
-      console.error("Dictionary load failed:", err);
+      console.error("Failed to load lemmas.json:", err);
     }
   }
 
-  /* -------- constant-time lookup -------- */
-  lookup(form) {
-    const plain = stripMacrons(form.toLowerCase());
-    const id    = this.formIndex.get(plain);
-    return id == null ? null : this.dictionary[id];
+  switchTab(tabId) {
+    this.tabButtons.forEach(b => b.classList.remove("active"));
+    this.tabPanels .forEach(p => p.classList.remove("active"));
+
+    document
+      .querySelector(`.tab-button[data-tab="${tabId}"]`)
+      .classList.add("active");
+    document
+      .getElementById(tabId)
+      .classList.add("active");
   }
 
-  /* -------------- search -------------- */
-  performSearch() {
-    const w = this.inputField.value.trim();
-    if (!w) return alert("Please enter a word.");
+  lookup(form) {
+    const key = stripMacrons(form.toLowerCase());
+    const idx = this.formIndex.get(key);
+    return idx == null ? null : this.dictionary[idx];
+  }
 
-    const e = this.lookup(w);
-    if (e) {
-      this.resultContainer.innerHTML = this.renderEntry(e);
-      this.renderInflections(e);
-      document.querySelector(".tab-button[data-tab=definition]").click();
+  performSearch() {
+    const word = this.inputField.value.trim();
+    if (!word) {
+      alert("Please enter a word.");
+      return;
+    }
+
+    const entry = this.lookup(word);
+    if (entry) {
+      // Render definition
+      this.resultContainer.innerHTML = this.renderEntry(entry);
+
+      // Clear inflections placeholder
+      this.inflContainer.innerHTML = `
+        <p class="placeholder">
+          Inflection tables will appear here once you add stems.
+        </p>`;
+
+      // Switch to Definition tab
+      this.switchTab("definition");
     } else {
       this.resultContainer.innerHTML =
         "<p>Word not found in the dictionary.</p>";
-      document.getElementById("inflContainer").innerHTML = "";
+      this.inflContainer.innerHTML = "";
     }
   }
 
-  /* ------------- render one lemma ------------- */
   renderEntry(entry) {
     return `
       <h3>${entry.lemma}</h3>
-      <p><strong>Part of Speech:</strong> ${entry.pos || "—"}</p>
+      <p><strong>Part of Speech:</strong> ${entry.pos}</p>
       <p><strong>Definition:</strong> ${entry.definition}</p>
     `;
-  }
-
-  /* ------------- render inflection tables ------------- */
-  renderInflections(entry) {
-    const cont = document.getElementById("inflContainer");
-    cont.innerHTML = "";
-
-    // 1st-conj verbs: Present Indicative
-    if (entry.pos === "verb" && entry.decl === 1) {
-      const presStem = entry.stems.present || entry.lemma.slice(0, -1);
-      const forms    = conjugateV1(presStem);
-      const persons  = ["1 Sg","2 Sg","3 Sg","1 Pl","2 Pl","3 Pl"];
-      const header   = persons.map(p => `<th>${p}</th>`).join("");
-      const row      = forms.map(f => `<td>${f}</td>`).join("");
-
-      cont.innerHTML = `
-        <h4>Present Indicative (1st Conjugation)</h4>
-        <table>
-          <thead><tr>${header}</tr></thead>
-          <tbody><tr>${row}</tr></tbody>
-        </table>
-      `;
-      return;
-    }
-
-    // 1st-decl nouns
-    if (entry.pos === "noun" && entry.decl === 1 && entry.stems.stem) {
-      const forms = declineN1(entry.stems.stem);
-      const cases = ["Nom","Gen","Dat","Acc","Abl","Voc"];
-      const sg    = forms.slice(0,6);
-      const pl    = forms.slice(6,12);
-
-      const rows = cases.map((c,i) => `
-        <tr><td>${c}</td><td>${sg[i]}</td><td>${pl[i]}</td></tr>
-      `).join("");
-
-      cont.innerHTML = `
-        <h4>First Declension Noun Forms</h4>
-        <table>
-          <thead><tr><th>Case</th><th>Singular</th><th>Plural</th></tr></thead>
-          <tbody>${rows}</tbody>
-        </table>
-      `;
-      return;
-    }
-
-    // fallback
-    cont.innerHTML = `<p>No inflections available for <strong>${entry.lemma}</strong>.</p>`;
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  window.app = new DictionaryApp();  // expose for console testing
+  window.app = new DictionaryApp();
 });
