@@ -88,3 +88,20 @@ main {
   color: #666;
   font-style: italic;
 }
+.extra-notes {
+  margin-top: 1em;
+  font-size: 0.9em;
+}
+.extra-notes summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+.extra-notes .notes-content {
+  margin-top: 0.5em;
+  line-height: 1.4;
+  /* maybe limit its height, add scroll:
+  max-height: 12em;
+  overflow-y: auto;
+  */
+}
+

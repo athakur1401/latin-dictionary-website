@@ -4,9 +4,9 @@ import json, pathlib, unicodedata
 # 1️⃣ input folder (the cloned per-letter JSONs)
 INPUT_DIR = pathlib.Path("assets/lewis-short")
 # 2️⃣ output path
-OUT_DIR  = pathlib.Path("dist")
+OUT_DIR   = pathlib.Path("dist")
 OUT_DIR.mkdir(exist_ok=True)
-OUT_FILE = OUT_DIR / "lemmas.json"
+OUT_FILE  = OUT_DIR / "lemmas.json"
 
 # map L&S part-of-speech → our POS
 POS_MAP = {
@@ -21,6 +21,7 @@ POS_MAP = {
 }
 
 def demacron(s: str) -> str:
+    """Strip macrons from a string."""
     return "".join(
         c for c in unicodedata.normalize("NFD", s)
         if unicodedata.category(c) != "Mn"
@@ -34,6 +35,7 @@ for fn in sorted(INPUT_DIR.glob("ls_*.json")):
     for entry in data:
         senses = entry.get("senses") or []
         pos    = entry.get("part_of_speech")
+        # skip entries with no senses or no POS
         if not senses or not pos:
             continue
 
@@ -43,16 +45,15 @@ for fn in sorted(INPUT_DIR.glob("ls_*.json")):
             continue
         seen.add(lemma)
 
-        # map POS
+        # normalize POS
         p = POS_MAP.get(pos.lower(), pos.lower())
 
-        # collect definitions: handle both str and dict entries
+        # collect sense‐glosses
         defs = []
         for s in senses:
             if isinstance(s, str):
                 defs.append(s.strip())
             elif isinstance(s, dict):
-                # some entries use "definition", some "gloss"
                 d = s.get("definition") or s.get("gloss") or ""
                 if d:
                     defs.append(d.strip())
@@ -60,12 +61,16 @@ for fn in sorted(INPUT_DIR.glob("ls_*.json")):
             continue
         definition = "; ".join(defs)
 
+        # grab full L&S notes if present
+        notes = entry.get("main_notes", "").strip()
+
         merged.append({
             "lemma":      lemma,
             "pos":        p,
             "decl":       None,
             "stems":      {},
-            "definition": definition
+            "definition": definition,
+            "notes":      notes
         })
 
 # write out

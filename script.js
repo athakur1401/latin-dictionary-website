@@ -104,14 +104,26 @@ class DictionaryApp {
     }
   }
 
-  renderEntry(entry) {
-    return `
+    renderEntry(entry) {
+    // always show the crisp definition
+    let html = `
       <h3>${entry.lemma}</h3>
-      <p><strong>Part of Speech:</strong> ${entry.pos}</p>
+      <p><strong>Part of Speech:</strong> ${entry.pos || "—"}</p>
       <p><strong>Definition:</strong> ${entry.definition}</p>
     `;
+
+    // if there are extra notes, show them in a collapsible <details>
+    if (entry.notes) {
+      html += `
+        <details class="extra-notes">
+          <summary>More info</summary>
+          <div class="notes-content">${entry.notes}</div>
+        </details>
+      `;
+    }
+
+    return html;
   }
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   window.app = new DictionaryApp();
