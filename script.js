@@ -1,6 +1,6 @@
 // script.js
 
-// Remove macrons for lookup keys
+// ─── Utility: strip macrons so we can do accent‐insensitive lookups ───
 function stripMacrons(str) {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
@@ -23,17 +23,20 @@ class DictionaryApp {
 
   async init() {
     try {
-      // 1) Fetch the unified Lewis & Short lemmas
+      // 1. Load our merged L&S lemmas
       this.dictionary = await (await fetch("assets/lemmas.json")).json();
 
-      // 2) Build a map lemma→index (macron‐stripped)
+      // 2. Build a macron‐stripped lemma → index map
       this.formIndex = new Map(
-        this.dictionary.map((entry, i) => [stripMacrons(entry.lemma), i])
+        this.dictionary.map((entry, i) => [
+          stripMacrons(entry.lemma.toLowerCase()),
+          i
+        ])
       );
 
       console.log(`Loaded ${this.dictionary.length} lemmas`);
 
-      // 3) Hook up lookup listeners
+      // 3. Wire up lookup
       this.lookupButton.addEventListener("click", e => {
         e.preventDefault();
         this.performSearch();
@@ -45,7 +48,7 @@ class DictionaryApp {
         }
       });
 
-      // 4) Tab switcher
+      // 4. Wire up tab switching
       this.tabButtons.forEach(btn => {
         btn.addEventListener("click", () => {
           this.switchTab(btn.dataset.tab);
@@ -58,14 +61,12 @@ class DictionaryApp {
 
   switchTab(tabId) {
     this.tabButtons.forEach(b => b.classList.remove("active"));
-    this.tabPanels.forEach(p => p.classList.remove("active"));
+    this.tabPanels .forEach(p => p.classList.remove("active"));
 
     document
       .querySelector(`.tab-button[data-tab="${tabId}"]`)
       .classList.add("active");
-    document
-      .getElementById(tabId)
-      .classList.add("active");
+    document.getElementById(tabId).classList.add("active");
   }
 
   lookup(form) {
@@ -83,16 +84,14 @@ class DictionaryApp {
 
     const entry = this.lookup(word);
     if (entry) {
-      // Render definition
+      // show the definition
       this.resultContainer.innerHTML = this.renderEntry(entry);
-
-      // Reset inflections panel
+      // reset the inflections panel
       this.inflContainer.innerHTML = `
         <p class="placeholder">
           Inflection tables will appear here once you add stems.
         </p>`;
-
-      // Switch to Definition tab
+      // go back to the Definition tab
       this.switchTab("definition");
     } else {
       this.resultContainer.innerHTML =
@@ -102,28 +101,15 @@ class DictionaryApp {
   }
 
   renderEntry(entry) {
-    // always show the crisp definition
-    let html = `
+    return `
       <h3>${entry.lemma}</h3>
       <p><strong>Part of Speech:</strong> ${entry.pos || "—"}</p>
       <p><strong>Definition:</strong> ${entry.definition}</p>
     `;
-
-    // if there are extra notes, show them in a collapsible <details>
-    if (entry.notes) {
-      html += `
-        <details class="extra-notes">
-          <summary>More info</summary>
-          <div class="notes-content">${entry.notes}</div>
-        </details>
-      `;
-    }
-
-    return html;
   }
-} // <<-- closing brace for DictionaryApp!
+} // ←←← Make sure this closing brace is here!
 
-// bootstrap
+// ─── Bootstrap ───
 document.addEventListener("DOMContentLoaded", () => {
   window.app = new DictionaryApp();
 });
