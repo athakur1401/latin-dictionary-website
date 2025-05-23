@@ -1,6 +1,7 @@
 // script.js
+import { conjugateV1, declineN1 } from "./inflect.js";
 
-// ─── Utility: strip macrons so we can do accent‐insensitive lookups ───
+// Strip macrons for lookup keys
 function stripMacrons(str) {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
@@ -23,20 +24,17 @@ class DictionaryApp {
 
   async init() {
     try {
-      // 1. Load our merged L&S lemmas
+      // 1) Load your merged Lewis & Short JSON
       this.dictionary = await (await fetch("assets/lemmas.json")).json();
 
-      // 2. Build a macron‐stripped lemma → index map
-      this.formIndex = new Map(
-        this.dictionary.map((entry, i) => [
-          stripMacrons(entry.lemma.toLowerCase()),
-          i
-        ])
-      );
+      // 2) Build lookup map (lemma → index), macrons stripped
+      this.dictionary.forEach((entry, i) => {
+        this.formIndex.set(stripMacrons(entry.lemma), i);
+      });
 
       console.log(`Loaded ${this.dictionary.length} lemmas`);
 
-      // 3. Wire up lookup
+      // 3) Wire up lookup
       this.lookupButton.addEventListener("click", e => {
         e.preventDefault();
         this.performSearch();
@@ -48,7 +46,7 @@ class DictionaryApp {
         }
       });
 
-      // 4. Wire up tab switching
+      // 4) Wire up the tabs
       this.tabButtons.forEach(btn => {
         btn.addEventListener("click", () => {
           this.switchTab(btn.dataset.tab);
@@ -63,10 +61,10 @@ class DictionaryApp {
     this.tabButtons.forEach(b => b.classList.remove("active"));
     this.tabPanels .forEach(p => p.classList.remove("active"));
 
-    document
-      .querySelector(`.tab-button[data-tab="${tabId}"]`)
-      .classList.add("active");
-    document.getElementById(tabId).classList.add("active");
+    document.querySelector(`.tab-button[data-tab="${tabId}"]`)
+            .classList.add("active");
+    document.getElementById(tabId)
+            .classList.add("active");
   }
 
   lookup(form) {
@@ -84,14 +82,13 @@ class DictionaryApp {
 
     const entry = this.lookup(word);
     if (entry) {
-      // show the definition
+      // show definition
       this.resultContainer.innerHTML = this.renderEntry(entry);
-      // reset the inflections panel
-      this.inflContainer.innerHTML = `
-        <p class="placeholder">
-          Inflection tables will appear here once you add stems.
-        </p>`;
-      // go back to the Definition tab
+
+      // populate inflections
+      this.renderInflections(entry);
+
+      // switch to Definition tab
       this.switchTab("definition");
     } else {
       this.resultContainer.innerHTML =
@@ -101,15 +98,81 @@ class DictionaryApp {
   }
 
   renderEntry(entry) {
-    return `
+    let html = `
       <h3>${entry.lemma}</h3>
       <p><strong>Part of Speech:</strong> ${entry.pos || "—"}</p>
       <p><strong>Definition:</strong> ${entry.definition}</p>
     `;
-  }
-} // ←←← Make sure this closing brace is here!
 
-// ─── Bootstrap ───
+    // optional extra notes
+    if (entry.notes) {
+      html += `
+        <details class="extra-notes">
+          <summary>More info</summary>
+          <div class="notes-content">${entry.notes}</div>
+        </details>
+      `;
+    }
+
+    return html;
+  }
+
+  renderInflections(entry) {
+    const cont = this.inflContainer;
+    cont.innerHTML = "";
+
+    // 1st-conj verbs → Present Indicative
+    if (entry.pos === "verb" && entry.decl === 1 && entry.stems.present) {
+      const stem  = entry.stems.present;
+      const forms = conjugateV1(stem);
+      const labels = ["1 Sg","2 Sg","3 Sg","1 Pl","2 Pl","3 Pl"];
+      const th = labels.map(l => `<th>${l}</th>`).join("");
+      const td = forms .map(f => `<td>${f}</td>`).join("");
+
+      cont.innerHTML = `
+        <h4>Present Indicative (1st Conjugation)</h4>
+        <table>
+          <thead><tr>${th}</tr></thead>
+          <tbody><tr>${td}</tr></tbody>
+        </table>
+      `;
+      return;
+    }
+
+    // 1st-decl nouns → six cases
+    if (entry.pos === "noun" && entry.decl === 1 && entry.stems.stem) {
+      const stem  = entry.stems.stem;
+      const forms = declineN1(stem);
+      const cases = ["Nom","Gen","Dat","Acc","Abl","Voc"];
+      const sing  = forms.slice(0,6);
+      const plur  = forms.slice(6,12);
+
+      const rows = cases.map((c,i) => `
+        <tr>
+          <td>${c}</td>
+          <td>${sing[i] || ""}</td>
+          <td>${plur[i] || ""}</td>
+        </tr>
+      `).join("");
+
+      cont.innerHTML = `
+        <h4>First Declension Noun Forms</h4>
+        <table>
+          <thead><tr><th>Case</th><th>Singular</th><th>Plural</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      `;
+      return;
+    }
+
+    // fallback
+    cont.innerHTML = `
+      <p>No inflections available for <strong>${entry.lemma}</strong>.</p>
+    `;
+  }
+}
+
+// bootstrap
 document.addEventListener("DOMContentLoaded", () => {
   window.app = new DictionaryApp();
 });
